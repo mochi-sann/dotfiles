@@ -85,7 +85,6 @@ mas "Bandwidth+", id: 490461369
 mas "Be Focused", id: 973134470
 mas "Bear", id: 1091189122
 mas "BetterSnapTool", id: 417375580
-mas "Cinebench", id: 1438772273
 mas "CotEditor", id: 1024640650
 mas "DaisyDisk", id: 411643860
 mas "Dark Mode Wallpaper", id: 1488154568
@@ -112,7 +111,6 @@ mas "moosti", id: 1480602835
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Playgrounds", id: 1496833156
-mas "RightFont", id: 1475782381
 mas "RightFont", id: 1475782381
 mas "RunCat", id: 1429033973
 mas "Shazam", id: 897118787
