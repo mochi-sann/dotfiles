@@ -5,8 +5,9 @@ cp ../.gitconfig .
 cp ../.zprofile .
 
 cp -r ../iTerm_setting .
-cp ../.vimrc .
-cp ../.vimrc .
+cp -r ../.zsh .
+cp -r ../.oh-my-zsh .
+cp -r ../zsh-syntax-highlighting .
 cp ../.vimrc .
 rm -rf Brewfile
 brew bundle dump  

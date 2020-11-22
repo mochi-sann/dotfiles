@@ -326,7 +326,7 @@ tab-name() {
 function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print $1}'| rev)\007"}
 
 
-zle -N accept-line re-prompt
+# zle -N accept-line re-prompt
 
 
 function google() {
@@ -380,3 +380,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH="$PATH:`pwd`/flutter/bin"
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# source /Users/sutomoyuru/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

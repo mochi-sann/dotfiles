@@ -1,4 +1,5 @@
 tap "argon/mas"
+tap "browsh-org/browsh"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -28,6 +29,7 @@ brew "git"
 brew "imagemagick"
 brew "jpegoptim"
 brew "libidn"
+brew "llvm"
 brew "mas"
 brew "mecab"
 brew "mysql"
@@ -52,6 +54,7 @@ brew "yarn", link: false
 brew "zplug"
 brew "zsh"
 brew "zsh-completions"
+brew "zsh-syntax-highlighting"
 brew "heroku/brew/heroku"
 brew "jesseduffield/lazygit/lazygit"
 brew "rcmdnk/file/brew-file"
@@ -79,15 +82,12 @@ cask "visual-studio-code"
 cask "vivaldi"
 cask "xquartz"
 mas "1Focus", id: 969210610
-mas "Asphalt 9", id: 1491129197
 mas "AVCHD to Mov Lite", id: 675103877
 mas "Bandwidth+", id: 490461369
-mas "Be Focused", id: 973134470
 mas "Bear", id: 1091189122
 mas "BetterSnapTool", id: 417375580
 mas "CotEditor", id: 1024640650
 mas "DaisyDisk", id: 411643860
-mas "Dark Mode Wallpaper", id: 1488154568
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
 mas "Disk Speed Test", id: 425264550
@@ -97,16 +97,12 @@ mas "Focus", id: 777233759
 mas "Focus To-Do", id: 1258530160
 mas "GarageBand", id: 682658836
 mas "GoodNotes", id: 1444383602
-mas "iMovie", id: 408981434
-mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
-mas "LadioCast", id: 411213048
 mas "LINE", id: 539883307
 mas "Mactracker", id: 430255202
 mas "Magnet", id: 441258766
 mas "Micro Sniff", id: 1504024265
-mas "Microsoft To Do", id: 1274495053
 mas "moosti", id: 1480602835
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
@@ -115,7 +111,6 @@ mas "RightFont", id: 1475782381
 mas "RunCat", id: 1429033973
 mas "Shazam", id: 897118787
 mas "Slack", id: 803453959
-mas "Sleipnir", id: 475299388
 mas "Spark", id: 1176895641
 mas "Speedtest", id: 1153157709
 mas "The Unarchiver", id: 425424353
