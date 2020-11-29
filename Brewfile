@@ -44,12 +44,15 @@ brew "procs"
 brew "pyenv"
 brew "ruby-build"
 brew "rbenv"
+brew "reattach-to-user-namespace"
 brew "ruby"
 brew "swig"
 brew "tmux"
+brew "tree"
 brew "vim"
 brew "w3m"
 brew "watchman"
+brew "wget"
 brew "yarn", link: false
 brew "zplug"
 brew "zsh"
@@ -70,6 +73,7 @@ cask "google-chrome-canary"
 cask "google-earth-pro"
 cask "google-trends"
 cask "icons8"
+cask "imazing"
 cask "iterm2"
 cask "moefe-google-translate"
 cask "obs-virtualcam"
@@ -107,6 +111,7 @@ mas "moosti", id: 1480602835
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Playgrounds", id: 1496833156
+mas "PomoDone App", id: 1096128050
 mas "RightFont", id: 1475782381
 mas "RunCat", id: 1429033973
 mas "Shazam", id: 897118787

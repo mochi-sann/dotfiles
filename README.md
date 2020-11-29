@@ -1,13 +1,21 @@
 # dotfiles
 
 Linux & mac
-```shell 
+
+```shell
 git clone https://github.com/Mochichi2003/dotfiles.git
 cd dotfiles
 sh install.sh
 ```
 
-mac 
+mac
+https://qiita.com/normalsalt/items/f200ba50363ebfd46df0
+
 ```shell
-sh brew.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install git
+cd ~
+git clone https://github.com/Mochichi2003/dotfiles.git
+cd dotfiles
+sh install.sh
 ```

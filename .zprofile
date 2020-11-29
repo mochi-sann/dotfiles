@@ -20,3 +20,8 @@ export TWITTER_API_CONSUMER_SECRET="21TpYrirmYT6pVjBruyVAHBO9ff2AGsuIqZzOksdE8GT
 export UNSPLASH_API_ACSESS_KEY="mA1UUduiZHvIeCuXiu0SYzQoE5UHnwrKkSQ2DhJX"
 export UNSPLASH_API_SECRET_KEY="a-tSlhOvTa8VuJa6K8PaV6L_HhhuQnn7L2RDD2czOPc"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# MacPorts Installer addition on 2020-11-26_at_12:48:37: adding an appropriate DISPLAY variable for use with MacPorts.
+export DISPLAY=:0
+# Finished adapting your DISPLAY environment variable for use with MacPorts.
+

@@ -276,6 +276,7 @@ bindkey "^N" history-beginning-search-forward-end
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH=/Users/sutomoyuru/.nodebrew/current/bin:$PATH
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 
 
