@@ -156,11 +156,7 @@ alias lss="exa"
 
 alias python="python3"
 
-cdls ()
-{
-    \cd "$@" && ls
-}
-alias cd="cdls"
+
 
 #保管色付け
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
@@ -213,7 +209,7 @@ function rprompt-git-current-branch {
   st=`git status 2> /dev/null`
   if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
     # 全て commit されてクリーンな状態
-    branch_status="%F{green}"
+    branch_status="%F{014}"
   elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
     # git 管理されていないファイルがある状態
     branch_status="%F{red}?"
@@ -237,11 +233,12 @@ function rprompt-git-current-branch {
 
 
 # プロンプトの右側にメソッドの結果を表示させる
-RPROMPT='`rprompt-git-current-branch`'
+RPROMPT=''
+# RPROMPT='`rprompt-git-current-branch`'
 
 # プロンプト指定
-PROMPT="%F{198}[%n]%f %F{085}%D{%Y/%m/%d} %*  %{$reset_color%}%f%f%{${fg[yellow]}%}%~%{${reset_color}%} 
-%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*'-') <!(*;-;%) <) %#%{${reset_color}%} "
+PROMPT='%F{198}[%n]%f %F{085}%D{%Y/%m/%d}%* `rprompt-git-current-branch` %{$reset_color%}%f%f%{${fg[yellow]}%}%~%{${reset_color}%} 
+%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*❛-❛) <!(*;-;%) <)%{${reset_color}%} '
 
 # プロンプト指定(コマンドの続き)
 # PROMPT2='[%n]> '
@@ -316,20 +313,7 @@ eval "$(rbenv init -)"
 
   #関数定義(引数3つ)
 #タブの色を変更する
-tab-color() {
-    echo -ne "\033]6;1;bg;red;brightness;$1\a"
-    echo -ne "\033]6;1;bg;green;brightness;$2\a"
-    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
-}
 
-#タブの色をリセットする
-tab-reset() {
-    echo -ne "\033]6;1;bg;*;default\a"
-}
-
-tab-name() {
-  echo -ne "\e]1;$1\a"
-}
 function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print $1}'| rev)\007"}
 
 
@@ -365,15 +349,15 @@ gitDirty() { [[ $(git status 2> /dev/null | grep -o '\w\+' | tail -n1) != ("clea
 
 # Show cwd when shell prompts for input.
 precmd() {
-   if overridden; then return; fi
-   cwd=${$(pwd)##*/} # Extract current working dir only
-   print -Pn "\e]0;$cwd$(gitDirty)\a" # Replace with $pwd to show full path
+  if overridden; then return; fi
+  cwd=${$(pwd)##*/} # Extract current working dir only
+  print -Pn "\e]0;$cwd$(gitDirty)\a" # Replace with $pwd to show full path
 }
 
 # Prepend command (w/o arguments) to cwd while waiting for command to complete.
 preexec() {
-   if overridden; then return; fi
-   printf "\033]0;%s\a" "${1%% *} | $cwd$(gitDirty)" # Omit construct from $1 to show args
+  if overridden; then return; fi
+  printf "\033]0;%s\a" "${1%% *} | $cwd$(gitDirty)" # Omit construct from $1 to show args
 }
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export ANDROID_SDK=/Users/sutomoyuru/Library/Android/sdk
@@ -394,5 +378,5 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /Users/sutomoyuru/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export JAVA_HOME="/usr/libexec/java_home -v 11.0.2"
 # Dockerのコマンドの補完
-fpath=(~/.zsh/completion $fpath)
- autoload -Uz compinit && compinit -i
+# fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i

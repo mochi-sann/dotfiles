@@ -6,12 +6,14 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "jesseduffield/lazygit"
+tap "prisma/prisma"
 tap "rcmdnk/file"
 tap "teamookla/speedtest"
 brew "antigen"
 brew "bash-completion"
 brew "bat"
 brew "fontconfig"
+brew "sqlite"
 brew "cmake"
 brew "cocoapods"
 brew "coreutils"
@@ -27,6 +29,7 @@ brew "gcc"
 brew "gh"
 brew "git"
 brew "imagemagick"
+brew "john"
 brew "jpegoptim"
 brew "libidn"
 brew "llvm"
@@ -34,6 +37,7 @@ brew "mas"
 brew "mecab"
 brew "mysql"
 brew "neofetch"
+brew "neovim"
 brew "nodebrew"
 brew "openjdk"
 brew "optipng"
@@ -62,6 +66,7 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "heroku/brew/heroku"
 brew "jesseduffield/lazygit/lazygit"
+brew "prisma/prisma/prisma"
 brew "rcmdnk/file/brew-file"
 brew "teamookla/speedtest/speedtest"
 cask "alfred"
@@ -71,11 +76,14 @@ cask "biscuit"
 cask "bitwarden"
 cask "blender"
 cask "brave-browser"
+cask "chromedriver"
+cask "chromium"
 cask "clipy"
 cask "dash"
 cask "deepl"
 cask "discord"
 cask "docker"
+cask "drawio"
 cask "firefox"
 cask "firefox-developer-edition"
 cask "google-chrome-canary"
@@ -86,21 +94,20 @@ cask "google-web-designer"
 cask "hyper"
 cask "icons8"
 cask "imageoptim"
-cask "imazing"
+cask "intel-power-gadget"
 cask "iterm2"
 cask "karabiner-elements"
-cask "keka"
-cask "microsoft-auto-update"
 cask "microsoft-edge"
 cask "notion"
 cask "numi"
-cask "postman"
+cask "onyx"
+cask "postgres"
 cask "spotify"
-cask "swimat"
 cask "ticktick"
 cask "unity-hub"
 cask "visual-studio-code"
-cask "xquartz"
+cask "webstorm"
+cask "zoom"
 mas "1440", id: 1483764819
 mas "Bandwidth+", id: 490461369
 mas "BetterSnapTool", id: 417375580
@@ -108,14 +115,21 @@ mas "DaisyDisk", id: 411643860
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
 mas "Disk Speed Test", id: 425264550
+mas "Display Menu", id: 549083868
 mas "Endel", id: 1484348796
 mas "Evernote", id: 406056744
 mas "GoodNotes", id: 1444383602
+mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
+mas "LINE", id: 539883307
 mas "Numbers", id: 409203825
+mas "OmniFocus", id: 1346203938
+mas "OmniGraffle", id: 1142578753
 mas "Pages", id: 409201541
+mas "Pastel", id: 413897608
 mas "Playgrounds", id: 1496833156
+mas "RightFont", id: 1475782381
 mas "RunCat", id: 1429033973
 mas "Shazam", id: 897118787
 mas "Slack", id: 803453959
