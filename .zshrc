@@ -237,7 +237,7 @@ RPROMPT=''
 # RPROMPT='`rprompt-git-current-branch`'
 
 # プロンプト指定
-PROMPT='%F{198}[%n]%f %F{085}%D{%Y/%m/%d}%* `rprompt-git-current-branch` %{$reset_color%}%f%f%{${fg[yellow]}%}%~%{${reset_color}%} 
+PROMPT='%F{198}[%n]%f %F{085}%D{%Y/%m/%d} %* `rprompt-git-current-branch` %{$reset_color%}%f%f%{${fg[yellow]}%}%~%{${reset_color}%} 
 %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*❛-❛) <!(*;-;%) <)%{${reset_color}%} '
 
 # プロンプト指定(コマンドの続き)
@@ -374,9 +374,13 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="$PATH:`pwd`/flutter/bin"
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-wakatime/zsh-wakatime.plugin.zsh
+
 
 # source /Users/sutomoyuru/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export JAVA_HOME="/usr/libexec/java_home -v 11.0.2"
 # Dockerのコマンドの補完
 # fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
+
+
