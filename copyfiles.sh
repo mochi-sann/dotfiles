@@ -8,6 +8,7 @@ cp -r ../iTerm_setting .
 cp -r ../.zsh .
 rm -rf .zsh/zsh-syntax-highlighting/.git
 rm -rf .zsh/zsh-autosuggestions/.git
+rm -rf .zsh/**/.git
 cp -r ../.oh-my-zsh .
 cp ../.vimrc .
 rm -rf Brewfile

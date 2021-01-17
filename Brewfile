@@ -12,6 +12,7 @@ tap "teamookla/speedtest"
 brew "antigen"
 brew "bash-completion"
 brew "bat"
+brew "bats"
 brew "fontconfig"
 brew "sqlite"
 brew "cmake"
@@ -19,6 +20,7 @@ brew "cocoapods"
 brew "coreutils"
 brew "deno"
 brew "exa"
+brew "exercism"
 brew "gobject-introspection"
 brew "libass"
 brew "libbluray"
@@ -27,6 +29,7 @@ brew "ffmpeg"
 brew "fish"
 brew "gcc"
 brew "gh"
+brew "gibo"
 brew "git"
 brew "imagemagick"
 brew "john"
@@ -42,6 +45,7 @@ brew "nodebrew"
 brew "openjdk"
 brew "optipng"
 brew "pandoc"
+brew "platformio"
 brew "pngquant"
 brew "postgresql"
 brew "procs"
@@ -71,7 +75,9 @@ brew "rcmdnk/file/brew-file"
 brew "teamookla/speedtest/speedtest"
 cask "alfred"
 cask "amazon-photos"
+cask "android-studio"
 cask "app-cleaner"
+cask "atom"
 cask "biscuit"
 cask "bitwarden"
 cask "blender"
@@ -84,6 +90,7 @@ cask "deepl"
 cask "discord"
 cask "docker"
 cask "drawio"
+cask "figma"
 cask "firefox"
 cask "firefox-developer-edition"
 cask "google-chrome-canary"
@@ -93,6 +100,7 @@ cask "google-trends"
 cask "google-web-designer"
 cask "hyper"
 cask "icons8"
+cask "image2icon"
 cask "imageoptim"
 cask "intel-power-gadget"
 cask "iterm2"
@@ -101,16 +109,21 @@ cask "microsoft-edge"
 cask "notion"
 cask "numi"
 cask "onyx"
+cask "osxfuse"
 cask "postgres"
+cask "postman"
+cask "spaceman"
 cask "spotify"
+cask "sublime-text"
 cask "ticktick"
 cask "unity-hub"
 cask "visual-studio-code"
 cask "webstorm"
 cask "zoom"
-mas "1440", id: 1483764819
+mas "AmorphousDiskMark", id: 1168254295
 mas "Bandwidth+", id: 490461369
 mas "BetterSnapTool", id: 417375580
+mas "Cinebench", id: 1438772273
 mas "DaisyDisk", id: 411643860
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
@@ -125,8 +138,8 @@ mas "Kindle", id: 405399194
 mas "LINE", id: 539883307
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
-mas "OmniGraffle", id: 1142578753
 mas "Pages", id: 409201541
+mas "Parallels Desktop", id: 1085114709
 mas "Pastel", id: 413897608
 mas "Playgrounds", id: 1496833156
 mas "RightFont", id: 1475782381
