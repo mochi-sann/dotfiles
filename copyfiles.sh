@@ -2,7 +2,7 @@ cp ../.vimrc .
 cp ../.tmux.conf .
 cp ../.zshrc .
 cp ../.gitconfig .
-cp ../.zprofile .
+# cp ../.zprofile .
 
 cp -r ../iTerm_setting .
 cp -r ../.zsh .

@@ -11,7 +11,7 @@ echo "setup symbolic link..."
 
 # dotfileのシンボリックリンク作成
 for f in .??*
-do
+do 
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
     ln -snfv ~/dotfiles/"$f" ~/
