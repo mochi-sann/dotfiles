@@ -156,6 +156,7 @@ alias lss="exa"
 
 alias python="python3"
 
+alias compete="cargo compete"
 
 
 #保管色付け
@@ -387,3 +388,28 @@ autoload -Uz compinit && compinit -i
 PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="/Users/mochi/.deno/bin:$PATH"
 eval "$(gh completion -s zsh)"
+
+# alias ls='exa'
+# alias cat='bat'
+# alias ps='procs'
+# alias grep='rg'
+# # alias find='fd'
+# alias od='hexyl'
+# alias wc='tokei'
+
+eval "$(anyenv init -)"
+
+export PATH="$PATH:$HOME/development/flutter/bin"
+
+export PATH=$HOME/.cargo/bin:$PATH
+# source $HOME/.cargo/env
+
+cdf() {
+  target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+  if [ "$target" != "" ]; then
+    cd "$target"; pwd
+  else
+    echo 'No Finder window found' >&2
+  fi
+}
+source $HOME/.cargo/env

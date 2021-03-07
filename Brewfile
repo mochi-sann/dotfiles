@@ -12,18 +12,26 @@ tap "mczachurski/wallpapper"
 tap "prisma/prisma"
 tap "rcmdnk/file"
 tap "teamookla/speedtest"
+brew "act"
 brew "antigen"
+brew "anyenv"
+brew "gettext"
+brew "sqlite"
+brew "python@3.9"
 brew "bash-completion"
 brew "bat"
 brew "bats"
+brew "binutils"
 brew "fontconfig"
-brew "sqlite"
 brew "cmake"
 brew "cocoapods", link: false
+brew "code-server"
 brew "coreutils"
 brew "deno"
 brew "exa"
 brew "exercism"
+brew "fd"
+brew "libtool"
 brew "gobject-introspection"
 brew "libass"
 brew "libbluray"
@@ -34,20 +42,29 @@ brew "gcc"
 brew "gh"
 brew "gibo"
 brew "git"
+brew "hexyl"
+brew "httpd"
+brew "hugo"
 brew "imagemagick"
 brew "john"
 brew "jpegoptim"
+brew "libarchive"
 brew "libidn"
 brew "llvm"
+brew "macos-trash"
 brew "mas"
 brew "mecab"
 brew "mysql"
+brew "ncurses"
 brew "neofetch"
 brew "neovim"
+brew "nim"
+brew "ninja"
 brew "nodebrew"
 brew "openjdk"
 brew "optipng"
 brew "pandoc"
+brew "php"
 brew "platformio"
 brew "pngquant"
 brew "postgresql"
@@ -56,11 +73,14 @@ brew "pyenv"
 brew "ruby-build"
 brew "rbenv"
 brew "reattach-to-user-namespace"
+brew "ripgrep"
 brew "ruby"
+brew "rust"
 brew "sbt"
 brew "screenfetch"
 brew "swig"
 brew "tmux"
+brew "tokei"
 brew "tree"
 brew "vim"
 brew "w3m"
@@ -88,7 +108,6 @@ cask "blender"
 cask "brave-browser"
 cask "cacher"
 cask "chromedriver"
-cask "chromium"
 cask "clipy"
 cask "commander-one"
 cask "dash"
@@ -99,6 +118,8 @@ cask "drawio"
 cask "figma"
 cask "firefox"
 cask "firefox-developer-edition"
+cask "firefox-nightly"
+cask "github"
 cask "google-chrome"
 cask "google-chrome-canary"
 cask "google-earth-pro"
@@ -109,51 +130,67 @@ cask "hyper"
 cask "icons8"
 cask "image2icon"
 cask "imageoptim"
+cask "imazing"
 cask "intel-power-gadget"
 cask "iterm2"
+cask "julia-lts"
 cask "karabiner-elements"
+cask "kinza"
+cask "libreoffice"
+cask "libreoffice-language-pack"
+cask "macs-fan-control"
 cask "microsoft-edge"
 cask "musaicfm"
 cask "notion"
 cask "numi"
 cask "onyx"
 cask "openemu"
+cask "opera"
 cask "osxfuse"
 cask "postgres"
 cask "postman"
+cask "sourcetree"
 cask "spaceman"
 cask "spotify"
 cask "sublime-text"
 cask "ticktick"
+cask "tor-browser"
 cask "unity-hub"
 cask "visual-studio-code"
+cask "visual-studio-code-insiders"
 cask "vivaldi-snapshot"
 cask "webstorm"
+cask "yandex"
 cask "zoom"
+mas "Adblock Plus", id: 1432731683
 mas "AmorphousDiskMark", id: 1168254295
-mas "Bandwidth+", id: 490461369
+mas "Apple Configurator 2", id: 1037126344
 mas "BetterSnapTool", id: 417375580
-mas "Cinebench", id: 1438772273
 mas "DaisyDisk", id: 411643860
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
 mas "Disk Speed Test", id: 425264550
 mas "Display Menu", id: 549083868
 mas "Endel", id: 1484348796
-mas "Evernote", id: 406056744
+mas "Focus To-Do", id: 1258530160
+mas "G App Launcher", id: 1543803459
+mas "GarageBand", id: 682658836
 mas "GoodNotes", id: 1444383602
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "LINE", id: 539883307
+mas "Magnet", id: 441258766
+mas "Microsoft Outlook", id: 985367838
 mas "Numbers", id: 409203825
-mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
-mas "Parallels Desktop", id: 1085114709
 mas "Pastel", id: 413897608
+mas "PiPifier", id: 1160374471
 mas "Playgrounds", id: 1496833156
+mas "RightFont", id: 1475782381
 mas "RunCat", id: 1429033973
 mas "Shazam", id: 897118787
+mas "SingularityApp", id: 1481535767
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Speedtest", id: 1153157709

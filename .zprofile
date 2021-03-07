@@ -14,7 +14,6 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # MacPorts Installer addition on 2020-11-26_at_12:48:37: adding an appropriate DISPLAY variable for use with MacPorts.
 export DISPLAY=:0
