@@ -116,7 +116,7 @@ alias vms="sh /Users/sutomoyuru/vagrant/vagrant-start.sh"
 
 
 # aliasたち
-alias ls="ls -G -w"
+alias lsg="ls -G -w"
 alias gls="gls --color"
 alias where="command -v"
 alias j="jobs -l"
