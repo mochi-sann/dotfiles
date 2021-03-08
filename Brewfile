@@ -187,7 +187,6 @@ mas "Pages", id: 409201541
 mas "Pastel", id: 413897608
 mas "PiPifier", id: 1160374471
 mas "Playgrounds", id: 1496833156
-mas "RightFont", id: 1475782381
 mas "RunCat", id: 1429033973
 mas "Shazam", id: 897118787
 mas "SingularityApp", id: 1481535767
