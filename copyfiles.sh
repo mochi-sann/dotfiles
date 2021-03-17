@@ -12,4 +12,7 @@ rm -rf .zsh/**/.git
 cp -r ../.oh-my-zsh .
 cp ../.vimrc .
 rm -rf Brewfile
+
+cp -r ../.config/fish ./.config/fish/
+
 brew bundle dump  
