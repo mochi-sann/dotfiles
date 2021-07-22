@@ -12,6 +12,7 @@ tap "mczachurski/wallpapper"
 tap "prisma/prisma"
 tap "rcmdnk/file"
 tap "ryota-ka/twterm"
+tap "sachaos/tap"
 tap "teamookla/speedtest"
 brew "act"
 brew "antigen"
@@ -28,7 +29,7 @@ brew "cocoapods", link: false
 brew "code-server"
 brew "composer"
 brew "coreutils"
-brew "deno", link: false
+brew "deno"
 brew "libtool"
 brew "emacs"
 brew "exa"
@@ -40,6 +41,7 @@ brew "libass"
 brew "libbluray"
 brew "tesseract"
 brew "ffmpeg"
+brew "ncurses"
 brew "fish"
 brew "gcc"
 brew "gh"
@@ -47,12 +49,15 @@ brew "libidn"
 brew "ghostscript"
 brew "gibo"
 brew "git"
+brew "gitmoji"
 brew "go"
 brew "pango"
+brew "graphviz"
 brew "gtk+3"
 brew "hexyl"
 brew "httpd"
 brew "hugo"
+brew "hyperfine"
 brew "imagemagick"
 brew "john"
 brew "jpegoptim"
@@ -63,7 +68,6 @@ brew "macos-trash"
 brew "mas"
 brew "mecab"
 brew "mysql"
-brew "ncurses"
 brew "neofetch"
 brew "neovim"
 brew "nim"
@@ -90,6 +94,7 @@ brew "rust"
 brew "sbt"
 brew "screenfetch"
 brew "sl"
+brew "snapcraft"
 brew "swiftformat"
 brew "swig"
 brew "tmux"
@@ -109,7 +114,9 @@ brew "heroku/brew/heroku"
 brew "jesseduffield/lazygit/lazygit"
 brew "prisma/prisma/prisma"
 brew "rcmdnk/file/brew-file"
+brew "sachaos/tap/ac-deck"
 brew "teamookla/speedtest/speedtest"
+cask "alacritty"
 cask "alfred"
 cask "alt-tab"
 cask "amazon-photos"
@@ -125,12 +132,14 @@ cask "clipy"
 cask "commander-one"
 cask "cool-retro-term"
 cask "dash"
+cask "dbeaver-community"
 cask "deepl"
 cask "discord"
 cask "disk-inventory-x"
 cask "docker"
 cask "drawio"
 cask "edex-ui"
+cask "electerm"
 cask "figma"
 cask "firefox"
 cask "firefox-developer-edition"
@@ -153,6 +162,7 @@ cask "intel-power-gadget"
 cask "iterm2"
 cask "julia-lts"
 cask "karabiner-elements"
+cask "kitty"
 cask "libreoffice"
 cask "libreoffice-language-pack"
 cask "macs-fan-control"
@@ -164,6 +174,8 @@ cask "onyx"
 cask "openemu"
 cask "opera"
 cask "osxfuse"
+cask "pgadmin4"
+cask "pomotroid"
 cask "postgres"
 cask "postman"
 cask "quickwords"
@@ -183,39 +195,6 @@ cask "visual-studio-code-insiders"
 cask "vivaldi-snapshot"
 cask "webstorm"
 cask "wireshark"
+cask "xquartz"
 cask "yandex"
 cask "zoom"
-mas "Adblock Plus", id: 1432731683
-mas "AmorphousDiskMark", id: 1168254295
-mas "Apple Configurator 2", id: 1037126344
-mas "BetterSnapTool", id: 417375580
-mas "DaisyDisk", id: 411643860
-mas "DevCleaner", id: 1388020431
-mas "Developer", id: 640199958
-mas "Disk Speed Test", id: 425264550
-mas "Display Menu", id: 549083868
-mas "Endel", id: 1484348796
-mas "Focus To-Do", id: 1258530160
-mas "G App Launcher", id: 1543803459
-mas "GarageBand", id: 682658836
-mas "GoodNotes", id: 1444383602
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Kindle", id: 405399194
-mas "LINE", id: 539883307
-mas "Magnet", id: 441258766
-mas "Microsoft Outlook", id: 985367838
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Pastel", id: 413897608
-mas "PiPifier", id: 1160374471
-mas "Playgrounds", id: 1496833156
-mas "RunCat", id: 1429033973
-mas "Shazam", id: 897118787
-mas "SingularityApp", id: 1481535767
-mas "Slack", id: 803453959
-mas "Spark", id: 1176895641
-mas "Speedtest", id: 1153157709
-mas "The Unarchiver", id: 425424353
-mas "TweetDeck", id: 485812721
-mas "Xcode", id: 497799835
