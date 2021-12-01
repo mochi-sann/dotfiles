@@ -413,3 +413,7 @@ cdf() {
   fi
 }
 source $HOME/.cargo/env
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+export PATH=\"$(python3 -m site --user-base)/bin:$PATH\"export PATH="$PATH:/path/to/depot_tools"

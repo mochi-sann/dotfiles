@@ -9,7 +9,8 @@
 [core]
 	editor = vim
 	quotepath = false
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/mochi/.gitignore_global
+	precomposeUnicode = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -25,3 +26,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[cinnabar]
+	helper = /var/folders/y6/9_n2fg311c9_8jsjs183h5_c0000gn/T/tmp196fucw7/git-cinnabar-master/git-cinnabar-helper

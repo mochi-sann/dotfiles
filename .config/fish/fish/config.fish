@@ -38,7 +38,7 @@ alias df="df -h"
 
 
 alias su="su -l"
-
+alias vim="nvim"
 alias dc="docker compose "
 alias dcu='docker compose  up -d'
 alias dcd='docker compose  down'
@@ -71,7 +71,7 @@ function cpwd
 end
 
 
-set -x PATH $HOME/.nodebrew/current/bin $PATH
+# set -x PATH $HOME/.nodebrew/current/bin $PATH
 
 # set -x PATH "$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin $PATH"
 # set -x $HOME /.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin
@@ -114,3 +114,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 if [ -f '/Users/mochi/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/mochi/Downloads/google-cloud-sdk/path.fish.inc'; end
 
 status --is-interactive; and source (rbenv init -|psub)
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
+
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+# 文字を見やすくすする
