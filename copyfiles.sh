@@ -14,5 +14,10 @@ cp ../.vimrc .
 rm -rf Brewfile
 
 cp -r ../.config/fish ./.config/fish/
+cp -r ../.config/neofetch ./.config/neofetch
+cp -r ../.config/nvim  ./.config/nvim
+rm -rf  ./.config/nvim/dein/*
 
+rm -rf  ./.config/nvim/dein/.cache
+rm -rf  ./.config/nvim/.git
 brew bundle dump  

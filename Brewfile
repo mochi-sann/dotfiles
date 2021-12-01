@@ -230,3 +230,47 @@ cask "wireshark"
 cask "xquartz"
 cask "yandex"
 cask "zoom"
+mas "5 GUIs", id: 1534164621
+mas "Adblock Plus", id: 1432731683
+mas "AdBlock Pro", id: 1018301773
+mas "AmorphousDiskMark", id: 1168254295
+mas "Apple Configurator 2", id: 1037126344
+mas "BetterSnapTool", id: 417375580
+mas "Bitwarden", id: 1352778147
+mas "CotEditor", id: 1024640650
+mas "DaisyDisk", id: 411643860
+mas "DevCleaner", id: 1388020431
+mas "Developer", id: 640199958
+mas "Disk Speed Test", id: 425264550
+mas "Display Menu", id: 549083868
+mas "DuckDuckGo Privacy Essentials", id: 1482920575
+mas "Focus To-Do", id: 1258530160
+mas "G App Launcher", id: 1543803459
+mas "GarageBand", id: 682658836
+mas "GoodNotes", id: 1444383602
+mas "Icon Fun", id: 1202847196
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+mas "LanguageTranslator", id: 1218781096
+mas "LINE", id: 539883307
+mas "Notion Web Clipper", id: 1559269364
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pastel", id: 413897608
+mas "PiPifier", id: 1160374471
+mas "Playgrounds", id: 1496833156
+mas "RunCat", id: 1429033973
+mas "Screegle", id: 1591051659
+mas "Shazam", id: 897118787
+mas "Skitch", id: 425955336
+mas "Slack", id: 803453959
+mas "Spark", id: 1176895641
+mas "Speedtest", id: 1153157709
+mas "TestFlight", id: 899247664
+mas "The Unarchiver", id: 425424353
+mas "Tools for Xcode", id: 1524738503
+mas "TweetDeck", id: 485812721
+mas "Twitter", id: 1482454543
+mas "Xcode", id: 497799835
+mas "究極英単語", id: 628477127
