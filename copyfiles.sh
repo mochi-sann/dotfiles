@@ -13,6 +13,7 @@ cp -r ../.oh-my-zsh .
 cp ../.vimrc .
 rm -rf Brewfile
 
+cp -r ../.config/kitty/ ./.config/kitty/
 cp -r ../.config/fish ./.config/fish/
 cp -r ../.config/neofetch ./.config/neofetch
 # cp -r ../.config/nvim  ./.config/nvim
