@@ -15,7 +15,9 @@ rm -rf Brewfile
 
 cp -r ../.config/fish ./.config/fish/
 cp -r ../.config/neofetch ./.config/neofetch
-cp -r ../.config/nvim  ./.config/nvim
+# cp -r ../.config/nvim  ./.config/nvim
+
+rsync -a ../.config/nvim  ./.config/nvim --exclude .git --exclude .DS_Store  --exclude  /dein
 rm -rf  ./.config/nvim/dein/*
 
 rm -rf  ./.config/nvim/dein/.cache

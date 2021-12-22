@@ -34,7 +34,7 @@ brew "freetype"
 brew "fontconfig"
 brew "cmake"
 brew "cocoapods", link: false
-brew "code-server"
+brew "code-server", restart_service: true
 brew "composer"
 brew "coreutils"
 brew "libssh2"
@@ -43,7 +43,8 @@ brew "curl"
 brew "dash", link: false
 brew "deno"
 brew "libtool"
-brew "emacs"
+brew "nghttp2"
+brew "emacs", restart_service: true
 brew "exa"
 brew "exercism"
 brew "fd"
@@ -64,6 +65,7 @@ brew "gh"
 brew "libidn"
 brew "ghostscript"
 brew "gibo"
+brew "gifsicle"
 brew "git"
 brew "node"
 brew "gitmoji"
@@ -73,7 +75,7 @@ brew "graphviz"
 brew "gsettings-desktop-schemas"
 brew "gtk+3"
 brew "hexyl"
-brew "httpd"
+brew "httpd", link: false
 brew "hugo"
 brew "hyperfine"
 brew "imagemagick"
@@ -86,15 +88,17 @@ brew "lima"
 brew "llvm"
 brew "lolcat"
 brew "lsd"
+brew "luajit"
 brew "macos-trash"
 brew "mage"
+brew "marp-cli"
 brew "mas"
 brew "openjdk"
 brew "maven"
 brew "mecab"
 brew "miniupnpc"
 brew "mongosh"
-brew "mysql"
+brew "mysql", restart_service: true
 brew "neofetch"
 brew "neovim"
 brew "nim"
@@ -104,10 +108,10 @@ brew "optipng"
 brew "pandoc"
 brew "pastel"
 brew "peco"
-brew "php"
+brew "php", restart_service: true
 brew "platformio"
 brew "pngquant"
-brew "postgresql"
+brew "postgresql", restart_service: true
 brew "procs"
 brew "pyenv"
 brew "ruby-build"
@@ -126,6 +130,7 @@ brew "swig"
 brew "tmux"
 brew "tokei"
 brew "tree"
+brew "twty"
 brew "vim"
 brew "w3m"
 brew "watchman"
@@ -149,10 +154,11 @@ cask "alfred"
 cask "alt-tab"
 cask "amazon-photos"
 cask "android-studio"
-cask "atom"
+cask "asset-catalog-tinkerer"
 cask "biscuit"
 cask "bitwarden"
 cask "blender"
+cask "blender-benchmark"
 cask "brave-browser"
 cask "cacher"
 cask "chromedriver"
@@ -183,6 +189,7 @@ cask "google-trends"
 cask "google-web-designer"
 cask "graphql-playground"
 cask "gray"
+cask "hammerspoon"
 cask "hyper"
 cask "icons8"
 cask "image2icon"
@@ -244,16 +251,18 @@ mas "Developer", id: 640199958
 mas "Disk Speed Test", id: 425264550
 mas "Display Menu", id: 549083868
 mas "DuckDuckGo Privacy Essentials", id: 1482920575
+mas "Equinox", id: 1591510203
 mas "Focus To-Do", id: 1258530160
 mas "G App Launcher", id: 1543803459
 mas "GarageBand", id: 682658836
 mas "GoodNotes", id: 1444383602
+mas "HotKey", id: 975890633
 mas "Icon Fun", id: 1202847196
-mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "LanguageTranslator", id: 1218781096
 mas "LINE", id: 539883307
+mas "Luminar AI", id: 1541310539
 mas "Notion Web Clipper", id: 1559269364
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
@@ -261,7 +270,6 @@ mas "Pastel", id: 413897608
 mas "PiPifier", id: 1160374471
 mas "Playgrounds", id: 1496833156
 mas "RunCat", id: 1429033973
-mas "Screegle", id: 1591051659
 mas "Shazam", id: 897118787
 mas "Skitch", id: 425955336
 mas "Slack", id: 803453959
