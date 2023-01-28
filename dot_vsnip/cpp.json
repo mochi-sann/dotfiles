@@ -1,0 +1,9 @@
+{
+  "coutendl": {
+    "prefix": "cout << $1 << endl;",
+    "body": [
+      "cout << $1 << endl;"
+    ],
+    "description": "cout << $1 << endl;"
+  }
+}

@@ -1,0 +1,35 @@
+version = "0.7.0"
+home = "/Users/mochi"
+config_dir = "/Users/mochi/.sheldon"
+data_dir = "/Users/mochi/.sheldon"
+config_file = "/Users/mochi/.sheldon/plugins.toml"
+
+[[plugins]]
+name = "zshAutosuggestions"
+source_dir = "/Users/mochi/.sheldon/repos/github.com/zsh-users/zsh-autosuggestions"
+files = ["/Users/mochi/.sheldon/repos/github.com/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "highlight"
+source_dir = "/Users/mochi/.sheldon/repos/github.com/zdharma-continuum/fast-syntax-highlighting"
+files = ["/Users/mochi/.sheldon/repos/github.com/zdharma-continuum/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "zsh-complations"
+source_dir = "/Users/mochi/.sheldon/repos/github.com/zsh-users/zsh-completions"
+files = ["/Users/mochi/.sheldon/repos/github.com/zsh-users/zsh-completions/zsh-completions.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "zenozsh"
+source_dir = "/Users/mochi/.sheldon/repos/github.com/yuki-yano/zeno.zsh"
+files = ["/Users/mochi/.sheldon/repos/github.com/yuki-yano/zeno.zsh/zeno-plugin.zsh", "/Users/mochi/.sheldon/repos/github.com/yuki-yano/zeno.zsh/zeno.zsh"]
+apply = ["source"]
+
+[templates]
+PATH = "export PATH=\"{{ dir }}:$PATH\""
+path = "path=( \"{{ dir }}\" $path )"
+fpath = "fpath=( \"{{ dir }}\" $fpath )"
+source = "{% for file in files %}source \"{{ file }}\"\n{% endfor %}"

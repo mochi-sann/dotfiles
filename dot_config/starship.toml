@@ -1,0 +1,9 @@
+
+[directory]
+format = "[ $path ]($style)"
+truncation_length = 0
+read_only = " "
+truncate_to_repo = false
+# truncation_symbol = "…/"
+[aws]
+format = ''

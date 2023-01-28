@@ -1,0 +1,10 @@
+{
+  "new-awesome-ddsk": {
+  "prefix": "awesomeddsk",
+  "body": [
+    "- [$1](./$1) by @[$2](https://github.com/$2)",
+    ""
+  ],
+  "description": "new-awesome-ddsk"
+}
+}

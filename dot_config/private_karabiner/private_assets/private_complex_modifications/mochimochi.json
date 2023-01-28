@@ -1,0 +1,122 @@
+{
+  "title": "Left ctrl + hjkl to Arrow Keys Vim Vim スタイルのキーバインドを提供する ターミナルアプリをしようしているときは無効化される。",
+  "rules": [
+    {
+      "description": "Left ctrl + hjkl to arrow keys Vim  terminal.app iterm.app kitty.term  WezTermでは無効化される",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "net.kovidgoyal.kitty",
+                "com.github.wez.wezterm"
+                ,"io.alacritty"
+              ],
+              "type": "frontmost_application_unless",
+              "description": "terminal.app iterm.app kitty.app を使用しているときは無効化"
+            }
+          ],
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": ["left_control"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "net.kovidgoyal.kitty",
+                "com.github.wez.wezterm"
+                ,"io.alacritty"
+              ],
+              "type": "frontmost_application_unless",
+              "description": "terminal.app iterm.app kitty.app を使用しているときは無効化"
+            }
+          ],
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": ["left_control"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "net.kovidgoyal.kitty",
+                "com.github.wez.wezterm"
+                ,"io.alacritty"
+              ],
+              "type": "frontmost_application_unless",
+              "description": "terminal.app iterm.app kitty.app を使用しているときは無効化"
+            }
+          ],
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": ["left_control"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "net.kovidgoyal.kitty",
+                "com.github.wez.wezterm"
+                ,"io.alacritty"
+              ],
+              "type": "frontmost_application_unless",
+              "description": "terminal.app iterm.app kitty.app を使用しているときは無効化"
+            }
+          ],
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": ["left_control"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

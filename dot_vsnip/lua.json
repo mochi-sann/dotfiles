@@ -1,0 +1,20 @@
+{
+  "packer plugin": {
+    "prefix": "use",
+    "body": ["use({ \"$1\" })", ""],
+    "description": "packer plugin"
+  },
+  "packer plugin config": {
+    "prefix": "plugconfig",
+    "body": ["config = function()", "require(\"plugconfig/$1\")", "end,"],
+    "description": "packer plugin config"
+  },
+"pluglazy": {
+  "prefix": "pluglazy",
+  "body": [
+    "opt = true,",
+    "event = \"VimEnter\","
+  ],
+  "description": "pluglazy"
+}
+}
