@@ -24,7 +24,6 @@
 --   },
 --
 -- })
-
 -- require('mini.sessions').setup({
 --
 -- })

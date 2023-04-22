@@ -17,22 +17,24 @@
 $
 
 # Command Line History (newest to oldest):
-:q
-|2,0,1673932965,,"q"
+:wqall
+|2,0,1677421937,,"wqall"
 :w
-|2,0,1672752519,,"w"
+|2,0,1677421935,,"w"
+:e . 
+|2,0,1677421895,,"e . "
+:e 
+|2,0,1677421890,,"e "
+:q
+|2,0,1676865274,,"q"
+:vs
+|2,0,1676865263,,"vs"
 :qall
 |2,0,1672752472,,"qall"
-:wqall
-|2,0,1672733762,,"wqall"
 :e hoge.log
 |2,0,1672193941,,"e hoge.log"
 :terminal
 |2,0,1671694795,,"terminal"
-:vs
-|2,0,1671694790,,"vs"
-:e . 
-|2,0,1671694664,,"e . "
 :e hoge.log2
 |2,0,1671694657,,"e hoge.log2"
 :30
@@ -87,10 +89,10 @@ $
 |2,0,1611558289,,"h opreter"
 
 # Search String History (newest to oldest):
+? @$
+|2,1,1677421905,,"@$"
 ?/ple
 |2,1,1672733735,47,"ple"
-? @$
-|2,1,1671694784,,"@$"
 ?/cur
 |2,1,1670981358,47,"cur"
 ?/color
@@ -107,12 +109,12 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	nvim-lua/plenary.nvim
-|3,0,0,0,1,0,1672733756,"nvim-lua/plenary.nvim"
-""1	LINE	0
+"0	LINE	0
 	console.log("hello world")
-|3,1,1,1,1,0,1672752518,"console.log(\"hello world\")"
+|3,0,0,1,1,0,1677421907,"console.log(\"hello world\")"
+"1	LINE	0
+	console.log("hello world")
+|3,0,1,1,1,0,1672752518,"console.log(\"hello world\")"
 "2	LINE	0
 	tnoremap 
 |3,0,2,1,1,0,1672752501,"tnoremap "
@@ -189,231 +191,247 @@ $
 "q	CHAR	0
 	€kb€kb€kbw
 |3,0,26,0,1,0,1617590540,"€kb€kb€kbw"
-"-	CHAR	0
-	nvim-lua/plenary.nvim
-|3,0,36,0,1,0,1672733759,"nvim-lua/plenary.nvim"
+""-	CHAR	0
+	å·¦ç§»å‹•
+|3,1,36,0,1,0,1677421920,"å·¦ç§»å‹•"
 
 # File marks:
-'0  11  0  ~/.config/nvim/init.lua
-|4,48,11,0,1672752529,"~/.config/nvim/init.lua"
-'1  1  0  ~/.config/nvim/init.lua
-|4,49,1,0,1672752472,"~/.config/nvim/init.lua"
-'2  1  0  ~/.config/nvim/init.lua
-|4,50,1,0,1672752472,"~/.config/nvim/init.lua"
+'0  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,48,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+'1  20  52  ~/.vimrc
+|4,49,20,52,1676865274,"~/.vimrc"
+'2  11  0  ~/.config/nvim/init.lua
+|4,50,11,0,1672752529,"~/.config/nvim/init.lua"
 '3  1  0  ~/.config/nvim/init.lua
-|4,51,1,0,1672742913,"~/.config/nvim/init.lua"
+|4,51,1,0,1672752472,"~/.config/nvim/init.lua"
 '4  1  0  ~/.config/nvim/init.lua
-|4,52,1,0,1672742913,"~/.config/nvim/init.lua"
+|4,52,1,0,1672752472,"~/.config/nvim/init.lua"
 '5  1  0  ~/.config/nvim/init.lua
-|4,53,1,0,1672737269,"~/.config/nvim/init.lua"
+|4,53,1,0,1672742913,"~/.config/nvim/init.lua"
 '6  1  0  ~/.config/nvim/init.lua
-|4,54,1,0,1672737269,"~/.config/nvim/init.lua"
+|4,54,1,0,1672742913,"~/.config/nvim/init.lua"
 '7  1  0  ~/.config/nvim/init.lua
 |4,55,1,0,1672737269,"~/.config/nvim/init.lua"
 '8  1  0  ~/.config/nvim/init.lua
 |4,56,1,0,1672737269,"~/.config/nvim/init.lua"
 '9  1  0  ~/.config/nvim/init.lua
-|4,57,1,0,1672737266,"~/.config/nvim/init.lua"
+|4,57,1,0,1672737269,"~/.config/nvim/init.lua"
 
 # Jumplist (newest first):
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
--'  11  0  ~/.config/nvim/init.lua
-|4,39,11,0,1672752529,"~/.config/nvim/init.lua"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
 
 # History of marks within files (newest to oldest):
+
+> ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+	*	1677421935	0
+	"	1864	15
+	^	1865	39
+	.	1865	0
+	+	1865	0
+
+> ~/.vimrc
+	*	1676865274	0
+	"	20	52
+	.	30	0
+	+	29	37
+	+	4	15
+	+	18	4
+	+	30	0
 
 > ~/.config/nvim/init.lua
 	*	1672752528	0
@@ -457,15 +475,6 @@ $
 > ~/codespace/github.com/mochi-sann/dicord-invite-app/hoge.log
 	*	1671694638	0
 	"	68	0
-
-> ~/.vimrc
-	*	1671694563	0
-	"	29	0
-	.	30	0
-	+	29	37
-	+	4	15
-	+	18	4
-	+	30	0
 
 > /usr/local/Cellar/vim/9.0.0800/share/vim/vim90/doc/usr_01.txt
 	*	1669704146	0
@@ -1057,11 +1066,3 @@ $
 	+	24	0
 	+	25	0
 	+	26	0
-
-> ~/.ssh/config
-	*	1606712420	0
-	"	13	0
-	^	13	0
-	.	12	10
-	+	8	20
-	+	12	10

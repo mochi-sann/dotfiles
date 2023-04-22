@@ -1,7 +1,5 @@
 require("nvim-treesitter.configs").setup({
-	highlight = {
-		enable = true,
-	},
+	highlight = { enable = true },
 	ensure_installed = {
 		"c",
 		"lua",
@@ -30,10 +28,7 @@ require("nvim-treesitter.configs").setup({
 		"cpp",
 	},
 
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
+	context_commentstring = { enable = true, enable_autocmd = false },
 
 	rainbow = {
 		enable = true,
@@ -43,7 +38,5 @@ require("nvim-treesitter.configs").setup({
 		-- colors = {}, -- table of hex strings
 		-- termcolors = {} -- table of colour name strings
 	},
-	autotag = {
-		enable = true,
-	},
+	autotag = { enable = true },
 })

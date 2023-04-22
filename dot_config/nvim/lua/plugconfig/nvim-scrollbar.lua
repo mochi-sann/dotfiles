@@ -52,13 +52,8 @@ require("scrollbar").setup({
 			highlight = "Normal",
 		},
 	},
-	excluded_buftypes = {
-		"terminal",
-	},
-	excluded_filetypes = {
-		"prompt",
-		"TelescopePrompt",
-	},
+	excluded_buftypes = { "terminal" },
+	excluded_filetypes = { "prompt", "TelescopePrompt" },
 	autocmd = {
 		render = {
 			"BufWinEnter",

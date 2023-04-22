@@ -23,9 +23,7 @@ require("neo-tree").setup({
 	--       end
 	--   end , -- this sorts files and directories descendantly
 	default_component_configs = {
-		container = {
-			enable_character_fade = true,
-		},
+		container = { enable_character_fade = true },
 		indent = {
 			indent_size = 2,
 			padding = 0, -- extra padding on left hand side
@@ -49,10 +47,7 @@ require("neo-tree").setup({
 			default = "*",
 			highlight = "NeoTreeFileIcon",
 		},
-		modified = {
-			symbol = "[+]",
-			highlight = "NeoTreeModified",
-		},
+		modified = { symbol = "[+]", highlight = "NeoTreeModified" },
 		name = {
 			trailing_slash = false,
 			use_git_status_colors = true,
@@ -77,10 +72,7 @@ require("neo-tree").setup({
 	window = {
 		position = "right",
 		width = 30,
-		mapping_options = {
-			noremap = true,
-			nowait = true,
-		},
+		mapping_options = { noremap = true, nowait = true },
 		mappings = {
 			["<space>"] = {
 				"toggle_node",
@@ -116,7 +108,7 @@ require("neo-tree").setup({
 			--  config = {
 			--    show_path = "none" -- "none", "relative", "absolute"
 			--  }
-			--}
+			-- }
 			["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
 			["q"] = "close_window",
 			["R"] = "refresh",
@@ -130,15 +122,12 @@ require("neo-tree").setup({
 			hide_dotfiles = false,
 			hide_gitignored = true,
 			hide_hidden = true, -- only works on Windows for hidden files/directories
-			hide_by_name = {
-				"node_modules",
-				".DS_Store",
-			},
+			hide_by_name = { "node_modules", ".DS_Store" },
 			hide_by_pattern = { -- uses glob style patterns
-				--"*.meta"
+				-- "*.meta"
 			},
 			never_show = { -- remains hidden even if visible is toggled to true
-				--"thumbs.db"
+				-- "thumbs.db"
 			},
 		},
 		follow_current_file = true, -- This will find and focus the file in the active buffer every

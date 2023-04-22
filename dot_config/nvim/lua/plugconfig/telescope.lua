@@ -20,8 +20,8 @@ local function extensions(name, prop)
 	end
 end
 
-vim.keymap.set("n", "<Leader>pp", builtin("find_files")({ hidden = true , file_ignore_patterns = {".git/"}}))
-vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({ file_ignore_patterns = {".git/"}}))
+vim.keymap.set("n", "<Leader>pp", builtin("find_files")({ hidden = true, file_ignore_patterns = { ".git/" } }))
+vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({ file_ignore_patterns = { ".git/" } }))
 vim.keymap.set("n", "<Leader>pd", builtin("diagnostics")({}))
 vim.keymap.set("n", "<Leader>ph", builtin("help_tags")({}))
 vim.keymap.set("n", "<Leader>pb", builtin("buffers")({}))
@@ -76,9 +76,7 @@ telescope.setup({
 		-- }
 		-- Now the picker_config_key will be applied every time you call this
 		-- builtin picker
-		layout_config = {
-			prompt_position = "top",
-		},
+		layout_config = { prompt_position = "top" },
 	},
 	extensions = {
 		-- Your extension configuration goes here:
@@ -87,15 +85,9 @@ telescope.setup({
 		-- }
 		-- please take a look at the readme of the extension you want to configure
 	},
-	file_ignore_patterns = {
-		"node_modules",
-		".git",
-	},
+	file_ignore_patterns = { "node_modules", ".git" },
 })
-local full_theme = {
-	width = 0.8,
-	show_line = true,
-}
+local full_theme = { width = 0.8, show_line = true }
 
 telescope.load_extension("frecency")
 -- then use it on whatever picker you want

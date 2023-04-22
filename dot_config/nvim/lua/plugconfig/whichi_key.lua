@@ -86,7 +86,4 @@ wk.register({
 	["<C-o>"] = "omni completion",
 	["<C-s>"] = "Spelling suggestions",
 	["<C-z>"] = "stop completion",
-}, {
-	mode = "i",
-	prefix = "<C-x>",
-})
+}, { mode = "i", prefix = "<C-x>" })
