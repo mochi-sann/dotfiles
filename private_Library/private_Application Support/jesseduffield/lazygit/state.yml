@@ -1,6 +1,6 @@
 lastupdatecheck: 0
 recentrepos:
-- /Users/mochi/.config/nvim
+- /Users/mochi/.local/share/chezmoi
 - /Users/mochi/codespace/github.com/mochi-sann/nof
 - /Users/mochi/codespace/github.com/mochi-sann/sandbox
 - /Users/mochi/codespace/github.com/mochi-sann/42-subjets
@@ -32,7 +32,6 @@ recentrepos:
 - /Users/mochi/dev/python/paiza
 - /Users/mochi/codespace/github.com/misskey-dev/misskey
 - /Users/mochi/dev/TypeScript-sandBox/MyProjectTypeOrm
-- /Users/mochi/.local/share/chezmoi
 - /Users/mochi/codespace/github.com/mochi-sann/ni
 - /Users/mochi/codespace/github.com/mochi-sann/tweak-new-twitter
 - /Users/mochi/codespace/github.com/cou723/dhu-class-review-site
