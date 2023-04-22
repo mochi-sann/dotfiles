@@ -516,9 +516,9 @@ return require("lazy").setup({ -- Packer can manage itself
 				log_level = "error",
 				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 			})
-			vim.api.nvim_set_keymap("", "<Leader>ss", "<Cmd>SaveSession<CR>", { noremap = true, silent = true })
-			vim.api.nvim_set_keymap("", "<Leader>sd", "<Cmd>DeleteSession<CR>", { noremap = true, silent = true })
-			vim.api.nvim_set_keymap("", "<Leader>sr", "<Cmd>RestoreSession<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("", "<Leader>ss", "<Cmd>SaveSession<CR>", { noremap = true, silent = false })
+			vim.api.nvim_set_keymap("", "<Leader>sd", "<Cmd>DeleteSession<CR>", { noremap = true, silent = false })
+			vim.api.nvim_set_keymap("", "<Leader>sr", "<Cmd>RestoreSession<CR>", { noremap = true, silent = false })
 		end,
 	},
 	{
