@@ -1,0 +1,300 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+eval "$(sheldon source)"
+### Added by Zinit's installer
+
+# setopt promptsubst
+ # zinit snippet OMZT::gnzh
+ # zinit light marlonrichert/zsh-autocomplete
+
+bindkey '\e[A' up-line-or-search
+bindkey '\eOA' up-line-or-search
+bindkey '^k' up-line-or-search
+# up-line-or-search:  Open history menu.
+# up-line-or-history: Cycle to previous history line.
+
+# Down arrow:
+# bindkey '\e[B' down-line-or-select
+# bindkey '\eOB' down-line-or-select
+# bindkey '^j' down-line-or-select
+# down-line-or-select:  Open completion menu.
+# down-line-or-history: Cycle to next history line.
+
+# zinit load zdharma-continuum/history-search-multi-word
+#
+# # Two regular plugins loaded without investigating.
+# zinit light zsh-users/zsh-autosuggestions
+# zinit light zdharma-continuum/fast-syntax-highlighting
+#
+# zinit ice lucid depth"1" blockf
+# # zinit light yuki-ycino/fzf-preview.zsh
+#
+# zinit snippet OMZP::git
+# zinit cdclear -q # <- forget completions provided by Git plugin
+
+
+eval "$(starship init zsh)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="/usr/local/bin:$PATH"
+
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$(go env GOPATH)/bin
+# history
+HISTFILE=$HOME/.zsh_history     # 履歴を保存するファイル
+HISTSIZE=100000                 # メモリ上に保存する履歴のサイズ
+SAVEHIST=1000000                # 上述のファイルに保存する履歴のサイズ
+
+# share .zshhistory
+setopt inc_append_history       # 実行時に履歴をファイルにに追加していく
+setopt share_history            # 履歴を他のシェルとリアルタイム共有する
+
+setopt hist_ignore_all_dups     # ヒストリーに重複を表示しない
+setopt hist_save_no_dups        # 重複するコマンドが保存されるとき、古い方を削除する。
+setopt extended_history         # コマンドのタイムスタンプをHISTFILEに記録する
+setopt hist_expire_dups_first   # HISTFILEのサイズがHISTSIZEを超える場合は、最初に重複を削除します
+
+
+# enable completion
+# autoload -Uz compinit; compinit
+
+# autoload -Uz colors colors
+
+# Tabで選択できるように
+ zstyle ':completion:*:default' menu select=2
+#
+# コマンドとかでも補完できるようにする
+autoload -Uz compinit && compinit
+# # 補完で大文字にもマッチ
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+#
+# # ファイル補完候補に色を付ける
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
+setopt auto_param_slash
+
+# カッコを自動補完
+setopt auto_param_keys
+
+# ファイル名の展開でディレクトリにマッチした場合 末尾に / を付加
+setopt mark_dirs
+
+# 補完キー連打で順に補完候補を自動で補完
+# setopt auto_menu
+
+# スペルミス訂正
+setopt correct
+
+# コマンドラインでも # 以降をコメントと見なす
+setopt interactive_comments
+# コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
+setopt magic_equal_subst
+
+# 語の途中でもカーソル位置で補完
+setopt complete_in_word
+
+# 日本語ファイル名を表示可能にする
+setopt print_eight_bit
+
+# ディレクトリ名だけでcdする
+setopt auto_cd
+
+# ビープ音を消す
+setopt no_beep
+export EDITOR="nvim"
+export VISUAL='nvim'
+
+
+
+# fd - cd to selected directory
+fcd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune -maxdepth 1 \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+# fzf --layout=reverse --preview "bat --color=always --style=header,grid --line-range :80 $(ghq root)/{}/(README|readme).*")
+fghq(){
+  local dir 
+  local ghq_root=$(ghq root)
+  dir=$(ghq list | fzf --layout=reverse --preview "bat --color=always --theme Dracula --style=header,grid --line-range :80 $ghq_root/{}/(README|readme|Readme).*")
+  cd "$ghq_root/$dir"
+  # cd "$dir"
+}
+updateghq() {
+  ghq list | ghq get --update --parallel
+}
+
+# Another fd - cd into the selected directory
+# This one differs from the above, by only showing the sub directories and not
+#  showing the directories within those.
+# fd() {
+#   DIR=`find * -maxdepth 0 -type d -print 2> /dev/null | fzf-tmux` \
+#     && cd "$DIR"
+# }
+# fda - including hidden directories
+fda() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+# fdr - cd to selected parent directory
+fdr() {
+  local declare dirs=()
+  get_parent_dirs() {
+    if [[ -d "${1}" ]]; then dirs+=("$1"); else return; fi
+    if [[ "${1}" == '/' ]]; then
+      for _dir in "${dirs[@]}"; do echo $_dir; done
+    else
+      get_parent_dirs $(dirname "$1")
+    fi
+  }
+  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf-tmux --tac)
+  cd "$DIR"
+}
+# cf - fuzzy cd from anywhere
+# ex: cf word1 word2 ... (even part of a file name)
+# zsh autoload function
+cf() {
+  local file
+
+  file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
+
+  if [[ -n $file ]]
+  then
+     if [[ -d $file ]]
+     then
+        cd -- $file
+     else
+        cd -- ${file:h}
+     fi
+  fi
+}
+fnvim(){
+  FILE=`fzf --preview "bat  --color=always --style=header,grid --line-range :100 {}"`\
+    && nvim "$FILE"
+} 
+
+function minimal-env-nvim() {
+  cd "$(mktemp -d)"
+  export HOME=$PWD
+  export XDG_CONFIG_HOME=$HOME/.config
+  export XDG_DATA_HOME=$HOME/.local/share
+  export XDG_CACHE_HOME=$HOME/.cache
+  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  mkdir -p ~/.config/nvim
+  cat << EOF > ~/.config/nvim/init.vim
+syntax enable
+filetype plugin indent on
+
+call plug#begin(stdpath('data') . '/plugged')
+" Plug ''
+call plug#end()
+EOF
+  pwd
+  ls -la
+}
+
+function minimal-env-vim() {
+  cd "$(mktemp -d)"
+  export HOME=$PWD
+  export XDG_CONFIG_HOME=$HOME/.config
+  export XDG_DATA_HOME=$HOME/.local/share
+  export XDG_CACHE_HOME=$HOME/.cache
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  mkdir -p ~/.config/nvim
+  cat << EOF > ~/.vimrc
+syntax enable
+filetype plugin indent on
+
+call plug#begin(stdpath('data') . '/plugged')
+" Plug ''
+call plug#end()
+EOF
+  pwd
+  ls -la
+}
+function ghq-fzf() {
+  local src=$(ghq list | fzf --layout=reverse --preview "bat --color=always --style=header,grid --line-range :80 $(ghq root)/{}/(README|readme).*")
+  if [ -n "$src" ]; then
+    BUFFER="cd $(ghq root)/$src"
+    zle accept-line
+  fi
+  zle -R -c
+}
+function geqgets() {
+  ghq get --shallow
+}
+zle -N ghq-fzf
+bindkey '^]' ghq-fzf 
+
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_DEFAULT_OPTS='--height 50% --reverse --border'
+
+function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
+
+
+# bun completions
+[ -s "/Users/mochi/.bun/_bun" ] && source "/Users/mochi/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/mochi/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export RUSTC_WRAPPER=$(which sccache)
+
+# tabtab source for packages
+# uninstall by removing these lines
+# [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/mochi/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/mochi/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/mochi/opt/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/mochi/opt/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+export PATH=/usr/local/Cellar/llvm/11.1.0/bin:$PATH
+export PATH=/usr/local/Cellar/dosfstools/4.2/sbin:$PATH
+# export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+
+# export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/dotfiles/cpp/include/
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# pnpm
+export PNPM_HOME="/Users/mochi/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+alias bell='afplay /System/Library/Sounds/Funk.aiff'
+_notify-done() {
+  osascript -e 'display notification "Process is done!!!!!!!!!!!!!!!1" with title "Terminal"'
+}
+alias notify-done=_notify-done
+# プロセスが終わったら知らせる
+alias ds="(notify-done&bell)"
+# pnpm end
+
+# nof completion --shell=zsh > /usr/local/share/zsh/site-functions/_nof
+

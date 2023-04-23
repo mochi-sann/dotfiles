@@ -1,0 +1,50 @@
+[user]
+        name = mochi33i
+        email = 44772513+mochi-sann@users.noreply.github.com
+        signingkey = C210B8480D7C751F6164998B6BB81D466F714176
+[color]
+        ui = true
+        diff = auto
+        status = auto
+        branch = auto
+[core]
+        editor = nvim
+        quotepath = false
+        excludesfile = /Users/mochi/.gitignore_global
+        precomposeUnicode = true
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+[init]
+        defaultBranch = main
+[merge]
+        conflictStyle = diff3
+[difftool "sourcetree"]
+        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+        path =
+[mergetool "sourcetree"]
+        cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+        trustExitCode = true
+[cinnabar]
+        helper = /Users/mochi/.mozbuild/git-cinnabar/git-cinnabar-helper
+        version-check = 1648428047
+[ghq]
+  vcs = git
+        root = ~/codespace
+
+[commit]
+        gpgsign = true
+[credential "https://github.com"]
+        helper =
+        helper = !/usr/local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+        helper =
+        helper = !/usr/local/bin/gh auth git-credential
+[safe]
+        directory = /Applications/XAMPP/xamppfiles/htdocs
+[gpg]
+        program = gpg
+[tag]
+        gpgsign = true
