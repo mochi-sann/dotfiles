@@ -1,6 +1,7 @@
 {
   "ChatGPT.nvim": { "branch": "main", "commit": "5a0fdf6c408a53924081aff0b7379e765c7edc1b" },
   "Select2Browser.nvim": { "branch": "main", "commit": "d1892630add2d662f0c4ccf524c2b4480d94e48f" },
+  "aerial.nvim": { "branch": "master", "commit": "00cac8e96f932dca8f559849cbea3f0812621d0d" },
   "auto-session": { "branch": "main", "commit": "f391aba10ee61927a1cceb9ea3a9dde501e87e9e" },
   "battery.nvim": { "branch": "main", "commit": "f3119d730ba5cd8c6bbbe1a153896850c3f0edfb" },
   "bufferline.nvim": { "branch": "main", "commit": "5aa803aaa9d8bbbca77d0c8df8ddc0b62c19ff6a" },
