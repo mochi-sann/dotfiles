@@ -1,11 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
-- /Users/mochi/.local/share/chezmoi
-- /Users/mochi/codespace/github.com/mochi-sann/nof
+- /Users/mochi/codespace/github.com/neovim/neovim
 - /Users/mochi/codespace/github.com/mochi-sann/sandbox
+- /Users/mochi/codespace/github.com/mochi-sann/nof
+- /Users/mochi/.local/share/chezmoi
 - /Users/mochi/codespace/github.com/mochi-sann/42-subjets
 - /Users/mochi/codespace/github.com/VirtualLifeDHU/site
-- /Users/mochi/codespace/github.com/neovim/neovim
 - /Users/mochi/codespace/github.com/mochi-sann/vivaldi-css
 - /Users/mochi/codespace/github.com/mochi-sann/misskey
 - /Users/mochi/codespace/github.com/mochi-sann/modal-test
