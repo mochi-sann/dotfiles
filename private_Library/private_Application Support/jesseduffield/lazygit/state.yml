@@ -1,16 +1,18 @@
 lastupdatecheck: 0
 recentrepos:
-- /Users/mochi/codespace/github.com/neovim/neovim
+- /Users/mochi/codespace/github.com/mochi-sann/learning-three-js-2e-ja-support
 - /Users/mochi/codespace/github.com/mochi-sann/sandbox
-- /Users/mochi/codespace/github.com/mochi-sann/nof
 - /Users/mochi/.local/share/chezmoi
+- /Applications/XAMPP/xamppfiles/htdocs
+- /Users/mochi/codespace/github.com/neovim/neovim
+- /Users/mochi/codespace/github.com/mochi-sann/dicord-invite-app
+- /Users/mochi/codespace/github.com/mochi-sann/nof
 - /Users/mochi/codespace/github.com/mochi-sann/42-subjets
 - /Users/mochi/codespace/github.com/VirtualLifeDHU/site
 - /Users/mochi/codespace/github.com/mochi-sann/vivaldi-css
 - /Users/mochi/codespace/github.com/mochi-sann/misskey
 - /Users/mochi/codespace/github.com/mochi-sann/modal-test
 - /Users/mochi/codespace/github.com/mckaywrigley/chatbot-ui
-- /Users/mochi/codespace/github.com/mochi-sann/dicord-invite-app
 - /Users/mochi/codespace/github.com/mochi-sann/three-playground
 - /Users/mochi/codespace/github.com/ics-creative/141212_glslshader
 - /Applications/XAMPP/htdocs
@@ -56,8 +58,6 @@ recentrepos:
 - /Users/mochi/dev/mapp-playgroundy-app
 - /Users/mochi/codespace/github.com/mochi-sann/hecto
 - /Users/mochi/codespace/github.com/mochi/sls
-- /Users/mochi/codespace/github.com/sasatech-gk/TalentNavi-image_transaform
-- /Users/mochi/codespace/github.com/sasatech-gk/talentpark-frontend-prod
 - /Users/mochi/codespace/github.com/cou723/cute-cat
 - /Users/mochi/dev/aws-test
 - /Users/mochi/codespace/github.com/mochi-sann/next-simple-template
@@ -66,7 +66,6 @@ recentrepos:
 - /Users/mochi/dev/TypeScript-sandBox/image-edit-sasa
 - /Users/mochi/codespace/github.com/mochi-sann/yumemi-code-tset-app
 - /Users/mochi/codespace/github.com/jesseduffield/lazygit
-- /Users/mochi/codespace/github.com/sasatech-gk/TalentPark-app-frontend
 - /Users/mochi/codespace/github.com/mochi-sann/oned
 - /Users/mochi/dotfiles/.config/nvim
 - /Users/mochi/codespace/github.com/mochi-sann/witch

@@ -82,6 +82,8 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.php,
 		null_ls.builtins.formatting.prismaFmt,
 		null_ls.builtins.formatting.phpcbf,
+
+    null_ls.builtins.formatting.phpcsfixer
 	},
 	-- on_attach = on_attach,
 })
