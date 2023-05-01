@@ -33,6 +33,9 @@
 [ghq]
   vcs = git
         root = ~/codespace
+[ghq "https://github.com/mycompany"]
+    root = ~/work_codespace/mycompany/
+
 
 [commit]
         gpgsign = true

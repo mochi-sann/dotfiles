@@ -511,6 +511,7 @@ return require("lazy").setup({ -- Packer can manage itself
   },
   {
     "tpope/vim-dadbod",
+    event = "UIEnter",
     config = function()
       require("plugconfig/vim-dadbod")
     end,
@@ -533,13 +534,14 @@ return require("lazy").setup({ -- Packer can manage itself
     dependencies = {
       { "kyazdani42/nvim-web-devicons" }, -- optional, for file icons
     },
-    -- event = "VimEnter",
+    event = "VimEnter",
     config = function()
       require("plugconfig/nvim-tree")
     end,
   },
   {
     "stevearc/aerial.nvim",
+    event = "VimEnter",
     config = function()
       vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
 
@@ -552,7 +554,7 @@ return require("lazy").setup({ -- Packer can manage itself
       })
     end,
   },
-  { "mfussenegger/nvim-dap" },
+  { "mfussenegger/nvim-dap", event = "UIEnter" },
 
   -- {
   --   dir = "~/codespace/github.com/mochi-sann/Selected2Browser.nvim",
