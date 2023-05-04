@@ -126,14 +126,13 @@ local base_colors = {
   yellow = '#ffe64d'
 }
 
-
 return {
   use_ime = true,
   font_size = 14,
-  window_background_opacity = 1,
+  window_background_opacity = 0.90,
   window_decorations = "RESIZE",
   -- font_sizeasdf = 14,
-  font = wezterm.font("UDEV Gothic 35LG"),
+  -- font = wezterm.font("UDEV Gothic 35NFLG"),
   -- font = wezterm.font("Monocraft"),
   -- font  = wezterm.font("PlemolJP35 Console"),
 

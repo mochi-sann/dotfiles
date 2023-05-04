@@ -177,9 +177,14 @@ return require("lazy").setup({ -- Packer can manage itself
       require("plugconfig/vim_expand_region")
     end,
   },
-  { "segeljakt/vim-silicon",       event = "VimEnter" }, -- colorschem
+  { "segeljakt/vim-silicon", event = "VimEnter" },       -- colorschem
 
-  { "folke/tokyonight.nvim",       lazy = true },
+  {
+    "folke/tokyonight.nvim",
+    config = function()
+      require("plugconfig/tokyonight_nvim")
+    end,
+  },
   { "catppuccin/nvim",             name = "catppuccin", lazy = true },
 
   ---------------------------------------------------------------------------
@@ -555,6 +560,7 @@ return require("lazy").setup({ -- Packer can manage itself
     end,
   },
   { "mfussenegger/nvim-dap", event = "UIEnter" },
+  { "tikhomirov/vim-glsl" },
 
   -- {
   --   dir = "~/codespace/github.com/mochi-sann/Selected2Browser.nvim",

@@ -4,7 +4,11 @@ require("config/functions")
 
 vim.cmd([[
 autocmd BufRead,BufEnter *.astro set filetype=astro
+autocmd BufNewFile,BufRead *.vert,*.tesc,*.tese,*.geom,*.frag,*.comp,*.vs,*.fs set filetype=glsl
 nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 tnoremap <Esc> <C-\><C-n>
-colorschem tokyonight-moon
+colorschem tokyonight
+
+" hi Normal ctermbg=NONE ctermfg=252 guibg=#NONE guifg=#c6c8d1
+
 ]])
