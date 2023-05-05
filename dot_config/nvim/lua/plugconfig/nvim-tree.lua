@@ -75,6 +75,7 @@ end
 
 local config = {
 	on_attach = on_attach_keymaps,
+	reload_on_bufenter = true,
 	filters = {
 		dotfiles = false,
 		exclude = { vim.fn.stdpath("config") .. "/lua/custom", ".git" },
@@ -82,8 +83,11 @@ local config = {
 	renderer = {
 		indent_markers = {
 			enable = true,
-			inline_arrows = true,
-			icons = { corner = "└", edge = "│", item = "│", none = " " },
+			inline_arrows = false,
+			-- icons = { corner = "└", edge = "│", item = "│", none = " " },
+		},
+		icons = {
+			show = { folder_arrow = false },
 		},
 	},
 	disable_netrw = true,
