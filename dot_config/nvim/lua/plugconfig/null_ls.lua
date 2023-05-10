@@ -84,6 +84,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.phpcbf,
 
 		null_ls.builtins.formatting.phpcsfixer,
+		null_ls.builtins.formatting.sqlfmt,
 	},
 	-- on_attach = on_attach,
 })
