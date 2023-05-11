@@ -117,10 +117,10 @@ fcd() {
 }
 # fzf --layout=reverse --preview "bat --color=always --style=header,grid --line-range :80 $(ghq root)/{}/(README|readme).*")
 fghq(){
-  local dir 
-  local ghq_root=$(ghq root)
-  dir=$(ghq list | fzf --layout=reverse --preview "bat --color=always --theme Dracula --style=header,grid --line-range :80 $ghq_root/{}/(README|readme|Readme).*")
-  cd "$ghq_root/$dir"
+  local dir
+  # local ghq_root=$(ghq root)
+  dir=$(ghq list --full-path | fzf --layout=reverse --preview "bat --color=always --theme Dracula --style=header,grid --line-range :80 $ghq_root/{}/(README|readme|Readme).*")
+  cd "$dir"
   # cd "$dir"
 }
 updateghq() {

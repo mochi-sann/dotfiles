@@ -33,8 +33,8 @@
 [ghq]
   vcs = git
         root = ~/codespace
-[ghq "https://github.com/mycompany"]
-    root = ~/work_codespace/mycompany/
+[ghq "https://github.com/cortechne"]
+    root = ~/work_codespace/cortechn/
 
 
 [commit]
