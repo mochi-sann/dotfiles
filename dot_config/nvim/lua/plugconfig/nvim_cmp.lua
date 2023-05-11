@@ -296,8 +296,6 @@ mason_lspconfig.setup_handlers({
 			})
 		else
 			lspconfig[server_name].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
 			})
 		end
 	end,
