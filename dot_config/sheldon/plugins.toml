@@ -14,20 +14,35 @@ shell = "zsh"
 
 [plugins]
 
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
+
 [plugins.zshAutosuggestions]
 github = 'zsh-users/zsh-autosuggestions'
+apply = ["defer"]
 
 # [plugins.zsh-autocomplete]
 # github = 'marlonrichert/zsh-autocomplete'
 
+
 [plugins.highlight]
 github = 'zdharma-continuum/fast-syntax-highlighting'
+apply = ["defer"]
 
 [plugins.zsh-complations]
 github = 'zsh-users/zsh-completions'
+apply = ["defer"]
 
 # For example:
 [plugins.zenozsh]
 github = 'yuki-yano/zeno.zsh'
+apply = ["defer"]
 # [plugins.base16]
 # github = "chriskempson/base16-shell"
+[plugins.history]
+github = 'ellie/atuin'
+apply = ["defer"]

@@ -298,3 +298,5 @@ alias ds="(notify-done&bell)"
 
 # nof completion --shell=zsh > /usr/local/share/zsh/site-functions/_nof
 
+
+eval "$(atuin init zsh)"
