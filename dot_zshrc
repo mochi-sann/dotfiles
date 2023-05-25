@@ -276,7 +276,6 @@ export RUSTC_WRAPPER=$(which sccache)
 # fi
 # unset __conda_setup
 export PATH=/usr/local/Cellar/llvm/11.1.0/bin:$PATH
-export PATH=/usr/local/Cellar/dosfstools/4.2/sbin:$PATH
 # export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
 
 # export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/dotfiles/cpp/include/
