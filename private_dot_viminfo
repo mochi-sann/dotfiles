@@ -17,6 +17,8 @@
 $
 
 # Command Line History (newest to oldest):
+:q
+|2,0,1684813484,,"q"
 :wqall
 |2,0,1677421937,,"wqall"
 :w
@@ -25,8 +27,6 @@ $
 |2,0,1677421895,,"e . "
 :e 
 |2,0,1677421890,,"e "
-:q
-|2,0,1676865274,,"q"
 :vs
 |2,0,1676865263,,"vs"
 :qall
@@ -218,6 +218,8 @@ $
 |4,57,1,0,1672737269,"~/.config/nvim/init.lua"
 
 # Jumplist (newest first):
+-'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
+|4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
 -'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
 |4,39,1864,15,1677421937,"~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml"
 -'  1864  15  ~/codespace/github.com/mochi-sann/misskey/locales/ja-JP.yml
