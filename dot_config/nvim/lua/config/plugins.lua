@@ -430,7 +430,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 		ft = { "markdown" },
 	},
-	{ "rust-lang/rust.vim", ft = { "rust", "toml" } }, -- {
+	-- { "rust-lang/rust.vim", ft = { "rust", "toml" } }, -- {
 	{ "slim-template/vim-slim", ft = { "slim" } },
 	-- 	"SmiteshP/nvim-navic",
 	-- 	config = function()
@@ -613,6 +613,18 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{ "mfussenegger/nvim-dap", event = "UIEnter" },
 	{ "tikhomirov/vim-glsl" },
+  {
+    'glacambre/firenvim',
+
+    -- Lazy load firenvim
+    -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
+    cond = not not vim.g.started_by_firenvim,
+    build = function()
+        require("lazy").load({ plugins = "firenvim", wait = true })
+        vim.fn["firenvim#install"](0)
+    end
+}
+
 
 	-- {
 	--   dir = "~/codespace/github.com/mochi-sann/Selected2Browser.nvim",

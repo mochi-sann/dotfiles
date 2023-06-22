@@ -147,6 +147,7 @@ return {
   -- font = wezterm.font("Cica", {weight="Regular", stretch="Normal", style=Normal}),
   -- =>
   -- font = wezterm.font("UDEVGothicLG Nerd Font", {weight="Regular", stretch="Normal", style=Normal}),
+  window_close_confirmation = "NeverPrompt" , 
   use_fancy_tab_bar = false,
   tab_max_width = 50,
   -- line_height = 1.01,
