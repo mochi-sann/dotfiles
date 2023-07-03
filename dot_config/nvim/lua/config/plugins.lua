@@ -613,18 +613,39 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{ "mfussenegger/nvim-dap", event = "UIEnter" },
 	{ "tikhomirov/vim-glsl" },
-  {
-    'glacambre/firenvim',
+	{
+		"glacambre/firenvim",
 
-    -- Lazy load firenvim
-    -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
-    cond = not not vim.g.started_by_firenvim,
-    build = function()
-        require("lazy").load({ plugins = "firenvim", wait = true })
-        vim.fn["firenvim#install"](0)
-    end
+		-- Lazy load firenvim
+		-- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
+		cond = not not vim.g.started_by_firenvim,
+		build = function()
+			require("lazy").load({ plugins = "firenvim", wait = true })
+			vim.fn["firenvim#install"](0)
+			vim.api.nvim_create_autocmd({ "BufEnter" }, {
+				pattern = "github.com_*.txt",
+				cmd = "set filetype=markdown",
+			})
+
+			if vim.g.started_by_firenvim == true then
+				vim.o.laststatus = 0
+			end
+      vim.g.firenvim_config = {
+    localSettings = {
+        [".*"] = {
+            priority = 0,
+            selector = "",
+        },
+        ["github.com"] = {
+            priority = 1,
+            selector = "textarea",
+        }
+    }
 }
 
+
+		end,
+	},
 
 	-- {
 	--   dir = "~/codespace/github.com/mochi-sann/Selected2Browser.nvim",
