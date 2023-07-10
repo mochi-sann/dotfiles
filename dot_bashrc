@@ -13,4 +13,8 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 . "$HOME/.cargo/env"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
+
+export PATH="/usr/local/cuda/bin:$PATH"
+
+export LD_LIBRARY_PATH="/usr/lib/wsl/lib:/usr/local/cuda/lib64:/usr/lib/wsl/lib:"
+

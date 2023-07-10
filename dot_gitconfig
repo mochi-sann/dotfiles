@@ -1,6 +1,6 @@
 [user]
-        name = mochi33i
-        email = 44772513+mochi-sann@users.noreply.github.com
+	name = mochi33i
+	email = 44772513+mochi-sann@users.noreply.github.com
         signingkey = C210B8480D7C751F6164998B6BB81D466F714176
 [color]
         ui = true
@@ -38,7 +38,7 @@
 
 
 [commit]
-        gpgsign = true
+	gpgsign = false
 [credential "https://github.com"]
         helper =
         helper = !/usr/local/bin/gh auth git-credential
@@ -50,4 +50,4 @@
 [gpg]
         program = gpg
 [tag]
-        gpgsign = true
+	gpgsign = false
