@@ -311,11 +311,11 @@ return require("lazy").setup({ -- Packer can manage itself
 		config = function()
 			require("plugconfig/indent_blankline")
 		end,
-	}, -- treesitter settins
+	}, 
+  -- treesitter settins
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		event = "VimEnter",
 		dependencies = {
 			{ "mrjones2014/nvim-ts-rainbow" },
 			{
