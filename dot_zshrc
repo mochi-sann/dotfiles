@@ -326,27 +326,38 @@ alias ds="(notify-done&bell)"
 
 
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# Restart your shell for the changes to take effect.
-
-# Load pyenv-virtualenv automatically by adding
-# the following to ~/.bashrc:
-
-eval "$(pyenv virtualenv-init -)"
-
 
 export BROWSER="pwsh.exe /c start $(wslpath -w $(realpath $1))"
 # WSL?
 if [ -d "/mnt/c" ]; then
   export BROWSER="pwsh.exe /c start"
+function open() {
+    if [ $# != 1 ]; then
+        explorer.exe .
+    else
+        if [ -e $1 ]; then
+            cmd.exe /c start $(wslpath -w $1) 2> /dev/null
+        else
+            echo "open: $1 : No such file or directory" 
+        fi
+    fi
+}
+
 fi
 alias open="pwsh.exe /c start"
 
 
-
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+#
+# # Restart your shell for the changes to take effect.
+#
+# # Load pyenv-virtualenv automatically by adding
+# # the following to ~/.bashrc:
+#
+# eval "$(pyenv virtualenv-init -)"
+# export PATH="$PYENV_ROOT/versions/anaconda3-2023.03/bin/:$PATH
 
 
 
