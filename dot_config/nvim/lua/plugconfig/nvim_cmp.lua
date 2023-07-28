@@ -171,6 +171,7 @@ cmp.setup({
 		---{ name = "skkeleton", group_index = 2 },
 
 		{ name = "copilot", group_index = 2 },
+		{ name = "crates" },
 
 		-- { name = 'luasnip' }, -- For luasnip users.
 		-- { name = 'ultisnips' }, -- For ultisnips users.

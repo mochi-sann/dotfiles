@@ -20,7 +20,11 @@ local function extensions(name, prop)
 	end
 end
 
-vim.keymap.set("n", "<Leader>pp", builtin("find_files")({ hidden = true, file_ignore_patterns = { ".git" , "node_modules" , ".next"} }))
+vim.keymap.set(
+	"n",
+	"<Leader>pp",
+	builtin("find_files")({ hidden = true, file_ignore_patterns = { ".git", "node_modules", ".next" } })
+)
 vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({ file_ignore_patterns = { ".git/" } }))
 vim.keymap.set("n", "<Leader>pd", builtin("diagnostics")({}))
 vim.keymap.set("n", "<Leader>ph", builtin("help_tags")({}))

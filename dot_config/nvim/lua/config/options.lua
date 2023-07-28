@@ -33,7 +33,6 @@ vim.g.loaded_fzf = 1
 vim.g.loaded_gtags = 1
 vim.g.loaded_gtags_cscope = 1
 
-
 --
 vim.opt.number = true -- 行番号を表示
 vim.opt.laststatus = 3 -- ステータスラインを画面いっぱいにする
