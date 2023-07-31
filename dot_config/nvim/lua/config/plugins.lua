@@ -154,28 +154,28 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/nvim_cmp")
 		end,
 	},
-	-- {
-	-- 	"phaazon/hop.nvim",
-	-- 	branch = "v2", -- optional but strongly recommended
-	-- 	event = "VimEnter",
-	-- 	config = function()
-	-- 		require("plugconfig/hop")
-	-- 	end,
-	-- },
 	{
-		"folke/flash.nvim",
-		event = "VeryLazy",
-		---@type Flash.Config
-		opts = {},
-  -- stylua: ignore
-  keys = {
-    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-  },
+		"phaazon/hop.nvim",
+		branch = "v2", -- optional but strongly recommended
+		event = "VimEnter",
+		config = function()
+			require("plugconfig/hop")
+		end,
 	},
+	--{
+	--	"folke/flash.nvim",
+	--	event = "VeryLazy",
+	--	---@type Flash.Config
+	--	opts = {},
+	---- stylua: ignore
+	--keys = {
+	--  { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+	--  { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+	--  { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+	--  { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+	--  { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+	--},
+	--},
 	{
 		"t9md/vim-quickhl",
 		event = "VimEnter",
@@ -444,13 +444,13 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 		ft = { "markdown" },
 	},
-	-- { "rust-lang/rust.vim", ft = { "rust", "toml" } }, -- {
+	{ "rust-lang/rust.vim", ft = { "rust", "toml" } }, -- {
 	{
 		"saecki/crates.nvim",
 		tag = "v0.3.0",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			require("crates").setup()
+			require("plugconfig/null_ls")
 		end,
 	},
 	{ "slim-template/vim-slim", ft = { "slim" } },

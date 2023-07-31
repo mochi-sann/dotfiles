@@ -1,39 +1,39 @@
 -- 一部のプラグインの読み込みを無効化して読み込みを早くする
 local vim = vim
-vim.g.loaded_2html_plugin = 1
-vim.g.loaded_getscript = 1
-vim.g.loaded_getscriptPlugin = 1
-vim.g.loaded_gzip = 1
-vim.g.loaded_logiPat = 1
-vim.g.loaded_man = 1
-vim.g.loaded_matchit = 1
-vim.g.loaded_matchparen = 1
-vim.g.loaded_netrwFileHandlers = 1
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrwSettings = 1
-vim.g.loaded_remote_plugins = 1
-vim.g.loaded_rplugin = 1
-vim.g.loaded_rrhelper = 1
-vim.g.loaded_shada_plugin = 1
-vim.g.loaded_shada_plugin = 1
-vim.g.loaded_spec = 1
-vim.g.loaded_spellfile_plugin = 1
-vim.g.loaded_spellfile_plugin = 1
-vim.g.loaded_tar = 1
-vim.g.loaded_tarPlugin = 1
-vim.g.loaded_tutor_mode_plugin = 1
-vim.g.loaded_vimball = 1
-vim.g.loaded_vimballPlugin = 1
-vim.g.loaded_zip = 1
-vim.g.loaded_zipPlugin = 1
-vim.g.editorconfig = true
-
-vim.g.load_black = 1
-vim.g.loaded_fzf = 1
-vim.g.loaded_gtags = 1
-vim.g.loaded_gtags_cscope = 1
+--vim.g.loaded_2html_plugin = 1
+--vim.g.loaded_getscript = 1
+--vim.g.loaded_getscriptPlugin = 1
+--vim.g.loaded_gzip = 1
+--vim.g.loaded_logiPat = 1
+--vim.g.loaded_man = 1
+--vim.g.loaded_matchit = 1
+--vim.g.loaded_matchparen = 1
+--vim.g.loaded_netrwFileHandlers = 1
+--vim.g.loaded_netrwPlugin = 1
+--vim.g.loaded_netrwSettings = 1
+--vim.g.loaded_remote_plugins = 1
+--vim.g.loaded_rplugin = 1
+--vim.g.loaded_rrhelper = 1
+--vim.g.loaded_shada_plugin = 1
+--vim.g.loaded_shada_plugin = 1
+--vim.g.loaded_spec = 1
+--vim.g.loaded_spellfile_plugin = 1
+--vim.g.loaded_spellfile_plugin = 1
+--vim.g.loaded_tar = 1
+--vim.g.loaded_tarPlugin = 1
+--vim.g.loaded_tutor_mode_plugin = 1
+--vim.g.loaded_vimball = 1
+--vim.g.loaded_vimballPlugin = 1
+--vim.g.loaded_zip = 1
+--vim.g.loaded_zipPlugin = 1
+--
+--vim.g.load_black = 1
+--vim.g.loaded_fzf = 1
+--vim.g.loaded_gtags = 1
+--vim.g.loaded_gtags_cscope = 1
 
 --
+vim.g.editorconfig = true -- editorconfigを有効にする
 vim.opt.number = true -- 行番号を表示
 vim.opt.laststatus = 3 -- ステータスラインを画面いっぱいにする
 vim.o.cursorline = true -- カーソルラインを表示
@@ -58,18 +58,18 @@ vim.o.cmdheight = 0 -- コマンドラインの高さを0にする
 vim.o.guifont = "JetBrainsMono Nerd Font:h14"
 vim.o.pumblend = 7 -- ポップアップメニューをはん透明にする
 vim.o.winblend = 7 -- windowメニューをはん透明にする
-vim.g.mapleader = " "
+vim.g.mapleader = " " -- リーダーキーをスペースにする
 
 -- vim.o.completeopt
 
 vim.o.synmaxcol = 200
 -- ColorScheme
 vim.cmd([[ syntax enable ]]) -- シンタックスカラーリングオン
-vim.o.t_Co = 256
-vim.o.background = "dark"
+vim.o.t_Co = 256 -- ターミナルの色数を256色にする
+vim.o.background = "dark" -- 背景を暗くする
 
 vim.o.display = "lastline" -- 長い行も一行で収まるように
-vim.o.showmode = false
+vim.o.showmode = false -- 下に表示される--INSERT--などを消す
 vim.o.showmatch = true -- 括弧の対応をハイライト
 vim.o.matchtime = 8 -- 括弧の対を見つけるミリ秒数
 vim.o.showcmd = true -- 入力中のコマンドを表示
