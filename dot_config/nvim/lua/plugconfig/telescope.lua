@@ -23,7 +23,7 @@ end
 vim.keymap.set(
 	"n",
 	"<Leader>pp",
-	builtin("find_files")({ hidden = true, file_ignore_patterns = { ".git", "node_modules", ".next" } })
+	builtin("find_files")({ hidden = false, file_ignore_patterns = { ".git", "node_modules", ".next", "dist" } })
 )
 vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({ file_ignore_patterns = { ".git/" } }))
 vim.keymap.set("n", "<Leader>pd", builtin("diagnostics")({}))

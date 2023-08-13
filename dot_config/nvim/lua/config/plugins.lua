@@ -493,18 +493,18 @@ return require("lazy").setup({ -- Packer can manage itself
 			vim.api.nvim_set_keymap("", "<Leader>gg", "<Cmd>Select2Browser<CR>", { noremap = true, silent = true })
 		end,
 	},
-	{
-		"jackMort/ChatGPT.nvim",
-		event = "VimEnter",
-		config = function()
-			require("plugconfig/chat-gpt-nvim")
-		end,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	},
+	-- {
+	-- 	"jackMort/ChatGPT.nvim",
+	-- 	event = "VimEnter",
+	-- 	config = function()
+	-- 		require("plugconfig/chat-gpt-nvim")
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- },
 	{
 		"folke/zen-mode.nvim",
 		event = "VimEnter",

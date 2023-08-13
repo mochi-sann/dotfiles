@@ -361,3 +361,5 @@ alias open="pwsh.exe /c start"
 
 export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0
 source "$HOME/.rye/env"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$(rbenv root)/shims:$PATH"
