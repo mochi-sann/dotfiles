@@ -29,8 +29,6 @@ end
 -- local lspconfig = require("mason-lspconfig")
 local cmp = require("cmp")
 
-vim.opt.completeopt = "menu,menuone,noselect"
-
 local has_words_before = function()
 	if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
 		return false
@@ -262,45 +260,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
--- mason_lspconfig.setup()
--- for _, server in ipairs(lsp_installer.get_installed_servers()) do
-mason_lspconfig.setup_handlers({
-	function(server_name)
-		if server_name == "denols" then
-			lspconfig["denols"].setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-				-- single_file_support = false,
-				root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc", "deps.ts", "import_map.json"),
-				init_options = {
-					lint = true,
-					unstable = true,
-					suggest = {
-						imports = {
-							hosts = {
-								["https://deno.land"] = true,
-								["https://cdn.nest.land"] = true,
-								["https://crux.land"] = true,
-							},
-						},
-					},
-				},
-				-- autostart = false
-			})
-		elseif server_name == "tsserver" then
-			lspconfig["tsserver"].setup({
-				root_dir = lspconfig.util.root_pattern("package.json"),
-				-- root_dir = lspconfig.util.find_json_ancestor,
-
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
-		else
-			lspconfig[server_name].setup({})
-		end
-	end,
-})
-
 require("mason").setup({
 	ui = {
 		icons = {
@@ -309,4 +268,36 @@ require("mason").setup({
 			package_uninstalled = "✗",
 		},
 	},
+})
+
+mason_lspconfig.setup()
+-- for _, server in ipairs(lsp_installer.get_installed_servers()) do
+
+mason_lspconfig.setup_handlers({
+	function(server_name)
+		lspconfig[server_name].setup({})
+	end,
+
+	["denols"] = function()
+		lspconfig["denols"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			-- single_file_support = false,
+			root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc", "deps.ts", "import_map.json"),
+			init_options = {
+				lint = true,
+				unstable = true,
+				suggest = {
+					imports = {
+						hosts = {
+							["https://deno.land"] = true,
+							["https://cdn.nest.land"] = true,
+							["https://crux.land"] = true,
+						},
+					},
+				},
+			},
+			-- autostart = false
+		})
+	end,
 })
