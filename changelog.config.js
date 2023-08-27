@@ -11,6 +11,7 @@ module.exports = {
     "docs",
     "perf",
     "ci",
+    "deps",
   ],
   maxMessageLength: 64,
   minMessageLength: 3,
@@ -20,6 +21,10 @@ module.exports = {
     chore: {
       description: "ドキュメントの生成やビルドプロセス、ライブラリなどの変更",
       value: "chore",
+    },
+    deps: {
+      description: "依存ライブラリのアップデート",
+      value: "deps",
     },
     ci: {
       description: "CI用の設定やスクリプトに関する変更",
