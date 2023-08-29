@@ -666,13 +666,11 @@ return require("lazy").setup({ -- Packer can manage itself
 			}
 		end,
 	},
-
 	{
-		dir = "~/codespace/github.com/mochi-sann/Selected2Browser.nvim",
-		dev = true,
+		"winston0410/range-highlight.nvim",
+		dependencies = { "winston0410/cmd-parser.nvim" },
 		config = function()
-			require("Select2Browser").setup()
-			vim.api.nvim_set_keymap("", "<Leader>g", "<Cmd>Select2Browser<CR>", { noremap = true, silent = true })
+			require("range-highlight").setup({})
 		end,
 	},
 
