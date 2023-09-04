@@ -102,7 +102,12 @@ return require("lazy").setup({ -- Packer can manage itself
 				"hrsh7th/cmp-vsnip",
 				dependencies = { "vim-vsnip", "cmp-nvim-lsp-document-symbol" },
 			},
-			{ "SmiteshP/nvim-navic" },
+			{
+				"SmiteshP/nvim-navic",
+				config = function()
+					require("plugconfig/nvim_navic")
+				end,
+			},
 			{
 				"onsails/lspkind.nvim",
 				config = function()
@@ -148,8 +153,12 @@ return require("lazy").setup({ -- Packer can manage itself
 					require("copilot").setup({})
 				end,
 			},
+			{
+				"lvimuser/lsp-inlayhints.nvim",
+			},
+			{ "simrat39/rust-tools.nvim" },
 		},
-		event = { "UIEnter" },
+		event = { "InsertEnter" },
 		config = function()
 			require("plugconfig/nvim_cmp")
 		end,
@@ -444,7 +453,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 		ft = { "markdown" },
 	},
-	{ "rust-lang/rust.vim", ft = { "rust", "toml" } }, -- {
+	-- { "rust-lang/rust.vim", ft = { "rust", "toml" } }, -- {
 	{
 		"saecki/crates.nvim",
 		tag = "v0.3.0",
@@ -550,7 +559,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("auto-session").setup({
 				log_level = "error",
 				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-				auto_save_enabled = false,
+				auto_save_enabled = true,
 			})
 			vim.api.nvim_set_keymap("", "<Leader>ss", "<Cmd>SessionSave<CR>", { noremap = true, silent = false })
 			vim.api.nvim_set_keymap("", "<Leader>sd", "<Cmd>SessionDelete<CR>", { noremap = true, silent = false })

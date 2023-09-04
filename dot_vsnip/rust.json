@@ -7,4 +7,18 @@
     ""
   ],
   "description": "function"
-}}
+},
+
+"rust mod test": {
+  "prefix": "mod test",
+  "body": [
+    "#[cfg(test)]",
+    "mod test {",
+    "    use super::*;",
+    "    $1",
+    "}",
+    ""
+  ],
+  "description": "rust mod test"
+}
+}
