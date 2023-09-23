@@ -1,7 +1,7 @@
 [user]
 	name = mochi33i
 	email = 44772513+mochi-sann@users.noreply.github.com
-        signingkey = C210B8480D7C751F6164998B6BB81D466F714176
+	signingkey = C560686062DC79EB79894B0A2A9A646DDB4ABFCE
 [color]
         ui = true
         diff = auto
@@ -38,7 +38,7 @@
 
 
 [commit]
-	gpgsign = false
+	gpgsign = true
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
@@ -48,6 +48,6 @@
 [safe]
         directory = /Applications/XAMPP/xamppfiles/htdocs
 [gpg]
-        program = gpg
+	program = gpg
 [tag]
-	gpgsign = false
+	gpgsign = true

@@ -360,3 +360,10 @@ export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0
 source "$HOME/.rye/env"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$(rbenv root)/shims:$PATH"
+
+# bun completions
+[ -s "/home/mochi/.bun/_bun" ] && source "/home/mochi/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
