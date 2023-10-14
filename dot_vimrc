@@ -27,4 +27,5 @@ syntax on
 set showcmd
 " set wildmode=list:longest
 set completeopt=menu,menuone,noselect
-
+nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
+tnoremap <Esc> <C-\><C-n>
