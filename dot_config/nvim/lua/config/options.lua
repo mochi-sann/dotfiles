@@ -82,3 +82,5 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.api.nvim_set_hl(0, "VertSplit", { ctermbg = "NONE", bg = "NONE" })
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅,tab:»»,eol:¬,trail:•,extends:❯,precedes:❮")

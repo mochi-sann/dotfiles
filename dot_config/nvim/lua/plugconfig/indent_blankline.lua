@@ -1,5 +1,3 @@
-vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
 local highlight = {
 	"RainbowRed",
 	"RainbowYellow",
@@ -25,6 +23,8 @@ end)
 
 require("ibl").setup({
 	indent = {
+		char = "▎",
+		tab_char = "▎",
 		highlight = highlight,
 	},
 })
