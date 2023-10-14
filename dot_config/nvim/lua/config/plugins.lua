@@ -392,17 +392,28 @@ return require("lazy").setup({ -- Packer can manage itself
 		config = function()
 			require("registers").setup()
 		end,
-	}, -- {
-	-- 	"folke/which-key.nvim",
-	-- 	event = "VimEnter",
-	-- 	config = function()
-	-- 		require("plugconfig/whichi_key")
-	-- 	end,
-	-- },
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		config = function()
+			require("plugconfig/whichi_key")
+		end,
+	},
 	{ "ryanoasis/vim-devicons" }, -- {
 	-- 	"relastle/vim-colorrange",
 	-- 	event = "VimEnter",
 	-- },
+	{
+		"johmsalas/text-case.nvim",
+		config = function()
+			require("plugconfig/text_case")
+		end,
+	},
 	{
 		"uga-rosa/ccc.nvim",
 		event = { "VimEnter" },
