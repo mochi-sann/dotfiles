@@ -73,11 +73,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			{ "nvim-telescope/telescope-z.nvim" },
 			{
 				"nvim-telescope/telescope-frecency.nvim",
-				dependencies = { "kkharji/sqlite.lua" },
 			},
-			"telescope-ghq.nvim",
-			"telescope-z.nvim",
-			"telescope-frecency.nvim",
 
 			-- その他の拡張プラグイン……
 		},
@@ -332,7 +328,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-    opts = { },
+		opts = {},
 		config = function()
 			require("plugconfig/indent_blankline")
 		end,
