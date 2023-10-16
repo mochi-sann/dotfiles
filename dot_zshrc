@@ -327,7 +327,16 @@ alias ds="(notify-done&bell)"
 export BROWSER="pwsh.exe /c start $(wslpath -w $(realpath $1))"
 # WSL?
 if [ -d "/mnt/c" ]; then
-  export BROWSER="pwsh.exe /c start"
+  #C:\Program Files\PowerShell\7\pwsh.exe
+    export BROWSER="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"
+    alias open="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"
+    export PATH="$PATH:/mnt/c/Users/mochi/AppData/Local/Microsoft/WindowsApps"
+    export PATH="$PATH:/mnt/c/Users/mochi/AppData/Local/Programs/Microsoft VS Code/bin"
+    export PATH="$PATH:/mnt/c/Program Files/Docker/Docker/resources/bin"
+    export PATH="$PATH:/mnt/c/ProgramData/DockerDesktop/version-bin"
+    export PATH="$PATH:/mnt/c/WINDOWS"
+
+
 function open() {
     if [ $# != 1 ]; then
         explorer.exe .
@@ -341,7 +350,6 @@ function open() {
 }
 
 fi
-alias open="pwsh.exe /c start"
 
 
 # export PYENV_ROOT="$HOME/.pyenv"

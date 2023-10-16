@@ -24,9 +24,9 @@ defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
 [plugins.zshAutosuggestions]
 github = 'zsh-users/zsh-autosuggestions'
 
-# [plugins.zsh-autocomplete]
-# github = 'marlonrichert/zsh-autocomplete'
-
+#[plugins.zsh-autocomplete]
+#github = 'marlonrichert/zsh-autocomplete'
+#
 [plugins.powerlevel10k]
 github = 'romkatv/powerlevel10k'
 
@@ -37,8 +37,8 @@ github = 'zdharma-continuum/fast-syntax-highlighting'
 github = 'zsh-users/zsh-completions'
 
 # For example:
-[plugins.zenozsh]
-github = 'yuki-yano/zeno.zsh'
+# [plugins.zenozsh]
+# github = 'yuki-yano/zeno.zsh'
 # [plugins.base16]
 # github = "chriskempson/base16-shell"
 [plugins.history]

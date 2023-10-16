@@ -651,8 +651,18 @@ return require("lazy").setup({ -- Packer can manage itself
 			end)
 		end,
 	},
-	{ "mfussenegger/nvim-dap", event = "UIEnter" },
-	{ "tikhomirov/vim-glsl" },
+	{
+		"mfussenegger/nvim-dap",
+		event = "VeryLazy",
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+		},
+		config = function()
+			require("plugconfig/nvim_dap")
+		end,
+	},
+	{ "tikhomirov/vim-glsl", event = "VeryLazy" },
+	{ "koron/vim-budoux", event = "VeryLazy" },
 	-- {
 	-- 	"glacambre/firenvim",
 	--
