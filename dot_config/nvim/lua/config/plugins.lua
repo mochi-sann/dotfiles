@@ -446,7 +446,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- 	end,
 	-- },
 	{
-		"jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		event = "VimEnter",
 		dependencies = { "jayp0521/mason-null-ls.nvim", "williamboman/mason.nvim" },
 		onfig = function()
