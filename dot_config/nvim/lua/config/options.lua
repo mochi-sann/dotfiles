@@ -65,7 +65,7 @@ vim.g.mapleader = " " -- リーダーキーをスペースにする
 vim.o.synmaxcol = 200
 -- ColorScheme
 vim.cmd([[ syntax enable ]]) -- シンタックスカラーリングオン
-vim.o.t_Co = 256 -- ターミナルの色数を256色にする
+-- vim.o.t_xo = 256 -- ターミナルの色数を256色にする
 vim.o.background = "dark" -- 背景を暗くする
 
 vim.o.display = "lastline" -- 長い行も一行で収まるように
