@@ -1,7 +1,7 @@
 [user]
 	name = mochi33i
 	email = 44772513+mochi-sann@users.noreply.github.com
-	signingkey = C560686062DC79EB79894B0A2A9A646DDB4ABFCE
+	signingkey = 1FB2D07EAF5FB226506CA8FF95F0CB7A9D5CE3B5
 [color]
         ui = true
         diff = auto

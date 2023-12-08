@@ -415,13 +415,22 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 	{
+		"johmsalas/text-case.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+		config = function()
+			require("plugconfig/ccc-nvim")
+		end,
+		keys = {
+			{ "ga.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "v" }, desc = "Telescope" },
+		},
+	},
+
+	{
 		"uga-rosa/ccc.nvim",
 		event = { "VimEnter" },
 		dependenciek = { "nvim-telescope/telescope.nvim" },
 		-- keys = { ":CccPick<cr>" },
-		config = function()
-			require("plugconfig/ccc-nvim")
-		end,
+		config = function() end,
 	},
 	{ "nvim-lua/plenary.nvim" },
 	{
@@ -651,16 +660,16 @@ return require("lazy").setup({ -- Packer can manage itself
 			end)
 		end,
 	},
-	{
-		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
-		dependencies = {
-			"rcarriga/nvim-dap-ui",
-		},
-		config = function()
-			require("plugconfig/nvim_dap")
-		end,
-	},
+	-- {
+	-- 	"mfussenegger/nvim-dap",
+	-- 	event = "VeryLazy",
+	-- 	dependencies = {
+	-- 		"rcarriga/nvim-dap-ui",
+	-- 	},
+	-- 	config = function()
+	-- 		require("plugconfig/nvim_dap")
+	-- 	end,
+	-- },
 	{ "tikhomirov/vim-glsl", event = "VeryLazy" },
 	{ "koron/vim-budoux", event = "VeryLazy" },
 	-- {
