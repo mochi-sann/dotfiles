@@ -47,7 +47,7 @@ keybinds clear-defaults=true {
         bind "l" "Right" { MovePane "Right"; }
     }
     tab {
-        bind "Ctrl i" { SwitchToMode "Normal"; }
+        bind "Ctrl y" { SwitchToMode "Normal"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "h" "Left" "Up" "k" { GoToPreviousTab; }
         bind "l" "Right" "Down" "j" { GoToNextTab; }
@@ -173,7 +173,7 @@ keybinds clear-defaults=true {
         bind "Ctrl o" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
-        bind "Ctrl i" { SwitchToMode "Tab"; }
+        bind "Ctrl y" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
         bind "Ctrl h" { SwitchToMode "Move"; }
@@ -356,6 +356,20 @@ themes {
 // The folder in which Zellij will look for layouts
 //
 // layout_dir "/path/to/my/layout_dir"
+
+layout {
+    floating_panes {
+        pane
+        pane command="ls"
+        pane {
+            x "5%"
+            y "5%"
+            width "90%"
+            height "90%"
+        }
+    }
+}
+
 
 // The folder in which Zellij will look for themes
 //

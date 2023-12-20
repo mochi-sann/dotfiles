@@ -343,6 +343,7 @@ if [ -d "/mnt/c" ]; then
   export PATH="$PATH:/mnt/c/Program Files/Docker/Docker/resources/bin"
   export PATH="$PATH:/mnt/c/ProgramData/DockerDesktop/version-bin"
   export PATH="$PATH:/mnt/c/WINDOWS"
+  export PATH="$PATH:/mnt/c/Users/mochi/scoop/shim"
 
 
 function open() {

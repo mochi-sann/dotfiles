@@ -232,17 +232,17 @@ return require("lazy").setup({ -- Packer can manage itself
 		version = "v2.*",
 		dependencies = "kyazdani42/nvim-web-devicons",
 		config = function()
-			require("bufferline").setup({})
+			require("plugconfig/bufferline")
 		end,
 	},
-	{
-		"alvarosevilla95/luatab.nvim",
-		dependencies = "kyazdani42/nvim-web-devicons",
-		event = "VimEnter",
-		config = function()
-			require("plugconfig/luatab")
-		end,
-	}, --
+	-- {
+	-- 	"alvarosevilla95/luatab.nvim",buffer
+	-- 	dependencies = "kyazdani42/nvim-web-devicons",
+	-- 	event = "VimEnter",
+	-- 	config = function()
+	-- 		require("plugconfig/luatab")
+	-- 	end,
+	-- }, --
 	-- {
 	--   "vim-jp/vimdoc-ja",
 	--   event = "VimEnter",
