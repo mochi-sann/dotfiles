@@ -374,7 +374,6 @@ fi
 # export PATH="$PYENV_ROOT/versions/anaconda3-2023.03/bin/:$PATH
 
 export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0
-source "$HOME/.rye/env"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$(rbenv root)/shims:$PATH"
 
@@ -384,3 +383,8 @@ export PATH="$(rbenv root)/shims:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
