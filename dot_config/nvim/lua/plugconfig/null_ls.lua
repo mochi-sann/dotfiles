@@ -1,4 +1,7 @@
 local null_ls = require("null-ls")
+null_ls.register(require("none-ls-php.diagnostics.php"))
+null_ls.register(require("none-ls-shellcheck.diagnostics"))
+null_ls.register(require("none-ls-shellcheck.code_actions"))
 
 -- require("mason-null-ls").setup({
 --   ensure_installed = { "stylua", "jq", "prettier" , "rustfmt" },
@@ -63,13 +66,17 @@ null_ls.setup({
 			prefer_local = "node_modules/.bin",
 		}),
 
+		require("none-ls.code_actions.eslint"),
+		require("none-ls.diagnostics.cpplint"),
+		require("none-ls.formatting.jq"),
+
 		-- rust-analyzer
 		null_ls.builtins.formatting.rustfmt,
 		null_ls.builtins.diagnostics.golangci_lint,
 		-- null_ls.builtins.formatting.stylua,
 
 		-- null_ls.builtins.formatting.prettier,
-		null_ls.builtins.diagnostics.eslint,
+		-- null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.formatting.shfmt,
 		null_ls.builtins.diagnostics.shellcheck,
 		null_ls.builtins.formatting.clang_format,
@@ -79,7 +86,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.gofmt,
 		-- LuaFormatter on
 		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.diagnostics.php,
+		-- null_ls.builtins.diagnostics.php,
 		null_ls.builtins.formatting.prismaFmt,
 		null_ls.builtins.formatting.phpcbf,
 
