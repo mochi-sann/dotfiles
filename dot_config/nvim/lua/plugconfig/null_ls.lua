@@ -71,14 +71,14 @@ null_ls.setup({
 		require("none-ls.formatting.jq"),
 
 		-- rust-analyzer
-		null_ls.builtins.formatting.rustfmt,
+		-- null_ls.builtins.formatting.rustfmt,
 		null_ls.builtins.diagnostics.golangci_lint,
 		-- null_ls.builtins.formatting.stylua,
 
 		-- null_ls.builtins.formatting.prettier,
 		-- null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.formatting.shfmt,
-		null_ls.builtins.diagnostics.shellcheck,
+		-- null_ls.builtins.diagnostics.shellcheck,
 		null_ls.builtins.formatting.clang_format,
 		-- null_ls.builtins.diagnostics.codespell,
 		-- null_ls.builtins.formatting.markdownlint,
