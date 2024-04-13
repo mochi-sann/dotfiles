@@ -464,18 +464,26 @@ return require("lazy").setup({ -- Packer can manage itself
 			"gbprod/none-ls-php.nvim",
 			"gbprod/none-ls-shellcheck.nvim",
 		},
-		onfig = function()
+		config = function()
 			require("plugconfig/null_ls")
 		end,
 	},
 	-- { "davidgranstrom/nvim-markdown-preview", opt = true, event = "VimEnter" },
 	{
 		"iamcco/markdown-preview.nvim",
-		build = "cd app && yarn install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+		config = function()
+			vim.cmd([[
+        function OpenMarkdownPreview (url)
+          execute "open " . a:url
+        endfunction
+        let g:mkdp_browserfunc = 'OpenMarkdownPreview'
+      ]])
+		end,
 	},
 	-- { "rust-lang/rust.vim", ft = { "rust", "toml" } }, -- {
 	{

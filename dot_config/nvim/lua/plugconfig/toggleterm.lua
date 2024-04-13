@@ -22,7 +22,7 @@ end
 
 local current_buf_dir = get_current_buf_dir()
 -- noremap("t", "<A-t>", "ToggleTerm dir=" + get_current_buf_dir(), { silent = true })
-local current_buf_term = Terminal:new({ dir = current_buf_dir })
-vim.keymap.set("n", "<A-t>", function()
+vim.keymap.set("n", "<Space>t", function()
+	local current_buf_term = Terminal:new({ dir = vim.fn.expand("%:p:h") })
 	current_buf_term:toggle()
 end)
