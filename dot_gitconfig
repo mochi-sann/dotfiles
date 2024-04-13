@@ -12,6 +12,7 @@
         quotepath = false
         excludesfile = /Users/mochi/.gitignore_global
         precomposeUnicode = true
+        pager = delta
 [filter "lfs"]
         clean = git-lfs clean -- %f
         smudge = git-lfs smudge -- %f
@@ -51,3 +52,16 @@
 	program = gpg
 [tag]
 	gpgsign = true
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    side-by-side = false 
+    navigate = true    # use n and N to move between diff sections
+    line-numbers = true
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    dark = true
+    # light = true
+[diff]
+    colorMoved = default
+

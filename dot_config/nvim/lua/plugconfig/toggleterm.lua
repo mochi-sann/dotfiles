@@ -1,3 +1,4 @@
+local Terminal = require("toggleterm.terminal").Terminal
 require("toggleterm").setup({
 	open_mapping = [[<c-t>]],
 
@@ -15,3 +16,13 @@ require("toggleterm").setup({
 -- nnoremap <silent><c-y> <Cmd>exe v:count1 . "ToggleTerm size=14 direction=horizontal"<CR>
 -- inoremap <silent><c-y> <Esc><Cmd>exe v:count1 . "ToggleTerm size=14 direction=horizontal"<CR>
 -- ]])
+function get_current_buf_dir()
+	return vim.fn.expand("%:p:h")
+end
+
+local current_buf_dir = get_current_buf_dir()
+-- noremap("t", "<A-t>", "ToggleTerm dir=" + get_current_buf_dir(), { silent = true })
+local current_buf_term = Terminal:new({ dir = current_buf_dir })
+vim.keymap.set("n", "<A-t>", function()
+	current_buf_term:toggle()
+end)
