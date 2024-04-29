@@ -42,7 +42,6 @@ require("nvim-treesitter.configs").setup({
 		-- 	end
 		-- end,
 	},
-	context_commentstring = { enable = true, enable_autocmd = false },
 
 	rainbow = {
 		enable = true,
@@ -53,4 +52,7 @@ require("nvim-treesitter.configs").setup({
 		-- termcolors = {} -- table of colour name strings
 	},
 	autotag = { enable = true },
+})
+require("ts_context_commentstring").setup({
+	enable_autocmd = false,
 })

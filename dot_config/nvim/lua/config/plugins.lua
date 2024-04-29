@@ -463,6 +463,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			"nvimtools/none-ls-extras.nvim",
 			"gbprod/none-ls-php.nvim",
 			"gbprod/none-ls-shellcheck.nvim",
+			"saecki/crates.nvim",
 		},
 		config = function()
 			require("plugconfig/null_ls")
@@ -479,21 +480,21 @@ return require("lazy").setup({ -- Packer can manage itself
 		config = function()
 			vim.cmd([[
         function OpenMarkdownPreview (url)
-          execute "open " . a:url
+          execute " ! explorer.exe  " . a:url
         endfunction
         let g:mkdp_browserfunc = 'OpenMarkdownPreview'
       ]])
 		end,
 	},
 	-- { "rust-lang/rust.vim", ft = { "rust", "toml" } }, -- {
-	{
-		"saecki/crates.nvim",
-		tag = "v0.3.0",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("plugconfig/null_ls")
-		end,
-	},
+	-- {
+	-- 	"saecki/crates.nvim",
+	-- 	tag = "v0.3.0",
+	-- 	dependencies = { "nvim-lua/plenary.nvim" },
+	-- 	config = function()
+	-- 		require("plugconfig/null_ls")
+	-- 	end,
+	-- },
 	{ "slim-template/vim-slim", ft = { "slim" } },
 	-- 	"SmiteshP/nvim-navic",
 	-- 	config = function()
