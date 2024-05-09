@@ -62,6 +62,13 @@ return require("lazy").setup({ -- Packer can manage itself
 			})
 		end,
 	},
+	{
+		"petertriho/nvim-scrollbar",
+		config = function()
+			require("plugconfig/nvim-scrollbar")
+		end,
+	},
+
 	-- { "junegunn/fzf", build = ":call fzf#install()", event = "VimEnter" },
 	{ "nvim-lua/popup.nvim" },
 	{
@@ -347,6 +354,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			},
 			{ "windwp/nvim-ts-autotag" },
 			{ "JoosepAlviste/nvim-ts-context-commentstring" },
+			{ "RRethy/nvim-treesitter-textsubjects" },
 		},
 		config = function()
 			require("plugconfig/treesitter")
@@ -686,6 +694,8 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- },
 	{ "tikhomirov/vim-glsl", event = "VeryLazy" },
 	{ "koron/vim-budoux", event = "VeryLazy" },
+	{ "monaqa/dial.nvim", event = "VeryLazy" },
+
 	-- {
 	-- 	"glacambre/firenvim",
 	--
