@@ -145,6 +145,15 @@ return require("lazy").setup({ -- Packer can manage itself
 				dependencies = { { "hrsh7th/vim-vsnip-integ" } },
 			},
 			{
+				"ray-x/lsp_signature.nvim",
+				event = "VeryLazy",
+				opts = {},
+				config = function(_, opts)
+					require("lsp_signature").setup()
+				end,
+			},
+
+			{
 				"zbirenbaum/copilot-cmp",
 				config = function()
 					require("copilot_cmp").setup()
@@ -416,22 +425,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- 	"relastle/vim-colorrange",
 	-- 	event = "VimEnter",
 	-- },
-	{
-		"johmsalas/text-case.nvim",
-		config = function()
-			require("plugconfig/text_case")
-		end,
-	},
-	{
-		"johmsalas/text-case.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-		config = function()
-			require("plugconfig/ccc-nvim")
-		end,
-		keys = {
-			{ "ga.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "v" }, desc = "Telescope" },
-		},
-	},
 
 	{
 		"uga-rosa/ccc.nvim",
@@ -695,6 +688,31 @@ return require("lazy").setup({ -- Packer can manage itself
 	{ "tikhomirov/vim-glsl", event = "VeryLazy" },
 	{ "koron/vim-budoux", event = "VeryLazy" },
 	{ "monaqa/dial.nvim", event = "VeryLazy" },
+
+	{
+		"johmsalas/text-case.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+		config = function()
+			require("textcase").setup({})
+			require("telescope").load_extension("textcase")
+		end,
+		keys = {
+			"ga", -- Default invocation prefix
+			{ "ga.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "x" }, desc = "Telescope" },
+		},
+		cmd = {
+			-- NOTE: The Subs command name can be customized via the option "substitude_command_name"
+			"Subs",
+			"TextCaseOpenTelescope",
+			"TextCaseOpenTelescopeQuickChange",
+			"TextCaseOpenTelescopeLSPChange",
+			"TextCaseStartReplacingCommand",
+		},
+		-- If you want to use the interactive feature of the `Subs` command right away, text-case.nvim
+		-- has to be loaded on startup. Otherwise, the interactive feature of the `Subs` will only be
+		-- available after the first executing of it or after a keymap of text-case.nvim has been used.
+		lazy = false,
+	},
 
 	-- {
 	-- 	"glacambre/firenvim",
