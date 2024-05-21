@@ -26,8 +26,7 @@ export PATH="/usr/local/cuda/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 
-
-
+export VCPKG_ROOT="$HOME/codespace/github.com/microsoft/vcpkg/"
 
 
 export GOPATH=$(go env GOPATH)
@@ -452,3 +451,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+# Wasmer
+export WASMER_DIR="/home/mochi/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"

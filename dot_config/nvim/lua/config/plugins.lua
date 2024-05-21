@@ -349,6 +349,14 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/indent_blankline")
 		end,
 	},
+	{
+		"https://codeberg.org/esensar/nvim-dev-container",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("devcontainer").setup({})
+		end,
+	},
+
 	--  treesitter settins
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -752,6 +760,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("range-highlight").setup({})
 		end,
 	},
+	{ "sindrets/diffview.nvim" },
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
 		opts = {
