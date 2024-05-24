@@ -74,7 +74,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"nvim-telescope/telescope.nvim",
 		module = { "telescope" },
-		event = "UIEnter",
+		event = "VeryLazy",
 		dependencies = {
 			{ "nvim-telescope/telescope-ghq.nvim" },
 			{ "nvim-telescope/telescope-z.nvim" },
@@ -439,7 +439,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		event = { "VimEnter" },
 		dependenciek = { "nvim-telescope/telescope.nvim" },
 		-- keys = { ":CccPick<cr>" },
-		config = function() end,
 	},
 	{ "nvim-lua/plenary.nvim" },
 	{
@@ -760,9 +759,10 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("range-highlight").setup({})
 		end,
 	},
-	{ "sindrets/diffview.nvim" },
+	-- { "sindrets/diffview.nvim" },
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
+		event = "VeryLazy",
 		opts = {
 			show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
 			debug = false, -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
@@ -773,7 +773,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		build = function()
 			vim.notify("Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim.")
 		end,
-		event = "VeryLazy",
 		keys = {
 			{ "<leader>cce", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
 			{ "<leader>cct", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
