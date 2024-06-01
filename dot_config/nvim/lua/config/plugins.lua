@@ -478,6 +478,22 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 	-- { "davidgranstrom/nvim-markdown-preview", opt = true, event = "VimEnter" },
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+	-- 	ft = { "markdown" },
+	-- 	build = function()
+	-- 		vim.fn["mkdp#util#install"]()
+	-- 	end,
+	-- 	config = function()
+	-- 		vim.cmd([[
+	--        function OpenMarkdownPreview (url)
+	--          execute " ! explorer.exe  " . a:url
+	--        endfunction
+	--        let g:mkdp_browserfunc = 'OpenMarkdownPreview'
+	--      ]])
+	-- 	end,
+	-- },
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -487,13 +503,14 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 		config = function()
 			vim.cmd([[
-        function OpenMarkdownPreview (url)
-          execute " ! explorer.exe  " . a:url
-        endfunction
-        let g:mkdp_browserfunc = 'OpenMarkdownPreview'
+		    function OpenMarkdownPreview (url)
+		      execute " ! explorer.exe  " . a:url
+		    endfunction
+		    let g:mkdp_browserfunc = 'OpenMarkdownPreview'
       ]])
 		end,
 	},
+
 	-- { "rust-lang/rust.vim", ft = { "rust", "toml" } }, -- {
 	-- {
 	-- 	"saecki/crates.nvim",
