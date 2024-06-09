@@ -33,7 +33,7 @@ local vim = vim
 --vim.g.loaded_gtags_cscope = 1
 
 --
-vim.g.editorconfig = true -- editorconfigを有効にする
+vim.g.editorconfig = true -- edMisskekitorconfigを有効にする
 vim.opt.number = true -- 行番号を表示
 vim.opt.laststatus = 3 -- ステータスラインを画面いっぱいにする
 vim.o.cursorline = true -- カーソルラインを表示
@@ -84,3 +84,7 @@ vim.api.nvim_set_hl(0, "VertSplit", { ctermbg = "NONE", bg = "NONE" })
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 vim.opt.list = true
 vim.opt.listchars:append("space:⋅,eol:¬,trail:•,extends:❯,precedes:❮")
+
+vim.opt.termguicolors = true
+vim.opt.winblend = 0 -- ウィンドウの不透明度
+vim.opt.pumblend = 0 -- ポップアップメニューの不透明度

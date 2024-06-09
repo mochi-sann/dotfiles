@@ -455,3 +455,5 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Wasmer
 export WASMER_DIR="/home/mochi/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+# asdf
+. /opt/asdf-vm/asdf.sh
