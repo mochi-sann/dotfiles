@@ -69,7 +69,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 
-	-- { "junegunn/fzf", build = ":call fzf#install()", event = "VimEnter" },
+	-- { "junegunn/fzf", build = ":call fzf#install()", event = "VeryLazy" },
 	{ "nvim-lua/popup.nvim" },
 	{
 		"nvim-telescope/telescope.nvim",
@@ -178,7 +178,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"phaazon/hop.nvim",
 		branch = "v2", -- optional but strongly recommended
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/hop")
 		end,
@@ -199,19 +199,19 @@ return require("lazy").setup({ -- Packer can manage itself
 	--},
 	{
 		"t9md/vim-quickhl",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/vim_quichl")
 		end,
 	},
 	{
 		"terryma/vim-expand-region",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/vim_expand_region")
 		end,
 	},
-	{ "segeljakt/vim-silicon", event = "VimEnter" }, -- colorschem
+	{ "segeljakt/vim-silicon", event = "VeryLazy" }, -- colorschem
 
 	{
 		"folke/tokyonight.nvim",
@@ -254,14 +254,14 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- {
 	-- 	"alvarosevilla95/luatab.nvim",buffer
 	-- 	dependencies = "kyazdani42/nvim-web-devicons",
-	-- 	event = "VimEnter",
+	-- 	event = "VeryLazy",
 	-- 	config = function()
 	-- 		require("plugconfig/luatab")
 	-- 	end,
 	-- }, --
 	-- {
 	--   "vim-jp/vimdoc-ja",
-	--   event = "VimEnter",
+	--   event = "VeryLazy",
 	--   config = function()
 	--     require("plugconfig/vimdoc_ja")
 	--   end,
@@ -270,7 +270,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/toggleterm")
 		end,
@@ -308,7 +308,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	}, -- git
 	{
 		"kdheepak/lazygit.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/lazygit")
 		end,
@@ -316,16 +316,16 @@ return require("lazy").setup({ -- Packer can manage itself
 	{ "rhysd/git-messenger.vim" },
 	{
 		"akinsho/git-conflict.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		version = "*",
 		config = function()
 			require("git-conflict").setup()
 		end,
 	},
-	{ "alaviss/nim.nvim", event = "VimEnter" },
+	{ "alaviss/nim.nvim", event = "VeryLazy" },
 	{
 		"heavenshell/vim-jsdoc",
-		event = "VimEnter",
+		event = "VeryLazy",
 		cmd = { "JsDoc" },
 		ft = {
 			"typescript",
@@ -336,7 +336,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		},
 	}, -- {
 	--   "steelsojka/pears.nvim",
-	--   event = "VimEnter",
+	--   event = "VeryLazy",
 	--   config = function()
 	--     require("plugconfig/pears")
 	--   end,
@@ -380,12 +380,12 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("gitsigns").setup()
 		end,
 	},
-	{ "MunifTanjim/nui.nvim", event = "VimEnter" },
+	{ "MunifTanjim/nui.nvim", event = "VeryLazy" },
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = {
@@ -393,7 +393,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			"justinhj/battery.nvim",
 			"nvim-lua/plenary.nvim",
 		},
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/lualine")
 		end,
@@ -401,20 +401,20 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"echasnovski/mini.nvim",
 		branch = "stable",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/mini")
 		end,
 	}, -- {
 	-- 	"tversteeg/registers.nvim",
-	-- 	event = "VimEnter",
+	-- 	event = "VeryLazy",
 	-- 	config = function()
 	-- 		require("registers").setup()
 	-- 	end,
 	-- },
 	{
 		"tversteeg/registers.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("registers").setup()
 		end,
@@ -432,12 +432,12 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{ "ryanoasis/vim-devicons" }, -- {
 	-- 	"relastle/vim-colorrange",
-	-- 	event = "VimEnter",
+	-- 	event = "VeryLazy",
 	-- },
 
 	{
 		"uga-rosa/ccc.nvim",
-		event = { "VimEnter" },
+		event = { "VeryLazy" },
 		dependenciek = { "nvim-telescope/telescope.nvim" },
 		-- keys = { ":CccPick<cr>" },
 	},
@@ -445,19 +445,19 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"folke/todo-comments.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/todo-comments")
 		end,
 	},
 	{
 		"ibhagwan/smartyank.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/smartyank")
 		end,
 	},
-	{ "t9md/vim-choosewin", event = "VimEnter" }, -- {
+	{ "t9md/vim-choosewin", event = "VeryLazy" }, -- {
 	-- 	"jose-elias-alvarez/null-ls.nvim",
 	-- 	onfig = function()
 	-- 		require("plugconfig/null_ls")
@@ -465,7 +465,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- },
 	{
 		"nvimtools/none-ls.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		dependencies = {
 			"jayp0521/mason-null-ls.nvim",
 			"williamboman/mason.nvim",
@@ -478,7 +478,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/null_ls")
 		end,
 	},
-	-- { "davidgranstrom/nvim-markdown-preview", opt = true, event = "VimEnter" },
+	-- { "davidgranstrom/nvim-markdown-preview", opt = true, event = "VeryLazy" },
 	-- {
 	-- 	"iamcco/markdown-preview.nvim",
 	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -529,7 +529,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	--
 	-- 	requires = "neovim/nvim-lspconfig",
 	-- },
-	{ "wakatime/vim-wakatime", event = "VimEnter" },
+	{ "wakatime/vim-wakatime", event = "VeryLazy" },
 	{
 		"andweeb/presence.nvim",
 		event = "InsertEnter",
@@ -542,7 +542,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		config = function()
 			require("plugconfig/noice")
 		end,
-		event = "VimEnter",
+		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			{
@@ -555,7 +555,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"mochi-sann/Select2Browser.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("Select2Browser").setup()
 			vim.api.nvim_set_keymap("", "<Leader>gg", "<Cmd>Select2Browser<CR>", { noremap = true, silent = true })
@@ -563,7 +563,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	-- {
 	-- 	"jackMort/ChatGPT.nvim",
-	-- 	event = "VimEnter",
+	-- 	event = "VeryLazy",
 	-- 	config = function()
 	-- 		require("plugconfig/chat-gpt-nvim")
 	-- 	end,
@@ -575,7 +575,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- },
 	{
 		"folke/zen-mode.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("zen-mode").setup({
 				window = {
@@ -629,14 +629,14 @@ return require("lazy").setup({ -- Packer can manage itself
 		dependencies = {
 			{ "kyazdani42/nvim-web-devicons" }, -- optional, for file icons
 		},
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/nvim-tree")
 		end,
 	},
 	{
 		"stevearc/aerial.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
