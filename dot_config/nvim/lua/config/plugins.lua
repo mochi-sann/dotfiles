@@ -352,6 +352,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"https://codeberg.org/esensar/nvim-dev-container",
 		dependencies = "nvim-treesitter/nvim-treesitter",
+		event = "VeryLazy",
 		config = function()
 			require("devcontainer").setup({})
 		end,
