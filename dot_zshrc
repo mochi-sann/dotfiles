@@ -457,3 +457,5 @@ export WASMER_DIR="/home/mochi/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 # asdf
 . /opt/asdf-vm/asdf.sh
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
