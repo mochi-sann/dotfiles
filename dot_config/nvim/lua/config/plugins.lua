@@ -220,6 +220,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 	{ "catppuccin/nvim", name = "catppuccin", lazy = true },
+	-- { "shaunsingh/nord.nvim", config = {  } },
 
 	---------------------------------------------------------------------------
 	-- { "NLKNguyen/papercolor-theme", as = "papercolor" },
