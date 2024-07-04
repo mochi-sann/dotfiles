@@ -107,10 +107,12 @@ local config = {
 		--   },
 		-- },
 	},
-	actions = { open_file = { quit_on_open = true } },
+	actions = {
+		open_file = { quit_on_open = true },
+		use_system_clipboard = false,
+	},
 	git = { ignore = false },
 }
-
 --
 -- This function has been generated from your
 --   view.mappings.list

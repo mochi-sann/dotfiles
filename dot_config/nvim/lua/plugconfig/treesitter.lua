@@ -52,17 +52,16 @@ require("nvim-treesitter.configs").setup({
 		-- termcolors = {} -- table of colour name strings
 	},
 	autotag = { enable = true },
-      textsubjects = {
-        enable = true,
-        prev_selection = ',', -- (Optional) keymap to select the previous selection
-        keymaps = {
-            ['.'] = 'textsubjects-smart',
-            [';'] = 'textsubjects-container-outer',
-            ['i;'] = 'textsubjects-container-inner',
-            ['i;'] = { 'textsubjects-container-inner', desc = "Select inside containers (classes, functions, etc.)" },
-        },
-    },
-
+	textsubjects = {
+		enable = true,
+		prev_selection = ",", -- (Optional) keymap to select the previous selection
+		keymaps = {
+			["."] = "textsubjects-smart",
+			[";"] = "textsubjects-container-outer",
+			["i;"] = "textsubjects-container-inner",
+			["i;"] = { "textsubjects-container-inner", desc = "Select inside containers (classes, functions, etc.)" },
+		},
+	},
 })
 require("ts_context_commentstring").setup({
 	enable_autocmd = false,
