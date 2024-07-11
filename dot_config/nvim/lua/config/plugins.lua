@@ -824,18 +824,30 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- 		},
 	-- 	},
 	-- },
+	-- {
+	-- 	"CopilotC-Nvim/CopilotChat.nvim",
+	-- 	branch = "canary",
+	-- 	dependencies = {
+	-- 		{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+	-- 		{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+	-- 	},
+	-- 	opts = {
+	-- 		debug = true, -- Enable debugging
+	-- 		-- See Configuration section for rest
+	-- 	},
+	-- 	-- See Commands section for default commands if you want to lazy load on them
+	-- },
+
 	{
-		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "canary",
+		"OXY2DEV/markview.nvim",
+
 		dependencies = {
-			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+			-- You may not need this if you don't lazy load
+			-- Or if the parsers are in your $RUNTIMEPATH
+			"nvim-treesitter/nvim-treesitter",
+
+			"nvim-tree/nvim-web-devicons",
 		},
-		opts = {
-			debug = true, -- Enable debugging
-			-- See Configuration section for rest
-		},
-		-- See Commands section for default commands if you want to lazy load on them
 	},
 
 	-- file tree

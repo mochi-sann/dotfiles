@@ -437,8 +437,9 @@ function find_venv_in_parents() {
 # export PATH="$PYENV_ROOT/versions/anaconda3-2023.03/bin/:$PATH
 
 export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$(rbenv root)/shims:$PATH"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# export PATH="$(rbenv root)/shims:$PATH"
+# eval "$(rbenv init - zsh)"
 
 # bun completions
 [ -s "/home/mochi/.bun/_bun" ] && source "/home/mochi/.bun/_bun"
@@ -457,5 +458,7 @@ export WASMER_DIR="/home/mochi/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 # asdf
 . /opt/asdf-vm/asdf.sh
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export PATH=$GEM_HOME/bin:$PATH
 
