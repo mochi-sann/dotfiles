@@ -153,24 +153,24 @@ return require("lazy").setup({ -- Packer can manage itself
 				end,
 			},
 
-			{
-				"zbirenbaum/copilot-cmp",
-				config = function()
-					require("copilot_cmp").setup()
-				end,
-			},
-			{
-				"zbirenbaum/copilot.lua",
-				config = function()
-					require("copilot").setup({})
-				end,
-			},
+			-- {
+			-- 	"zbirenbaum/copilot-cmp",
+			-- 	config = function()
+			-- 		require("copilot_cmp").setup()
+			-- 	end,
+			-- },
+			-- {
+			-- 	"zbirenbaum/copilot.lua",
+			-- 	config = function()
+			-- 		require("copilot").setup({})
+			-- 	end,
+			-- },
 			{
 				"lvimuser/lsp-inlayhints.nvim",
 			},
 			{ "simrat39/rust-tools.nvim" },
 		},
-		event = { "InsertEnter" },
+		event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
 		config = function()
 			require("plugconfig/nvim_cmp")
 		end,
