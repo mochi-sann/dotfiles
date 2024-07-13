@@ -840,6 +840,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"OXY2DEV/markview.nvim",
+		ft = "markdown",
 
 		dependencies = {
 			-- You may not need this if you don't lazy load
