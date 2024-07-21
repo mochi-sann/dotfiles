@@ -350,14 +350,13 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/indent_blankline")
 		end,
 	},
-	-- {
-	-- 	"https://codeberg.org/esensar/nvim-dev-container",
-	-- 	dependencies = "nvim-treesitter/nvim-treesitter",
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("devcontainer").setup({})
-	-- 	end,
-	-- },
+	{
+		"https://codeberg.org/esensar/nvim-dev-container",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("devcontainer").setup({})
+		end,
+	},
 
 	--  treesitter settins
 	{
@@ -543,7 +542,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		config = function()
 			require("plugconfig/noice")
 		end,
-		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			{
@@ -841,6 +839,27 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"OXY2DEV/markview.nvim",
 		ft = "markdown",
+		config = function()
+			require("markview").setup({
+				buf_ignore = { "nofile" },
+				modes = { "n", "no" },
+
+				options = {
+					on_enable = {},
+					on_disable = {},
+				},
+
+				block_quotes = {},
+				checkboxes = {},
+				code_blocks = {},
+				headings = {},
+				horizontal_rules = {},
+				inline_codes = {},
+				links = {},
+				list_items = {},
+				tables = {},
+			})
+		end,
 
 		dependencies = {
 			-- You may not need this if you don't lazy load
