@@ -699,16 +699,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			end)
 		end,
 	},
-	-- {
-	-- 	"mfussenegger/nvim-dap",
-	-- 	event = "VeryLazy",
-	-- 	dependencies = {
-	-- 		"rcarriga/nvim-dap-ui",
-	-- 	},
-	-- 	config = function()
-	-- 		require("plugconfig/nvim_dap")
-	-- 	end,
-	-- },
 	{ "tikhomirov/vim-glsl", event = "VeryLazy" },
 	{ "koron/vim-budoux", event = "VeryLazy" },
 	{ "monaqa/dial.nvim", event = "VeryLazy" },
@@ -776,7 +766,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("range-highlight").setup({})
 		end,
 	},
-	-- { "sindrets/diffview.nvim" },
 	-- {
 	-- 	"CopilotC-Nvim/CopilotChat.nvim",
 	-- 	event = "VeryLazy",
@@ -837,38 +826,10 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- },
 
 	{
-		"OXY2DEV/markview.nvim",
-		ft = "markdown",
+		"ruifm/gitlinker.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
-			require("markview").setup({
-				buf_ignore = { "nofile" },
-				modes = { "n", "no" },
-
-				options = {
-					on_enable = {},
-					on_disable = {},
-				},
-
-				block_quotes = {},
-				checkboxes = {},
-				code_blocks = {},
-				headings = {},
-				horizontal_rules = {},
-				inline_codes = {},
-				links = {},
-				list_items = {},
-				tables = {},
-			})
+			require("gitlinker").setup()
 		end,
-
-		dependencies = {
-			-- You may not need this if you don't lazy load
-			-- Or if the parsers are in your $RUNTIMEPATH
-			"nvim-treesitter/nvim-treesitter",
-
-			"nvim-tree/nvim-web-devicons",
-		},
 	},
-
-	-- file tree
 })
