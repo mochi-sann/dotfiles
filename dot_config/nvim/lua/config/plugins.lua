@@ -512,23 +512,15 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 
-	-- { "rust-lang/rust.vim", ft = { "rust", "toml" } }, -- {
-	-- {
-	-- 	"saecki/crates.nvim",
-	-- 	tag = "v0.3.0",
-	-- 	dependencies = { "nvim-lua/plenary.nvim" },
-	-- 	config = function()
-	-- 		require("plugconfig/null_ls")
-	-- 	end,
-	-- },
+	{
+		"saecki/crates.nvim",
+		tag = "v0.3.0",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("plugconfig/null_ls")
+		end,
+	},
 	{ "slim-template/vim-slim", ft = { "slim" } },
-	-- 	"SmiteshP/nvim-navic",
-	-- 	config = function()
-	-- 		require("plugconfig/nvim_navic")
-	-- 	end,
-	--
-	-- 	requires = "neovim/nvim-lspconfig",
-	-- },
 	{ "wakatime/vim-wakatime", event = "VeryLazy" },
 	{
 		"andweeb/presence.nvim",
@@ -728,37 +720,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		lazy = false,
 	},
 
-	-- {
-	-- 	"glacambre/firenvim",
-	--
-	-- 	-- Lazy load firenvim
-	-- 	-- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
-	-- 	cond = not not vim.g.started_by_firenvim,
-	-- 	build = function()
-	-- 		require("lazy").load({ plugins = "firenvim", wait = true })
-	-- 		vim.fn["firenvim#install"](0)
-	-- 		vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	-- 			pattern = "github.com_*.txt",
-	-- 			cmd = "set filetype=markdown",
-	-- 		})
-	--
-	-- 		if vim.g.started_by_firenvim == true then
-	-- 			vim.o.laststatus = 0
-	-- 		end
-	-- 		vim.g.firenvim_config = {
-	-- 			localSettings = {
-	-- 				[".*"] = {
-	-- 					priority = 0,
-	-- 					selector = "",
-	-- 				},
-	-- 				["github.com"] = {
-	-- 					priority = 1,
-	-- 					selector = "textarea",
-	-- 				},
-	-- 			},
-	-- 		}
-	-- 	end,
-	-- },
 	{
 		"winston0410/range-highlight.nvim",
 		dependencies = { "winston0410/cmd-parser.nvim" },
