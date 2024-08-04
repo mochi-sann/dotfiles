@@ -793,4 +793,12 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("gitlinker").setup()
 		end,
 	},
+	{ "jay-babu/mason-nvim-dap.nvim", dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" } },
+	{
+		"rcarriga/nvim-dap-ui",
+		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+		config = function()
+			require("plugconfig/nvim-dap")
+		end,
+	},
 })

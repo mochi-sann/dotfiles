@@ -311,6 +311,7 @@ require("mason").setup({
 	},
 })
 
+require("mason-nvim-dap").setup()
 mason_lspconfig.setup()
 -- for _, server in ipairs(lsp_installer.get_installed_servers()) do
 
