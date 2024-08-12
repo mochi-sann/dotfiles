@@ -87,7 +87,7 @@ null_ls.setup({
 		-- LuaFormatter on
 		null_ls.builtins.formatting.stylua,
 		-- null_ls.builtins.diagnostics.php,
-		null_ls.builtins.formatting.prismaFmt,
+		-- null_ls.builtins.formatting.prismaFmt,
 		null_ls.builtins.formatting.phpcbf,
 
 		null_ls.builtins.formatting.phpcsfixer,

@@ -517,7 +517,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		tag = "v0.3.0",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			require("plugconfig/null_ls")
+			require("crates").setup()
 		end,
 	},
 	{ "slim-template/vim-slim", ft = { "slim" } },
