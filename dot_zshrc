@@ -17,12 +17,12 @@ fi
 # END_KITTY_SHELL_INTEGRATION
 
 # Fig post block. Keep at the bottom of this file.
-{{- if eq .chezmoi.os "darwin" -}}
-#!/bin/bash
 
-[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
-EOF
-{{ end -}}
+# {{- if eq .chezmoi.os "darwin" -}}
+# #!/bin/bash
+#
+# [[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
+# {{ end -}}
 
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
@@ -453,8 +453,8 @@ export WASMER_DIR="/home/mochi/.wasmer"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export PATH=$GEM_HOME/bin:$PATH
 
-{{ if eq .chezmoi.os "linux" }}
-{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# {{ if eq .chezmoi.os "linux" }}
+# {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
 # this is a wsl codes
 export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0
 
@@ -471,6 +471,5 @@ if [ -d "/mnt/c" ]; then
   export PATH="$PATH:/mnt/c/WINDOWS"
   export PATH="$PATH:/mnt/c/Users/mochi/scoop/shim"
 
-{{   end }}
-{{ end }}
-
+# {{   end }}
+# {{ end }}
