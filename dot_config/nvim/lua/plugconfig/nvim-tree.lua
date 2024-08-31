@@ -110,6 +110,9 @@ local config = {
 	actions = {
 		open_file = { quit_on_open = true },
 		use_system_clipboard = false,
+		open_file = {
+			chars = "ASDFGHJKL1234567890",
+		},
 	},
 	git = { ignore = false },
 }
