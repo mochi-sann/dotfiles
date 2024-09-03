@@ -1,4 +1,7 @@
 vim.opt.clipboard = "unnamedplus"
+
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
 if vim.fn.has("wsl") then
 	vim.g.clipboard = {
 		name = "win32yank-wsl",
@@ -13,3 +16,6 @@ if vim.fn.has("wsl") then
 		cache_enable = 0,
 	}
 end
+# WSL-specific code
+{{   end }}
+{{ end }}
