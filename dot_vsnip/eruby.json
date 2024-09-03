@@ -1,0 +1,16 @@
+{
+  "write <%=%> more easier": {
+    "prefix": "pa",
+    "body": [
+      "<%= $0 %>"
+    ],
+    "description": "Log output to console"
+  },
+  "write <%%>": {
+    "prefix": "ni",
+    "body": [
+      "<% $0 %>"
+    ],
+    "description": "Log output to console"
+  }
+}
