@@ -353,14 +353,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	--   end,
 	-- },
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {},
-		config = function()
-			require("plugconfig/indent_blankline")
-		end,
-	},
-	{
 		"https://codeberg.org/esensar/nvim-dev-container",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()
@@ -368,6 +360,14 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {},
+		config = function()
+			require("plugconfig/indent_blankline")
+		end,
+	},
 	--  treesitter settins
 	{
 		"nvim-treesitter/nvim-treesitter",
