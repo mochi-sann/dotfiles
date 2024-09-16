@@ -39,7 +39,7 @@ vim.opt.laststatus = 3 -- ステータスラインを画面いっぱいにする
 vim.o.cursorline = true -- カーソルラインを表示
 vim.o.showtabline = 2 -- タブバーを常時表示
 vim.o.autoindent = true -- "改行時に自動でインデントする
-vim.o.clipboard = "unnamed" -- ヤンクしたときにクリップボードに自動コピー
+-- vim.o.clipboard = "unnamed" -- ヤンクしたときにクリップボードに自動コピー
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 vim.o.swapfile = false -- swapfileをなくす
 vim.o.termguicolors = true -- ターミナルの色を設定
@@ -65,11 +65,12 @@ vim.g.mapleader = " " -- リーダーキーをスペースにする
 vim.o.synmaxcol = 200
 -- ColorScheme
 vim.cmd([[ syntax enable ]]) -- シンタックスカラーリングオン
+
 -- vim.o.t_xo = 256 -- ターミナルの色数を256色にする
 vim.o.background = "dark" -- 背景を暗くする
 
 vim.o.display = "lastline" -- 長い行も一行で収まるように
-vim.o.showmode = false -- 下に表示される--INSERT--などを消す
+vim.o.showmode = true -- 下に表示される--INSERT--などを消す
 vim.o.showmatch = true -- 括弧の対応をハイライト
 vim.o.matchtime = 8 -- 括弧の対を見つけるミリ秒数
 vim.o.showcmd = true -- 入力中のコマンドを表示
@@ -79,12 +80,12 @@ vim.o.title = false -- タイトル書き換えない
 vim.o.scrolloff = 5
 vim.o.sidescrolloff = 5
 vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.api.nvim_set_hl(0, "VertSplit", { ctermbg = "NONE", bg = "NONE" })
+-- vim.api.nvim_set_hl(0, "VertSplit", { ctermbg = "NONE", bg = "NONE" })
 
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+-- vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 vim.opt.list = true
 vim.opt.listchars:append("space:⋅,eol:¬,trail:•,extends:❯,precedes:❮")
 
 vim.opt.termguicolors = true
-vim.opt.winblend = 0 -- ウィンドウの不透明度
-vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
+-- vim.opt.winblend = 0 -- ウィンドウの不透明度
+-- vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
