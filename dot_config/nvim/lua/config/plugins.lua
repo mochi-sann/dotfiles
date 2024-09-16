@@ -225,11 +225,12 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"folke/tokyonight.nvim",
+		priority = 1000,
 		config = function()
 			require("plugconfig/tokyonight_nvim")
 		end,
 	},
-	{ "catppuccin/nvim", name = "catppuccin", lazy = true },
+	-- { "catppuccin/nvim", name = "catppuccin", lazy = true },
 	-- { "shaunsingh/nord.nvim", config = {  } },
 
 	---------------------------------------------------------------------------
@@ -287,19 +288,14 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 	{
-		"willothy/flatten.nvim",
-		config = true,
-		-- or pass configuration with
-		-- opts = {  }
-		-- Ensure that it runs first to minimize delay when opening file from terminal
-		lazy = false,
-		priority = 1001,
-	},
-
-	{
 		"chomosuke/term-edit.nvim",
+		ft = "toggleterm",
 		version = "1.*",
-		event = "UIEnter",
+		config = function()
+			require("term-edit").setup({
+				prompt_end = " %❯ ",
+			})
+		end,
 		-- Enter insert as if this plugin doesn't exist: <C-i>
 		-- Enter insert: i, a, A, I.
 		-- Delete: d<motion>, dd, D, x.
@@ -312,14 +308,16 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"willothy/flatten.nvim",
 		config = true,
-		event = "UIEnter",
 		-- or pass configuration with
 		-- opts = {  }
 		-- Ensure that it runs first to minimize delay when opening file from terminal
-	}, -- git
+		lazy = true,
+		priority = 1001,
+	},
 	{
 		"kdheepak/lazygit.nvim",
-		event = "VeryLazy",
+		cmd = "LazyGit",
+		keys = { "<Space>lg" },
 		config = function()
 			require("plugconfig/lazygit")
 		end,
@@ -344,6 +342,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			"javascript",
 			"javascriptreact",
 			"vue",
+			"svelte",
 		},
 	}, -- {
 	--   "steelsojka/pears.nvim",
@@ -524,7 +523,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"saecki/crates.nvim",
-		tag = "v0.3.0",
+		tag = "stable",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		ft = { "rust", "toml" },
 		config = function()
@@ -555,14 +554,14 @@ return require("lazy").setup({ -- Packer can manage itself
 			},
 		},
 	},
-	{
-		"mochi-sann/Select2Browser.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("Select2Browser").setup()
-			vim.api.nvim_set_keymap("", "<Leader>gg", "<Cmd>Select2Browser<CR>", { noremap = true, silent = true })
-		end,
-	},
+	-- {
+	-- 	"mochi-sann/Select2Browser.nvim",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("Select2Browser").setup()
+	-- 		vim.api.nvim_set_keymap("", "<Leader>gg", "<Cmd>Select2Browser<CR>", { noremap = true, silent = true })
+	-- 	end,
+	-- },
 	-- {
 	-- 	"jackMort/ChatGPT.nvim",
 	-- 	event = "VeryLazy",
@@ -740,7 +739,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
-		event = "VeryLazy",
 		opts = {
 			show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
 			debug = false, -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log

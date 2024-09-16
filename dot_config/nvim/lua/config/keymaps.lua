@@ -7,7 +7,7 @@ vim.keymap.set({ "n" }, "p", "]p`]", { desc = "paste and auto indent" })
 
 vim.keymap.set({ "n" }, "P", "]P`]", { desc = "paste before cursor and auto indent" })
 vim.keymap.set({ "n" }, "p", "]p`]", { desc = "paste and auto indent" })
-vim.keymap.vim.cmd([[
+vim.cmd([[
 " nnoremap U <c-r>  # U でredoになるように
 
 " nnoremap p ]p`]
