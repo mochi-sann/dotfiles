@@ -67,7 +67,7 @@ vim.o.synmaxcol = 200
 vim.cmd([[ syntax enable ]]) -- シンタックスカラーリングオン
 
 -- vim.o.t_xo = 256 -- ターミナルの色数を256色にする
-vim.o.background = "dark" -- 背景を暗くする
+-- vim.o.background = "dark" -- 背景を暗くする
 
 vim.o.display = "lastline" -- 長い行も一行で収まるように
 vim.o.showmode = true -- 下に表示される--INSERT--などを消す
