@@ -810,4 +810,13 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/nvim-dap")
 		end,
 	},
+	{
+		"nabekou29/open-by-http.nvim",
+		cmd = { "OpenByHttpServerStart", "OpenByHttpServerStop" },
+		event = { "FocusLost" },
+		opts = {
+			auto_start = true,
+			port = 24917,
+		},
+	},
 })
