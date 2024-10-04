@@ -311,9 +311,13 @@ return require("lazy").setup({ -- Packer can manage itself
 		-- or pass configuration with
 		-- opts = {  }
 		-- Ensure that it runs first to minimize delay when opening file from terminal
-		lazy = true,
+		lazy = false,
 		priority = 1001,
+		config = function()
+			require("flatten").setup({})
+		end,
 	},
+
 	{
 		"kdheepak/lazygit.nvim",
 		cmd = "LazyGit",
