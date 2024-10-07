@@ -562,6 +562,24 @@ return require("lazy").setup({ -- Packer can manage itself
 		},
 	},
 	-- {
+	-- 	"nvim-neotest/neotest",
+	-- 	dependencies = {
+	-- 		"nvim-neotest/nvim-nio",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"antoinemadec/FixCursorHold.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 	},
+	-- 	config = function()
+	-- 		require("plugconfig/neotest")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"mrcjkb/rustaceanvim",
+	-- 	version = "^5", -- Recommended
+	-- 	lazy = false, -- This plugin is already lazy
+	-- },
+
+	-- {
 	-- 	"mochi-sann/Select2Browser.nvim",
 	-- 	event = "VeryLazy",
 	-- 	config = function()
