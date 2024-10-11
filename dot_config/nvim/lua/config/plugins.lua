@@ -838,6 +838,37 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/spectre")
 		end,
 	},
+	{
+		"cshuaimin/ssr.nvim",
+		-- Calling setup is optional.
+		config = function()
+			require("ssr").setup({
+				border = "rounded",
+				min_width = 50,
+				min_height = 5,
+				max_width = 120,
+				max_height = 25,
+				adjust_window = true,
+				keymaps = {
+					close = "q",
+					next_match = "n",
+					prev_match = "N",
+					replace_confirm = "<cr>",
+					replace_all = "<leader><cr>",
+				},
+			})
+			vim.keymap.set({ "n", "x" }, "<leader>st", function()
+				require("ssr").open()
+			end)
+
+			vim.api.nvim_create_user_command("Ssr", function(ctx)
+				require("ssr").open()
+			end, {
+				nargs = "*",
+				desc = "Structural search and replace for Neovim.",
+			})
+		end,
+	},
 	{ "sindrets/diffview.nvim" },
 	{ "jay-babu/mason-nvim-dap.nvim", dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" } },
 	{
