@@ -561,6 +561,10 @@ return require("lazy").setup({ -- Packer can manage itself
 			},
 		},
 	},
+	{
+		"almo7aya/openingh.nvim",
+	},
+
 	-- {
 	-- 	"nvim-neotest/neotest",
 	-- 	dependencies = {
