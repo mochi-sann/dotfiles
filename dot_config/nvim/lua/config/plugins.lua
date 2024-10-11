@@ -831,6 +831,14 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("gitlinker").setup()
 		end,
 	},
+	{
+		"nvim-pack/nvim-spectre",
+		dependencies = "nvim-lua/plenary.nvim",
+		config = function()
+			require("plugconfig/spectre")
+		end,
+	},
+	{ "sindrets/diffview.nvim" },
 	{ "jay-babu/mason-nvim-dap.nvim", dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" } },
 	{
 		"rcarriga/nvim-dap-ui",
