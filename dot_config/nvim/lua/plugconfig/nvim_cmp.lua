@@ -34,7 +34,7 @@ rt.setup({
 	},
 	tools = {
 		inlay_hints = {
-			auto = false,
+			auto = true,
 		},
 	},
 })
@@ -345,8 +345,8 @@ mason_lspconfig.setup_handlers({
 			-- autostart = false
 		})
 	end,
-	["tsserver"] = function()
-		lspconfig.tsserver.setup({
+	["ts_ls"] = function()
+		lspconfig.ts_ls.setup({
 			settings = {
 				typescript = {
 					inlayHints = {
@@ -366,10 +366,40 @@ mason_lspconfig.setup_handlers({
 						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
 						includeInlayFunctionParameterTypeHints = true,
 						includeInlayVariableTypeHints = true,
-						includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-						includeInlayPropertyDeclarationTypeHints = true,
-						includeInlayFunctionLikeReturnTypeHints = true,
-						includeInlayEnumMemberValueHints = true,
+						includeinlayvariabletypehintswhentypematchesname = false,
+						includeinlaypropertydeclarationtypehints = true,
+						includeinlayfunctionlikereturntypehints = true,
+						includeinlayenummembervaluehints = true,
+					},
+				},
+			},
+		})
+	end,
+	["tsserver"] = function()
+		lspconfig.tsserver.setup({
+			settings = {
+				typescript = {
+					inlayhints = {
+						includeinlayparameternamehints = "all",
+						includeinlayparameternamehintswhenargumentmatchesname = false,
+						includeinlayfunctionparametertypehints = true,
+						includeinlayvariabletypehints = true,
+						includeinlayvariabletypehintswhentypematchesname = false,
+						includeinlaypropertydeclarationtypehints = true,
+						includeinlayfunctionlikereturntypehints = true,
+						includeinlayenummembervaluehints = true,
+					},
+				},
+				javascript = {
+					inlayhints = {
+						includeinlayparameternamehints = "all",
+						includeinlayparameternamehintswhenargumentmatchesname = false,
+						includeinlayfunctionparametertypehints = true,
+						includeinlayvariabletypehints = true,
+						includeinlayvariabletypehintswhentypematchesname = false,
+						includeinlaypropertydeclarationtypehints = true,
+						includeinlayfunctionlikereturntypehints = true,
+						includeinlayenummembervaluehints = true,
 					},
 				},
 			},
