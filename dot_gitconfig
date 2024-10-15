@@ -34,8 +34,6 @@
 [ghq]
   vcs = git
         root = ~/codespace
-[ghq "https://github.com/cortechne"]
-    root = ~/work_codespace/cortechn/
 
 
 [commit]
@@ -46,8 +44,6 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
-[safe]
-        directory = /Applications/XAMPP/xamppfiles/htdocs
 [gpg]
 	program = gpg
 [tag]
