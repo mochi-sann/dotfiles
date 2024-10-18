@@ -1,22 +1,41 @@
 {
   "typescript import": {
-    "prefix": ["imp", "import"],
-    "body": ["import { $2 } from \"$1\";"],
+    "prefix": [
+      "imp",
+      "import"
+    ],
+    "body": [
+      "import { $2 } from \"$1\";"
+    ],
     "description": "typescript import"
   },
   "console.log": {
-    "prefix": ["log", "console"],
-    "body": ["console.log($1)"],
+    "prefix": [
+      "log",
+      "console"
+    ],
+    "body": [
+      "console.log($1)"
+    ],
     "description": "console.table"
   },
   "console.table": {
-    "prefix": ["table", "console"],
-    "body": ["console.table($1)"],
+    "prefix": [
+      "table",
+      "console"
+    ],
+    "body": [
+      "console.table($1)"
+    ],
     "description": "console.table"
   },
   "for": {
     "prefix": "for",
-    "body": ["for (let i = 0; i < $1; i++) {", "  $2", "}"],
+    "body": [
+      "for (let i = 0; i < $1; i++) {",
+      "  $2",
+      "}"
+    ],
     "description": "for"
   },
   "define module": {
@@ -74,12 +93,20 @@
   },
   "Function Statement": {
     "prefix": "function",
-    "body": ["function ${1:name}(${2:params}) {", "\t$TM_SELECTED_TEXT$0", "}"],
+    "body": [
+      "function ${1:name}(${2:params}) {",
+      "\t$TM_SELECTED_TEXT$0",
+      "}"
+    ],
     "description": "Function Statement"
   },
   "If Statement": {
     "prefix": "if",
-    "body": ["if (${1:condition}) {", "\t$TM_SELECTED_TEXT$0", "}"],
+    "body": [
+      "if (${1:condition}) {",
+      "\t$TM_SELECTED_TEXT$0",
+      "}"
+    ],
     "description": "If Statement"
   },
   "If-Else Statement": {
@@ -95,7 +122,9 @@
   },
   "New Statement": {
     "prefix": "new",
-    "body": ["const ${1:name} = new ${2:type}(${3:arguments});$0"],
+    "body": [
+      "const ${1:name} = new ${2:type}(${3:arguments});$0"
+    ],
     "description": "New Statement"
   },
   "Switch Statement": {
@@ -114,12 +143,20 @@
   },
   "While Statement": {
     "prefix": "while",
-    "body": ["while (${1:condition}) {", "\t$TM_SELECTED_TEXT$0", "}"],
+    "body": [
+      "while (${1:condition}) {",
+      "\t$TM_SELECTED_TEXT$0",
+      "}"
+    ],
     "description": "While Statement"
   },
   "Do-While Statement": {
     "prefix": "dowhile",
-    "body": ["do {", "\t$TM_SELECTED_TEXT$0", "} while (${1:condition});"],
+    "body": [
+      "do {",
+      "\t$TM_SELECTED_TEXT$0",
+      "} while (${1:condition});"
+    ],
     "description": "Do-While Statement"
   },
   "Try-Catch Statement": {
@@ -153,32 +190,44 @@
   },
   "Import Statement": {
     "prefix": "import",
-    "body": ["import { $0 } from \"${1:module}\";"],
+    "body": [
+      "import { $0 } from \"${1:module}\";"
+    ],
     "description": "Import external module"
   },
   "Region Start": {
     "prefix": "#region",
-    "body": ["//#region $0"],
+    "body": [
+      "//#region $0"
+    ],
     "description": "Folding Region Start"
   },
   "Region End": {
     "prefix": "#endregion",
-    "body": ["//#endregion"],
+    "body": [
+      "//#endregion"
+    ],
     "description": "Folding Region End"
   },
   "Log to the console": {
     "prefix": "log",
-    "body": ["console.log($1);"],
+    "body": [
+      "console.log($1);"
+    ],
     "description": "Log to the console"
   },
   "Log warning to console": {
     "prefix": "warn",
-    "body": ["console.warn($1);"],
+    "body": [
+      "console.warn($1);"
+    ],
     "description": "Log warning to the console"
   },
   "Log error to console": {
     "prefix": "error",
-    "body": ["console.error($1);"],
+    "body": [
+      "console.error($1);"
+    ],
     "description": "Log error to the console"
   },
   "new Promise": {
@@ -189,5 +238,38 @@
       "})"
     ],
     "description": "Create a new Promise"
+  },
+  "Print to console variable": {
+    "scope": "javascript,typescript,typescriptreact",
+    "prefix": [
+      "clop",
+      "clo"
+    ],
+    "body": [
+      "console.log(...[${1:variable}, '👀 [$TM_FILENAME:$TM_LINE_NUMBER]: ${1:variable}'].reverse());"
+    ],
+    "description": "Log output to console with filename as prefix"
+  },
+  "Print to console an object recursively as an object": {
+    "scope": "javascript,typescript,typescriptreact",
+    "prefix": [
+      "clopdir",
+      "clodir"
+    ],
+    "body": [
+      "console.dir(${1:variable}, {showHidden: false, depth: null, colors: true});"
+    ],
+    "description": "Log the object as intended. No more {a: [Object]}. On a browser console, user can expand the object to access nested object."
+  },
+  "Print to console an object recursively as a text": {
+    "scope": "javascript,typescript,typescriptreact",
+    "prefix": [
+      "clopobj",
+      "cloobj"
+    ],
+    "body": [
+      "console.log(...[JSON.stringify(${1:variable}, null, 2), '👀 [$TM_FILENAME:$TM_LINE_NUMBER] ${1:variable}:\\n',].reverse());"
+    ],
+    "description": "Log a string representation of the object as intended. No more {a: [Object]}. Be careful as big object can be hard to read on console."
   }
 }
