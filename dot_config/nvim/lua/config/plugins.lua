@@ -660,7 +660,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		dependencies = {
 			{ "kyazdani42/nvim-web-devicons" }, -- optional, for file icons
 		},
-		event = "VeryLazy",
 		config = function()
 			require("plugconfig/nvim-tree")
 		end,

@@ -95,6 +95,7 @@ local config = {
 	-- open_on_setup = false,
 	hijack_cursor = true,
 	view = {
+		width = 35,
 		side = "right",
 		-- mappings = {
 		--   custom_only = false,
