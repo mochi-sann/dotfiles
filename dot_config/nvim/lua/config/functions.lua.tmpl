@@ -19,3 +19,10 @@ if vim.fn.has("wsl") then
 end
 {{   end }}
 {{ end }}
+
+vim.cmd([[
+augroup vimrc-checktime
+  autocmd!
+  autocmd WinEnter * checktime
+augroup END
+]])

@@ -271,5 +271,22 @@
       "console.log(...[JSON.stringify(${1:variable}, null, 2), '👀 [$TM_FILENAME:$TM_LINE_NUMBER] ${1:variable}:\\n',].reverse());"
     ],
     "description": "Log a string representation of the object as intended. No more {a: [Object]}. Be careful as big object can be hard to read on console."
+  },
+  "object to privet classs constractor": {
+    "prefix": "thisp",
+    "body": [
+      "this._$1 = props.$1;"
+    ],
+    "description": "object to privet classs constractor"
+  },
+  "object to privet classs getter": {
+    "prefix": "getp",
+    "body": [
+      "get $1(): $2 {",
+      "  return this._$1;",
+      "}",
+      ""
+    ],
+    "description": "object to privet classs getter"
   }
 }
