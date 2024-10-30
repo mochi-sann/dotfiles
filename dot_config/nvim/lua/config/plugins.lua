@@ -892,9 +892,17 @@ return require("lazy").setup({ -- Packer can manage itself
 		event = "VeryLazy",
 		lazy = false,
 		version = false, -- set this if you want to always pull the latest change
+
 		opts = {
+			debug = true,
 			---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
 			provider = "Lalama-3.1", -- Recommend using Claude
+			system_prompt = [[
+日本語で返答すること
+ソフトウェア開発のエキスパートとして行動する。
+コーディングの際には常にベストプラクティスを使用すること。
+コードベースにすでに存在する既存の規約やライブラリなどを尊重し、使用すること。
+  ]],
 			vendors = {
 				["Lalama-3.1"] = {
 					endpoint = "http://192.168.3.4:1234/v1",
@@ -913,7 +921,8 @@ return require("lazy").setup({ -- Packer can manage itself
 							body = {
 								model = opts.model,
 								messages = require("avante.providers").copilot.parse_message(code_opts), -- you can make your own message, but this is very advanced
-								max_tokens = 2048,
+								temperature = 0.7,
+								max_tokens = -1,
 								stream = true,
 							},
 						}
