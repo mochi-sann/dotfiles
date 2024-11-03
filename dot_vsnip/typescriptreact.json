@@ -2149,7 +2149,7 @@
   "react typescript template": {
     "prefix": "_raffce",
     "body": [
-      "import React from \"react\"",
+      "import  type React from \"react\"",
       "",
       "export type ${1:${TM_FILENAME_BASE}}Props = {$2}",
       "",
