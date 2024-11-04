@@ -123,6 +123,7 @@ keybinds clear-defaults=true {
     }
     tmux {
         bind "[" { SwitchToMode "Scroll"; }
+        bind "Ctrl n" { SwitchToMode "Resize"; }
         bind "Ctrl l" { Write 2; SwitchToMode "Normal"; }
         bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
@@ -144,27 +145,28 @@ keybinds clear-defaults=true {
         bind "Space" { NextSwapLayout; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
-    shared_except "normal" "locked" {
-        bind "Enter" "Esc" { SwitchToMode "Normal"; }
-    }
-    shared_except "pane" "locked" {
-        bind "Ctrl p" { SwitchToMode "Pane"; }
-    }
-    shared_except "resize" "locked" {
-        bind "Ctrl n" { SwitchToMode "Resize"; }
-    }
-    shared_except "scroll" "locked" {
-        bind "Ctrl s" { SwitchToMode "Scroll"; }
-    }
-    shared_except "session" "locked" {
-        bind "Ctrl o" { SwitchToMode "Session"; }
-    }
-    shared_except "tab" "locked" {
-        bind "Ctrl y" { SwitchToMode "Tab"; }
-    }
-    shared_except "move" "locked" {
-        bind "Ctrl h" { SwitchToMode "Move"; }
-    }
+  //         shared_except "normal" "locked" {
+ //          bind "Enter" "Esc" { SwitchToMode "Normal"; }
+ //      }
+ //      shared_except "pane" "locked" {
+ //          bind "Ctrl p" { SwitchToMode "Pane"; }
+ //      }
+ //      shared_except "resize" "locked" {
+ //          bind "Ctrl n" { SwitchToMode "Resize"; }
+ //      }
+ //      shared_except "scroll" "locked" {
+ //          bind "Ctrl s" { SwitchToMode "Scroll"; }
+ //      }
+ //      shared_except "session" "locked" {
+ //          bind "Ctrl o" { SwitchToMode "Session"; }
+ //      }
+ //      shared_except "tab" "locked" {
+ //          bind "Ctrl y" { SwitchToMode "Tab"; }
+ //      }
+ //      shared_except "move" "locked" {
+  //         bind "Ctrl h" { SwitchToMode "Move"; }
+  //     }
+
 //    shared_except "locked" {
 //        bind "Ctrl g" { SwitchToMode "Locked"; }
 //        bind "Ctrl q" { Quit; }
