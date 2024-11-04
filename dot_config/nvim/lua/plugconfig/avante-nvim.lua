@@ -1,5 +1,5 @@
 return {
-  debug = true,
+  debug = false,
   ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
   provider = "Lalama-3.1", -- Recommend using Claude
   system_prompt = [[

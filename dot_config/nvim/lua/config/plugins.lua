@@ -736,7 +736,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"johmsalas/text-case.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
+		-- dependencies = { "nvim-telescope/telescope.nvim" },
 		config = function()
 			require("textcase").setup({})
 			require("telescope").load_extension("textcase")
@@ -761,6 +761,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"winston0410/range-highlight.nvim",
+    event = "VeryLazy",
 		dependencies = { "winston0410/cmd-parser.nvim" },
 		config = function()
 			require("range-highlight").setup({})
@@ -825,21 +826,21 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- },
 
 	{
-		"ruifm/gitlinker.nvim",
+		"ruifm/gitlinker.nvim",event = "VeryLazy",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
 			require("gitlinker").setup()
 		end,
 	},
 	{
-		"nvim-pack/nvim-spectre",
+		"nvim-pack/nvim-spectre",event = "VeryLazy",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
 			require("plugconfig/spectre")
 		end,
 	},
 	{
-		"cshuaimin/ssr.nvim",
+		"cshuaimin/ssr.nvim",event = "VeryLazy",
 		-- Calling setup is optional.
 		config = function()
 			require("ssr").setup({
@@ -869,11 +870,11 @@ return require("lazy").setup({ -- Packer can manage itself
 			})
 		end,
 	},
-	{ "sindrets/diffview.nvim" },
+	{ "sindrets/diffview.nvim"  ,event = "VeryLazy", },
 	{ "jay-babu/mason-nvim-dap.nvim", dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" } },
 	{
 		"rcarriga/nvim-dap-ui",
-		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+	event = "VeryLazy",	dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 		config = function()
 			require("plugconfig/nvim-dap")
 		end,
