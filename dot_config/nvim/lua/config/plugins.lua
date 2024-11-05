@@ -357,18 +357,18 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- },
 	{
 		"https://codeberg.org/esensar/nvim-dev-container",
-    lazy = true ,
+		lazy = true,
 		dependencies = "nvim-treesitter/nvim-treesitter",
-      cmd = {
+		cmd = {
 			-- NOTE: The Subs command name can be customized via the option "substitude_command_name"
-      "DevcontainerStart", 
-"DevcontainerAttach" ,
-"DevcontainerExec" ,
-"DevcontainerStop" ,
-"DevcontainerStopAll" ,
-"DevcontainerRemoveAll" ,
-"DevcontainerLogs" ,
-"DevcontainerEditNearestConfig"
+			"DevcontainerStart",
+			"DevcontainerAttach",
+			"DevcontainerExec",
+			"DevcontainerStop",
+			"DevcontainerStopAll",
+			"DevcontainerRemoveAll",
+			"DevcontainerLogs",
+			"DevcontainerEditNearestConfig",
 		},
 
 		config = function()
@@ -385,11 +385,13 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 	--  treesitter settins
-  { "windwp/nvim-ts-autotag" , config = function()
-  require("plugconfig/autotag")
-  end,
-  event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
-},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("plugconfig/autotag")
+		end,
+		event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
+	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -681,8 +683,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/nvim-tree")
 		end,
 
-    event = "VeryLazy",
-
+		event = "VeryLazy",
 	},
 	{
 		"stevearc/aerial.nvim",
@@ -781,7 +782,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"winston0410/range-highlight.nvim",
-    event = "VeryLazy",
+		event = "VeryLazy",
 		dependencies = { "winston0410/cmd-parser.nvim" },
 		config = function()
 			require("range-highlight").setup({})
@@ -846,21 +847,24 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- },
 
 	{
-		"ruifm/gitlinker.nvim",event = "VeryLazy",
+		"ruifm/gitlinker.nvim",
+		event = "VeryLazy",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
 			require("gitlinker").setup()
 		end,
 	},
 	{
-		"nvim-pack/nvim-spectre",event = "VeryLazy",
+		"nvim-pack/nvim-spectre",
+		event = "VeryLazy",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
 			require("plugconfig/spectre")
 		end,
 	},
 	{
-		"cshuaimin/ssr.nvim",event = "VeryLazy",
+		"cshuaimin/ssr.nvim",
+		event = "VeryLazy",
 		-- Calling setup is optional.
 		config = function()
 			require("ssr").setup({
@@ -890,11 +894,12 @@ return require("lazy").setup({ -- Packer can manage itself
 			})
 		end,
 	},
-	{ "sindrets/diffview.nvim"  ,event = "VeryLazy", },
+	{ "sindrets/diffview.nvim", event = "VeryLazy" },
 	{ "jay-babu/mason-nvim-dap.nvim", dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" } },
 	{
 		"rcarriga/nvim-dap-ui",
-	event = "VeryLazy",	dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+		event = "VeryLazy",
+		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 		config = function()
 			require("plugconfig/nvim-dap")
 		end,
@@ -914,10 +919,10 @@ return require("lazy").setup({ -- Packer can manage itself
 		lazy = true,
 		-- version = false, -- set this if you want to always pull the latest change
 
-		opts = require('plugconfig/avante-nvim'),
+		opts = require("plugconfig/avante-nvim"),
 		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 		build = "make",
-    
+
 		-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
