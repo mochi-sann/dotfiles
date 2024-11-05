@@ -372,6 +372,9 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 	--  treesitter settins
+  { "windwp/nvim-ts-autotag" , config = function()
+  require("plugconfig/autotag")
+  end,},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -383,7 +386,6 @@ return require("lazy").setup({ -- Packer can manage itself
 					require("plugconfig/treesitter-context")
 				end,
 			},
-			{ "windwp/nvim-ts-autotag" },
 			{ "JoosepAlviste/nvim-ts-context-commentstring" },
 			{ "RRethy/nvim-treesitter-textsubjects" },
 		},
