@@ -1,7 +1,7 @@
 return {
 	debug = false,
 	---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-	provider = "Lalama-3.1", -- Recommend using Claude
+	provider = "deepspeek", -- Recommend using Claude
 	system_prompt = [[
 日本語で返答すること
 ソフトウェア開発のエキスパートとして行動する。
@@ -10,7 +10,8 @@ return {
 ]],
 	vendors = {
 		["deepspeek"] = {
-			endpoint = "http://192.168.3.4:1234/v1",
+      
+			endpoint = "http://100.97.82.35:1234/v1",
 			model = "TheBloke/deepseek-coder-6.7B-instruct-GGUF",
 			timeout = 1000 * 30, -- Timeout in milliseconds
 			temperature = 0.7,
@@ -37,7 +38,7 @@ return {
 			end,
 		},
 		["Llama-3-ELYZA-JP"] = {
-			endpoint = "http://192.168.3.4:1234/v1",
+			endpoint = "http://100.97.82.35:1234/v1",
 			model = "elyza/Llama-3-ELYZA-JP-8B-GGUF",
 			timeout = 1000 * 30, -- Timeout in milliseconds
 			temperature = 0.7,
@@ -64,7 +65,7 @@ return {
 			end,
 		},
 		["Lalama-3.1"] = {
-			endpoint = "http://192.168.3.4:1234/v1",
+			endpoint = "http://100.97.82.35:1234/v1",
 			model = "lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF",
 			timeout = 1000 * 30, -- Timeout in milliseconds
 			temperature = 0.7,

@@ -915,8 +915,8 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"yetone/avante.nvim",
-		event = "VeryLazy",
-		lazy = true,
+		-- event = "VeryLazy",
+		-- lazy = true,
 		-- version = false, -- set this if you want to always pull the latest change
 
 		opts = require("plugconfig/avante-nvim"),
