@@ -357,7 +357,20 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- },
 	{
 		"https://codeberg.org/esensar/nvim-dev-container",
+    lazy = true ,
 		dependencies = "nvim-treesitter/nvim-treesitter",
+      cmd = {
+			-- NOTE: The Subs command name can be customized via the option "substitude_command_name"
+      "DevcontainerStart", 
+"DevcontainerAttach" ,
+"DevcontainerExec" ,
+"DevcontainerStop" ,
+"DevcontainerStopAll" ,
+"DevcontainerRemoveAll" ,
+"DevcontainerLogs" ,
+"DevcontainerEditNearestConfig"
+		},
+
 		config = function()
 			require("devcontainer").setup({})
 		end,
@@ -374,7 +387,9 @@ return require("lazy").setup({ -- Packer can manage itself
 	--  treesitter settins
   { "windwp/nvim-ts-autotag" , config = function()
   require("plugconfig/autotag")
-  end,},
+  end,
+  event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
+},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -665,6 +680,9 @@ return require("lazy").setup({ -- Packer can manage itself
 		config = function()
 			require("plugconfig/nvim-tree")
 		end,
+
+    event = "VeryLazy",
+
 	},
 	{
 		"stevearc/aerial.nvim",
@@ -893,12 +911,13 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"yetone/avante.nvim",
 		event = "VeryLazy",
-		lazy = false,
-		version = false, -- set this if you want to always pull the latest change
+		lazy = true,
+		-- version = false, -- set this if you want to always pull the latest change
 
 		opts = require('plugconfig/avante-nvim'),
 		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 		build = "make",
+    
 		-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
