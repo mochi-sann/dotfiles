@@ -5,7 +5,7 @@ gui:
     sidePanelWidth: 0.3333 # number from 0 to 1
     expandFocusedSidePanel: false
     mainPanelSplitMode: "flexible" # one of 'horizontal' | 'flexible' | 'vertical'
-    language: "ja" # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl' | 'ja' | 'ko'
+    language: "en" # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl' | 'ja' | 'ko'
     timeFormat: "2015-02-25 11:06:39 +0900 JST" # https://pkg.go.dev/time#Time.Format
     theme:
         lightTheme: # For terminals with a light background

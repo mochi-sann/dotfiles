@@ -922,6 +922,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		opts = require("plugconfig/avante-nvim"),
 		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 		build = "make",
+    commit = "f8d80d87c5e2a230ccb29805411bb67aefa1cf96",
 
 		-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
 		dependencies = {
