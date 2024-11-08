@@ -123,6 +123,7 @@ keybinds clear-defaults=true {
     }
     tmux {
         bind "[" { SwitchToMode "Scroll"; }
+        bind "p" { SwitchToMode "Pane"; }
         bind "Ctrl n" { SwitchToMode "Resize"; }
         bind "Ctrl l" { Write 2; SwitchToMode "Normal"; }
         bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
