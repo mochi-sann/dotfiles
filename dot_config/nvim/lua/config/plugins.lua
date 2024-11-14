@@ -25,25 +25,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- { "junegunn/fzf", build = ":call fzf#install()", event = "VeryLazy" },
 	{ "nvim-lua/popup.nvim" },
 	{
-		"nvim-telescope/telescope.nvim",
-		module = { "telescope" },
-		event = "VeryLazy",
-		dependencies = {
-			{ "nvim-telescope/telescope-ghq.nvim" },
-			{ "nvim-telescope/telescope-z.nvim" },
-			{
-				"nvim-telescope/telescope-frecency.nvim",
-			},
-
-			-- その他の拡張プラグイン……
-		},
-		init = function() end,
-		config = function()
-			require("plugconfig/telescope")
-		end,
-	},
-	
-	{
 		"LintaoAmons/bookmarks.nvim",
 		-- tag = "v0.5.4", -- optional, pin the plugin at specific version for stability
 		dependencies = {
@@ -123,7 +104,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	-- "rebelot/kanagawa.nvim")
 	{ "kyazdani42/nvim-web-devicons" },
-	
+
 	-- {
 	-- 	"alvarosevilla95/luatab.nvim",buffer
 	-- 	dependencies = "kyazdani42/nvim-web-devicons",
@@ -561,7 +542,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			})
 		end,
 	},
-	
+
 	{ "tikhomirov/vim-glsl", event = "VeryLazy" },
 	{ "koron/vim-budoux", event = "VeryLazy" },
 	{ "monaqa/dial.nvim", event = "VeryLazy" },
