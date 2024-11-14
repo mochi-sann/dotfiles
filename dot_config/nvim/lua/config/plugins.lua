@@ -105,14 +105,14 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- "rebelot/kanagawa.nvim")
 	{ "kyazdani42/nvim-web-devicons" },
 
-	-- {
-	-- 	"alvarosevilla95/luatab.nvim",buffer
-	-- 	dependencies = "kyazdani42/nvim-web-devicons",
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("plugconfig/luatab")
-	-- 	end,
-	-- }, --
+	{
+		"alvarosevilla95/luatab.nvim",
+		dependencies = "kyazdani42/nvim-web-devicons",
+		event = "VeryLazy",
+		config = function()
+			require("luatab").setup({})
+		end,
+	}, --
 	-- {
 	--   "vim-jp/vimdoc-ja",
 	--   event = "VeryLazy",
