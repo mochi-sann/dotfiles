@@ -272,14 +272,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/lualine")
 		end,
 	},
-	{
-		"echasnovski/mini.nvim",
-		branch = "stable",
-		event = "VeryLazy",
-		config = function()
-			require("plugconfig/mini")
-		end,
-	}, -- {
 	-- 	"tversteeg/registers.nvim",
 	-- 	event = "VeryLazy",
 	-- 	config = function()
