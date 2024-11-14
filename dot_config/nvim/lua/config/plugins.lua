@@ -653,57 +653,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			})
 		end,
 	},
-	{
-		"s1n7ax/nvim-window-picker",
-		config = function()
-			require("window-picker").setup({
-				selection_chars = "ASDFGHJKL;QWERUIOP",
-				show_prompt = false,
-				include_current_win = true,
-				-- if you have include_current_win == true, then current_win_hl_color will
-				-- be highlighted using this background color
-				current_win_hl_color = "#e35e4f",
-				use_winbar = "smart", -- "always" | "never" | "smart"
-
-				-- all the windows except the curren window will be highlighted using this
-				-- color
-				other_win_hl_color = "#1a1b26",
-			})
-			local window_picker = require("window-picker")
-
-			-- <C-w>xと<C-w><C-x>を同時に設定する
-			local win_keymap_set = function(key, callback)
-				vim.keymap.set({ "n", "t" }, "<C-w>" .. key, callback)
-				vim.keymap.set({ "n", "t" }, "<C-w><C-" .. key .. ">", callback)
-			end
-
-			win_keymap_set("w", function()
-				local wins = 0
-
-				-- 全ウィンドウをループ
-				for i = 1, vim.fn.winnr("$") do
-					local win_id = vim.fn.win_getid(i)
-					local conf = vim.api.nvim_win_get_config(win_id)
-
-					-- focusableなウィンドウをカウント
-					if conf.focusable then
-						wins = wins + 1
-
-						-- ウィンドウ数が3以上ならchowchoを起動
-						if wins > 2 then
-							local picked_window_id = window_picker.pick_window() or vim.api.nvim_get_current_win()
-							vim.api.nvim_set_current_win(picked_window_id)
-
-							return
-						end
-					end
-				end
-
-				-- ウィンドウが少なければ標準の<C-w><C-w>を実行
-				vim.api.nvim_command("wincmd w")
-			end)
-		end,
-	},
+	
 	{ "tikhomirov/vim-glsl", event = "VeryLazy" },
 	{ "koron/vim-budoux", event = "VeryLazy" },
 	{ "monaqa/dial.nvim", event = "VeryLazy" },
@@ -826,38 +776,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			})
 		end,
 	},
-	{
-		"cshuaimin/ssr.nvim",
-		event = "VeryLazy",
-		-- Calling setup is optional.
-		config = function()
-			require("ssr").setup({
-				border = "rounded",
-				min_width = 50,
-				min_height = 5,
-				max_width = 120,
-				max_height = 25,
-				adjust_window = true,
-				keymaps = {
-					close = "q",
-					next_match = "n",
-					prev_match = "N",
-					replace_confirm = "<cr>",
-					replace_all = "<leader><cr>",
-				},
-			})
-			vim.keymap.set({ "n", "x" }, "<leader>st", function()
-				require("ssr").open()
-			end)
-
-			vim.api.nvim_create_user_command("Ssr", function(ctx)
-				require("ssr").open()
-			end, {
-				nargs = "*",
-				desc = "Structural search and replace for Neovim.",
-			})
-		end,
-	},
 	{ "sindrets/diffview.nvim", event = "VeryLazy" },
 	{ "jay-babu/mason-nvim-dap.nvim", dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" } },
 	{
@@ -875,45 +793,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		opts = {
 			auto_start = true,
 			port = 24917,
-		},
-	},
-	{
-		"yetone/avante.nvim",
-		-- event = "VeryLazy",
-		-- lazy = true,
-		-- version = false, -- set this if you want to always pull the latest change
-
-		opts = require("plugconfig/avante-nvim"),
-		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-		build = "make",
-		commit = "f8d80d87c5e2a230ccb29805411bb67aefa1cf96",
-
-		-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"stevearc/dressing.nvim",
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
-			--- The below dependencies are optional,
-			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			"zbirenbaum/copilot.lua", -- for providers='copilot'
-			{
-				-- support for image pasting
-				"HakonHarnes/img-clip.nvim",
-				event = "VeryLazy",
-				opts = {
-					-- recommended settings
-					default = {
-						embed_image_as_base64 = false,
-						prompt_for_file_name = false,
-						drag_and_drop = {
-							insert_mode = true,
-						},
-						-- required for Windows users
-						use_absolute_path = true,
-					},
-				},
-			},
 		},
 	},
 	{
