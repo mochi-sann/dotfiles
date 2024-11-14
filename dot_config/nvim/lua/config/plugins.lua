@@ -42,92 +42,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/telescope")
 		end,
 	},
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-emoji" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-path" },
-			{ "hrsh7th/cmp-cmdline" },
-			{ "hrsh7th/cmp-nvim-lsp-signature-help" },
-			{ "hrsh7th/cmp-nvim-lua" },
-			{ "hrsh7th/cmp-emoji" },
-			{ "hrsh7th/cmp-nvim-lsp-document-symbol" },
-			{
-				"hrsh7th/cmp-vsnip",
-				dependencies = { "vim-vsnip", "cmp-nvim-lsp-document-symbol" },
-			},
-			{
-				"SmiteshP/nvim-navic",
-				config = function()
-					require("plugconfig/nvim_navic")
-				end,
-			},
-			{
-				"onsails/lspkind.nvim",
-				config = function()
-					require("plugconfig/lspkind")
-				end,
-			}, -- {
-			-- 	"tzachar/cmp-tabnine",
-			-- 	config = function()
-			-- 		require("plugconfig/cmp-tabnine")
-			-- 	end,
-			-- 	build = "./install.sh",
-			-- },
-			{
-				"j-hui/fidget.nvim",
-				config = function()
-					require("fidget").setup({})
-				end,
-			},
-			{ "neovim/nvim-lspconfig" },
-			{
-				"williamboman/mason-lspconfig.nvim",
-				config = function()
-					require("plugconfig/mason-lsp")
-				end,
-			},
-			{ "williamboman/mason.nvim" },
-			{
-				"hrsh7th/vim-vsnip",
-				config = function()
-					require("plugconfig/vsnip")
-				end,
-				dependencies = { { "hrsh7th/vim-vsnip-integ" } },
-			},
-			{
-				"ray-x/lsp_signature.nvim",
-				event = "VeryLazy",
-				opts = {},
-				config = function(_, opts)
-					require("lsp_signature").setup()
-				end,
-			},
-
-			-- {
-			-- 	"zbirenbaum/copilot-cmp",
-			-- 	config = function()
-			-- 		require("copilot_cmp").setup()
-			-- 	end,
-			-- },
-			-- {
-			-- 	"zbirenbaum/copilot.lua",
-			-- 	config = function()
-			-- 		require("copilot").setup({})
-			-- 	end,
-			-- },
-			{
-				"lvimuser/lsp-inlayhints.nvim",
-			},
-			{ "simrat39/rust-tools.nvim" },
-		},
-		event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
-		config = function()
-			require("plugconfig/nvim_cmp")
-		end,
-	},
+	
 	{
 		"LintaoAmons/bookmarks.nvim",
 		-- tag = "v0.5.4", -- optional, pin the plugin at specific version for stability
@@ -208,14 +123,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	-- "rebelot/kanagawa.nvim")
 	{ "kyazdani42/nvim-web-devicons" },
-	{
-		"akinsho/bufferline.nvim",
-		version = "v2.*",
-		dependencies = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("plugconfig/bufferline")
-		end,
-	},
+	
 	-- {
 	-- 	"alvarosevilla95/luatab.nvim",buffer
 	-- 	dependencies = "kyazdani42/nvim-web-devicons",
