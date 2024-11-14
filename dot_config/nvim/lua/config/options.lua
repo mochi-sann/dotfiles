@@ -59,7 +59,7 @@ vim.o.guifont = "JetBrainsMono Nerd Font:h14"
 vim.o.pumblend = 7 -- ポップアップメニューをはん透明にする
 vim.o.winblend = 7 -- windowメニューをはん透明にする
 vim.g.mapleader = " " -- リーダーキーをスペースにする
-vim.g.maplocalleader = ',' -- localleader を','にする
+vim.g.maplocalleader = "," -- localleader を','にする
 
 -- vim.o.completeopt
 

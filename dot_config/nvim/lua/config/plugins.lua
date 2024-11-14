@@ -14,54 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 return require("lazy").setup({ -- Packer can manage itself
 
-	{
-		"nathom/filetype.nvim",
-		config = function()
-			require("filetype").setup({
-				overrides = {
-					extensions = {
-						-- Set the filetype of *.pn files to potion
-						pn = "potion",
-					},
-					literal = {
-						-- Set the filetype of files named "MyBackupFile" to lua
-						MyBackupFile = "lua",
-					},
-					complex = {
-						-- Set the filetype of any full filename matching the regex to gitconfig
-						[".*git/config"] = "gitconfig", -- Included in the plugin
-					},
-					-- The same as the ones above except the keys map to functions
-					function_extensions = {
-						["cpp"] = function()
-							vim.bo.filetype = "cpp"
-							-- Remove annoying indent jumping
-							vim.bo.cinoptions = vim.bo.cinoptions .. "L0"
-						end,
-						["pdf"] = function()
-							vim.bo.filetype = "pdf"
-							-- Open in PDF viewer (Skim.app) automatically
-							vim.fn.jobstart("open -a skim " .. '"' .. vim.fn.expand("%") .. '"')
-						end,
-					},
-					function_literal = {
-						Brewfile = function()
-							vim.cmd("syntax off")
-						end,
-					},
-					function_complex = {
-						["*.math_notes/%w+"] = function()
-							vim.cmd("iabbrev $ $$")
-						end,
-					},
-					shebang = {
-						-- Set the filetype of files with a dash shebang to sh
-						dash = "sh",
-					},
-				},
-			})
-		end,
-	},
+	{ import = "plugins" },
 	{
 		"petertriho/nvim-scrollbar",
 		config = function()
@@ -766,7 +719,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			"ga", -- Default invocation prefix
 			{ "ga.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "x" }, desc = "Telescope" },
 		},
-    lazy = true ,
+		lazy = true,
 		cmd = {
 			-- NOTE: The Subs command name can be customized via the option "substitude_command_name"
 			"Subs",
@@ -862,17 +815,17 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/spectre")
 		end,
 	},
-    {
-    'MagicDuck/grug-far.nvim',
-    config = function()
-      require('grug-far').setup({
+	{
+		"MagicDuck/grug-far.nvim",
+		config = function()
+			require("grug-far").setup({
 
-        -- options, see Configuration section below
-        -- there are no required options atm
-        -- engine = 'ripgrep' is default, but 'astgrep' can be specified
-      });
-    end
-  },
+				-- options, see Configuration section below
+				-- there are no required options atm
+				-- engine = 'ripgrep' is default, but 'astgrep' can be specified
+			})
+		end,
+	},
 	{
 		"cshuaimin/ssr.nvim",
 		event = "VeryLazy",
@@ -933,7 +886,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		opts = require("plugconfig/avante-nvim"),
 		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 		build = "make",
-    commit = "f8d80d87c5e2a230ccb29805411bb67aefa1cf96",
+		commit = "f8d80d87c5e2a230ccb29805411bb67aefa1cf96",
 
 		-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
 		dependencies = {
