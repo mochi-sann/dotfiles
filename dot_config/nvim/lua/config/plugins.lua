@@ -179,8 +179,40 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{ "alaviss/nim.nvim", event = "VeryLazy" },
 	{
+		"axelvc/template-string.nvim",
+		confg = function()
+			require("template-string").setup({
+				filetypes = {
+					"html",
+					"typescript",
+					"javascript",
+					"typescriptreact",
+					"javascriptreact",
+					"vue",
+					"svelte",
+					"python",
+				}, -- filetypes where the plugin is active
+				jsx_brackets = true, -- must add brackets to JSX attributes
+				remove_template_string = false, -- remove backticks when there are no template strings
+				restore_quotes = {
+					-- quotes used when "remove_template_string" option is enabled
+					normal = [[']],
+					jsx = [["]],
+				},
+			})
+		end,
+		ft = {
+			"typescript",
+			"typescriptreact",
+			"javascript",
+			"javascriptreact",
+			"vue",
+			"svelte",
+			"astro",
+		},
+	},
+	{
 		"heavenshell/vim-jsdoc",
-		event = "VeryLazy",
 		cmd = { "JsDoc" },
 		ft = {
 			"typescript",
@@ -572,67 +604,15 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("range-highlight").setup({})
 		end,
 	},
-	{
-		"CopilotC-Nvim/CopilotChat.nvim",
-		opts = {
-			show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
-			debug = false, -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
-			disable_extra_info = "no", -- Disable extra information (e.g: system prompt) in the response.
-			language = "English", -- Copilot answer language settings when using default prompts. Default language is English.
-			-- proxy = "socks5://127.0.0.1:3000", -- Proxies requests via https or socks.
-		},
-		build = function()
-			vim.notify("Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim.")
-		end,
-		keys = {
-			{ "<leader>cce", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
-			{ "<leader>cct", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
-			{
-				"<leader>ccT",
-				"<cmd>CopilotChatVsplitToggle<cr>",
-				desc = "CopilotChat - Toggle Vsplit", -- Toggle vertical split
-			},
-			{
-				"<leader>ccv",
-				":CopilotChatVisual",
-				mode = "x",
-				desc = "CopilotChat - Open in vertical split",
-			},
-			{
-				"<leader>ccx",
-				":CopilotChatInPlace<cr>",
-				mode = "x",
-				desc = "CopilotChat - Run in-place code",
-			},
-			{
-				"<leader>ccf",
-				"<cmd>CopilotChatFixDiagnostic<cr>", -- Get a fix for the diagnostic message under the cursor.
-				desc = "CopilotChat - Fix diagnostic",
-			},
-			{
-				"<leader>ccr",
-				"<cmd>CopilotChatReset<cr>", -- Reset chat history and clear buffer.
-				desc = "CopilotChat - Reset chat history and clear buffer",
-			},
-		},
-	},
-	{
-		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "canary",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-		},
-		opts = {
-			debug = true, -- Enable debugging
-			-- See Configuration section for rest
-		},
-		-- See Commands section for default commands if you want to lazy load on them
-	},
 
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
-		event = "InsertEnter",
+		event = {
+			"InsertEnter",
+			"CmdwinEnter",
+			"CmdlineEnter",
+		},
 		config = function()
 			require("copilot").setup({})
 		end,
