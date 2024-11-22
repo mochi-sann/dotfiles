@@ -191,6 +191,7 @@ return require("lazy").setup({ -- Packer can manage itself
 					"vue",
 					"svelte",
 					"python",
+					"astro",
 				}, -- filetypes where the plugin is active
 				jsx_brackets = true, -- must add brackets to JSX attributes
 				remove_template_string = false, -- remove backticks when there are no template strings
@@ -202,12 +203,14 @@ return require("lazy").setup({ -- Packer can manage itself
 			})
 		end,
 		ft = {
+			"html",
 			"typescript",
-			"typescriptreact",
 			"javascript",
+			"typescriptreact",
 			"javascriptreact",
 			"vue",
 			"svelte",
+			"python",
 			"astro",
 		},
 	},
