@@ -38,7 +38,10 @@ return {
 		vim.keymap.set(
 			"n",
 			"<Leader>pp",
-			builtin("find_files")({ hidden = false, file_ignore_patterns = { ".git", "node_modules", ".next", "dist" } })
+			builtin("find_files")({
+				hidden = true,
+				file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
+			})
 		)
 		vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({ file_ignore_patterns = { ".git/" } }))
 		vim.keymap.set("n", "<Leader>pd", builtin("diagnostics")({}))
@@ -106,7 +109,7 @@ return {
 				-- }
 				-- please take a look at the readme of the extension you want to configure
 			},
-			file_ignore_patterns = { "node_modules", ".git" },
+			file_ignore_patterns = { "node_modules", ".git/" },
 		})
 		local full_theme = { width = 0.8, show_line = true }
 
