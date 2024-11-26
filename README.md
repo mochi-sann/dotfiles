@@ -17,6 +17,11 @@ pacman -S chezmoi
 chezmoi init https://github.com/mochi-sann/dotfiles.git
 ```
 
+## backup files 
+```bash 
+# in chemzoi directory
+chezmoi archive
+``` 
 ## apply chezmoi
 
 ```bash
