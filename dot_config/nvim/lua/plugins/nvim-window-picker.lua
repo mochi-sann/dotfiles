@@ -14,7 +14,7 @@ return {
 					buftype = { "terminal", "quickfix" },
 				},
 			},
-      hint = 'floating-big-letter',
+			hint = "floating-big-letter",
 			selection_chars = "ASDFGHJKL;QWERUIOP",
 			show_prompt = true,
 			include_current_win = true,
@@ -32,9 +32,9 @@ return {
 		-- <C-w>xと<C-w><C-x>を同時に設定する
 		local win_keymap_set = function(key, callback)
 			vim.keymap.set({ "n", "t" }, "<C-w>" .. key, callback)
-			vim.keymap.set({ "n", "t" }, "<C-w><C-" .. key .. ">", callback , {
-        desc = "Switch to window using window-picker",
-      })
+			vim.keymap.set({ "n", "t" }, "<C-w><C-" .. key .. ">", callback, {
+				desc = "Switch to window using window-picker",
+			})
 		end
 
 		win_keymap_set("w", function()

@@ -134,6 +134,6 @@ local config = {
 -- Please see https://github.com/nvim-tree/nvim-tree.lua/wiki/Migrating-To-on_attach for assistance in migrating.
 --
 
-vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFile<cr>", { silent = true, noremap = true })
-vim.api.nvim_set_keymap("n", "<Space>n", ":NvimTreeOpen<cr>", { silent = true, noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFile<cr>", { silent = true, noremap = true })
+-- vim.api.nvim_set_keymap("n", "<Space>n", ":NvimTreeOpen<cr>", { silent = true, noremap = true })
 require("nvim-tree").setup(config)

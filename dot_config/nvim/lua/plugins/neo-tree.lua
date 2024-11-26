@@ -194,17 +194,17 @@ return {
 						--"*/src/*/tsconfig.json",
 					},
 					always_show = { -- remains visible even if other settings would normally hide it
-						--".gitignored",
+						".gitignored",
 					},
 					always_show_by_pattern = { -- uses glob style patterns
 						--".env*",
 					},
 					never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
-						--".DS_Store",
-						--"thumbs.db"
+						".DS_Store",
+						"thumbs.db",
 					},
 					never_show_by_pattern = { -- uses glob style patterns
-						--".null-ls_*",
+						".null-ls_*",
 					},
 				},
 				follow_current_file = {
@@ -300,6 +300,13 @@ return {
 			},
 		})
 
+		vim.api.nvim_set_keymap(
+			"n",
+			"<C-n>",
+			":Neotree reveal<cr>",
+			{ desc = "open filer and focus current file", silent = true, noremap = true }
+		)
+		vim.api.nvim_set_keymap("n", "<Space>n", ":Neotree<cr>", { desc = "open filer", silent = true, noremap = true })
 		vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 	end,
 }
