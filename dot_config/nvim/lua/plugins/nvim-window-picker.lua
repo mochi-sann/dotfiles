@@ -1,9 +1,22 @@
 return {
 	"s1n7ax/nvim-window-picker",
+	version = "2.*",
 	config = function()
 		require("window-picker").setup({
+			filter_rules = {
+				include_current_win = false,
+				autoselect_one = true,
+				-- filter using buffer options
+				bo = {
+					-- if the file type is one of following, the window will be ignored
+					filetype = { "neo-tree", "neo-tree-popup", "notify", "nvim-tree" },
+					-- if the buffer type is one of following, the window will be ignored
+					buftype = { "terminal", "quickfix" },
+				},
+			},
+      hint = 'floating-big-letter',
 			selection_chars = "ASDFGHJKL;QWERUIOP",
-			show_prompt = false,
+			show_prompt = true,
 			include_current_win = true,
 			-- if you have include_current_win == true, then current_win_hl_color will
 			-- be highlighted using this background color
@@ -19,7 +32,9 @@ return {
 		-- <C-w>xと<C-w><C-x>を同時に設定する
 		local win_keymap_set = function(key, callback)
 			vim.keymap.set({ "n", "t" }, "<C-w>" .. key, callback)
-			vim.keymap.set({ "n", "t" }, "<C-w><C-" .. key .. ">", callback)
+			vim.keymap.set({ "n", "t" }, "<C-w><C-" .. key .. ">", callback , {
+        desc = "Switch to window using window-picker",
+      })
 		end
 
 		win_keymap_set("w", function()
