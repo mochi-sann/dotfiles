@@ -19,6 +19,7 @@ chezmoi init https://github.com/mochi-sann/dotfiles.git
 
 ## backup files 
 ```bash 
+chezmoi cd 
 # in chemzoi directory
 chezmoi archive
 ``` 
