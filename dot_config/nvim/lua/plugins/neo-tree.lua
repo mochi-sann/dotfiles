@@ -130,7 +130,7 @@ return {
 					},
 					["<2-LeftMouse>"] = "open",
 					["<cr>"] = "open",
-					["l"] = "open",
+					-- ["l"] = "open",
 					["<esc>"] = "cancel", -- close preview or floating neo-tree window
 					["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
 					-- Read `# Preview Mode` for more information
@@ -142,7 +142,7 @@ return {
 					["t"] = "open_tabnew",
 					-- ["<cr>"] = "open_drop",
 					-- ["t"] = "open_tab_drop",
-					["w"] = "open_with_window_picker",
+					["l"] = "open_with_window_picker",
 					--["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
 					["C"] = "close_node",
 					["h"] = "open",
@@ -225,11 +225,11 @@ return {
 						["<bs>"] = "navigate_up",
 						["."] = "set_root",
 						["H"] = "toggle_hidden",
-						["/"] = "fuzzy_finder",
+						["f"] = "fuzzy_finder",
 						["D"] = "fuzzy_finder_directory",
 						["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
 						-- ["D"] = "fuzzy_sorter_directory",
-						["f"] = "filter_on_submit",
+						-- ["f"] = "filter_on_submit",
 						["<c-x>"] = "clear_filter",
 						["[g"] = "prev_git_modified",
 						["]g"] = "next_git_modified",
