@@ -459,36 +459,6 @@ return {
 					},
 				})
 			end,
-			["tsserver"] = function()
-				lspconfig.tsserver.setup({
-					settings = {
-						typescript = {
-							inlayhints = {
-								includeinlayparameternamehints = "all",
-								includeinlayparameternamehintswhenargumentmatchesname = false,
-								includeinlayfunctionparametertypehints = true,
-								includeinlayvariabletypehints = true,
-								includeinlayvariabletypehintswhentypematchesname = false,
-								includeinlaypropertydeclarationtypehints = true,
-								includeinlayfunctionlikereturntypehints = true,
-								includeinlayenummembervaluehints = true,
-							},
-						},
-						javascript = {
-							inlayhints = {
-								includeinlayparameternamehints = "all",
-								includeinlayparameternamehintswhenargumentmatchesname = false,
-								includeinlayfunctionparametertypehints = true,
-								includeinlayvariabletypehints = true,
-								includeinlayvariabletypehintswhentypematchesname = false,
-								includeinlaypropertydeclarationtypehints = true,
-								includeinlayfunctionlikereturntypehints = true,
-								includeinlayenummembervaluehints = true,
-							},
-						},
-					},
-				})
-			end,
 		})
 	end,
 }
