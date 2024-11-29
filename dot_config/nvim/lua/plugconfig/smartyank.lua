@@ -4,7 +4,7 @@ require("smartyank").setup({
 		higroup = "IncSearch", -- highlight group of yanked text
 		timeout = 500, -- timeout for clearing the highlight
 	},
-	clipboard = { enabled = true },
+	-- clipboard = { enabled = true },
 	tmux = {
 		enabled = true,
 		-- remove `-w` to disable copy to host client's clipboard
