@@ -148,8 +148,8 @@ return {
 					-- ["t"] = "open_tab_drop",
 					["l"] = "open_with_window_picker",
 					--["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
-					["C"] = "close_node",
-					["h"] = "open",
+					-- ["C"] = "close_node",
+					["h"] = "close_node",
 					-- ['C'] = 'close_all_subnodes',
 					["z"] = "close_all_nodes",
 					--["Z"] = "expand_all_nodes",
@@ -250,7 +250,8 @@ return {
 					["i"] = "show_file_details",
 				},
 			},
-			nesting_rules = {},
+			nesting_rules = {
+			},
 			filesystem = {
 				filtered_items = {
 					visible = false, -- when true, they will just be displayed differently than normal items
