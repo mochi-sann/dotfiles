@@ -15,7 +15,8 @@ return {
 				},
 			},
 			hint = "floating-big-letter",
-			selection_chars = "ASDFGHJKL;QWERUIOP",
+			-- selection_chars = "ASDFGHJKL;QWERUIOP",
+			selection_chars = "FJDKSLA;CMRUEIWOQP",
 			show_prompt = true,
 			include_current_win = true,
 			-- if you have include_current_win == true, then current_win_hl_color will

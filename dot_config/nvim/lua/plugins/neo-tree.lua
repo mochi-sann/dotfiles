@@ -164,9 +164,76 @@ return {
           ["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
           ["d"] = "delete",
           ["r"] = "rename",
-          ["y"] = "copy_to_clipboard",
-          ["x"] = "cut_to_clipboard",
-          ["p"] = "paste_from_clipboard",
+          -- ["y"] = "copy_to_clipboard",
+          -- ["x"] = "cut_to_clipboard",
+          -- ["p"] = "paste_from_clipboard",
+          ["y"] = function(state)
+            -- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
+            -- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
+            local node = state.tree:get_node()
+            local filename = node.name
+            vim.fn.setreg('"', filename)
+            vim.notify("Copied: " .. filename)
+          end,
+          ["Y"] = function(state)
+            local node = state.tree:get_node()
+            local filepath = node:get_id()
+            local filename = node.name
+            local modify = vim.fn.fnamemodify
+
+            local results = {
+              filepath,
+              modify(filepath, ":."),
+              modify(filepath, ":~"),
+              filename,
+              modify(filename, ":r"),
+              modify(filename, ":e"),
+            }
+            print("results", results[2])
+            -- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
+            -- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
+            -- local node = state.tree:get_node()
+            -- local filepath = node:get_id()
+            vim.fn.setreg('"', modify(filepath, ":~"))
+            vim.notify("Copied: " .. modify(filepath, ":~"))
+          end,
+          -- ["Y"] = function(state)
+          --   -- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
+          --   -- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
+          --   local node = state.tree:get_node()
+          --   local filepath = node:get_id()
+          --   local filename = node.name
+          --   local modify = vim.fn.fnamemodify
+          --
+          --   local results = {
+          --     filepath,
+          --     modify(filepath, ":."),
+          --     modify(filepath, ":~"),
+          --     filename,
+          --     modify(filename, ":r"),
+          --     modify(filename, ":e"),
+          --   }
+          --
+          --   -- absolute path to clipboard
+          --   local i = vim.fn.inputlist({
+          --     "Choose to copy to clipboard:",
+          --     "1. Absolute path: " .. results[1],
+          --     "2. Path relative to CWD: " .. results[2],
+          --     "3. Path relative to HOME: " .. results[3],
+          --     "4. Filename: " .. results[4],
+          --     "5. Filename without extension: " .. results[5],
+          --     "6. Extension of the filename: " .. results[6],
+          --   })
+          --
+          --   if i > 0 then
+          --     local result = results[i]
+          --     if not result then
+          --       return print("Invalid choice: " .. i)
+          --     end
+          --     -- vim.fn.setreg('"', result)
+          --     vim.notify("Copied: " .. result)
+          --   end
+          -- end,
           ["c"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
           -- ["c"] = {
           --  "copy",
@@ -187,9 +254,9 @@ return {
       filesystem = {
         filtered_items = {
           visible = false, -- when true, they will just be displayed differently than normal items
-          hide_dotfiles = true,
-          hide_gitignored = true,
-          hide_hidden = true, -- only works on Windows for hidden files/directories
+          hide_dotfiles = false,
+          hide_gitignored = false,
+          hide_hidden = false, -- only works on Windows for hidden files/directories
           hide_by_name = {
             --"node_modules"
           },
@@ -199,6 +266,7 @@ return {
           },
           always_show = { -- remains visible even if other settings would normally hide it
             ".gitignored",
+            ".gitignore",
           },
           always_show_by_pattern = { -- uses glob style patterns
             --".env*",
@@ -330,7 +398,28 @@ return {
       end, { desc = "Open neo-tree at current file or working directory" }),
     })
 
-    vim.api.nvim_set_keymap("n", "<Space>n", ":Neotree<cr>", { desc = "open filer", silent = true, noremap = true })
-    -- vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+    vim.keymap.set("n", "<Space>n", function()
+      local reveal_file = vim.fn.expand("%:p")
+      if reveal_file == "" then
+        reveal_file = vim.fn.getcwd()
+      else
+        local f = io.open(reveal_file, "r")
+        if f then
+          f.close(f)
+        else
+          reveal_file = vim.fn.getcwd()
+        end
+      end
+      require("neo-tree.command").execute({
+        action = "focus",      -- OPTIONAL, this is the default value
+        source = "filesystem", -- OPTIONAL, this is the default value
+        position = "right",     -- OPTIONAL, this is the default value
+        reveal_file = reveal_file, -- path to file or folder to reveal
+        reveal_force_cwd = true, -- change cwd without asking if needed
+      })
+    end, { desc = "Open neo-tree at current file or working directory" })
+    -- vim.api.nvim_set_keymap("n", "<Space>n", ":Neotree<cr>", { desc = "open filer", silent = true, noremap = true })
+    -- vim.api.nvim_set_keymap("n", "<Space>n", ":Neotree<cr>", { desc = "open filer", silent = true, noremap = true })
+    -- -- vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
   end,
 }
