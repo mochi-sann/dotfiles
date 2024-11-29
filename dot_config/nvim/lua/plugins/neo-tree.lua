@@ -16,6 +16,7 @@ return {
 
 		require("neo-tree").setup({
 			close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+			auto_clean_after_session_restore = true, -- Automatically clean up broken neo-tree buffers saved in sessions
 			popup_border_style = "rounded",
 			enable_git_status = true,
 			enable_diagnostics = true,
@@ -250,8 +251,7 @@ return {
 					["i"] = "show_file_details",
 				},
 			},
-			nesting_rules = {
-			},
+			nesting_rules = {},
 			filesystem = {
 				filtered_items = {
 					visible = false, -- when true, they will just be displayed differently than normal items
@@ -418,7 +418,27 @@ return {
 				reveal_file = reveal_file, -- path to file or folder to reveal
 				reveal_force_cwd = true, -- change cwd without asking if needed
 			})
-		end, { desc = "Open neo-tree at current file or working directory" })
+		end, { desc = "Open neo-tree at right file or working directory" })
+		vim.keymap.set("n", "<C-n>", function()
+			local reveal_file = vim.fn.expand("%:p")
+			if reveal_file == "" then
+				reveal_file = vim.fn.getcwd()
+			else
+				local f = io.open(reveal_file, "r")
+				if f then
+					f.close(f)
+				else
+					reveal_file = vim.fn.getcwd()
+				end
+			end
+			require("neo-tree.command").execute({
+				action = "focus", -- OPTIONAL, this is the default value
+				source = "filesystem", -- OPTIONAL, this is the default value
+				position = "float", -- OPTIONAL, this is the default value
+				reveal_file = reveal_file, -- path to file or folder to reveal
+				reveal_force_cwd = true, -- change cwd without asking if needed
+			})
+		end, { desc = "Open neo-tree at float file or working directory" })
 		-- vim.api.nvim_set_keymap("n", "<Space>n", ":Neotree<cr>", { desc = "open filer", silent = true, noremap = true })
 		-- vim.api.nvim_set_keymap("n", "<Space>n", ":Neotree<cr>", { desc = "open filer", silent = true, noremap = true })
 		-- -- vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
