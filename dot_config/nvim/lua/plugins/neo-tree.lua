@@ -19,6 +19,7 @@ return {
 		require("neo-tree").setup({
 			close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
 			auto_clean_after_session_restore = true, -- Automatically clean up broken neo-tree buffers saved in sessions
+			use_default_mappings = false,
 			popup_border_style = "rounded",
 			enable_git_status = true,
 			enable_diagnostics = true,
@@ -167,9 +168,9 @@ return {
 					["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
 					["d"] = "delete",
 					["r"] = "rename",
-					-- ["y"] = "copy_to_clipboard",
-					-- ["x"] = "cut_to_clipboard",
-					-- ["p"] = "paste_from_clipboard",
+					["c"] = "copy_to_clipboard",
+					["x"] = "cut_to_clipboard",
+					["p"] = "paste_from_clipboard",
 					["y"] = function(state)
 						-- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
 						-- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
@@ -179,71 +180,13 @@ return {
 						vim.notify("Copied: " .. filename)
 					end,
 					["Y"] = function(state)
-						local node = state.tree:get_node()
-						local filepath = node:get_id()
-						local filename = node.name
-						local modify = vim.fn.fnamemodify
-
-						local results = {
-							filepath,
-							modify(filepath, ":."),
-							modify(filepath, ":~"),
-							filename,
-							modify(filename, ":r"),
-							modify(filename, ":e"),
-						}
-						print("results", results[2])
 						-- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
 						-- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
-						-- local node = state.tree:get_node()
-						-- local filepath = node:get_id()
-						vim.fn.setreg('"', modify(filepath, ":~"))
-						vim.notify("Copied: " .. modify(filepath, ":~"))
+						local node = state.tree:get_node()
+						local filepath = node:get_id()
+						vim.fn.setreg('"', filepath)
+						vim.notify("Copied: " .. filepath)
 					end,
-					-- ["Y"] = function(state)
-					--   -- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
-					--   -- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
-					--   local node = state.tree:get_node()
-					--   local filepath = node:get_id()
-					--   local filename = node.name
-					--   local modify = vim.fn.fnamemodify
-					--
-					--   local results = {
-					--     filepath,
-					--     modify(filepath, ":."),
-					--     modify(filepath, ":~"),
-					--     filename,
-					--     modify(filename, ":r"),
-					--     modify(filename, ":e"),
-					--   }
-					--
-					--   -- absolute path to clipboard
-					--   local i = vim.fn.inputlist({
-					--     "Choose to copy to clipboard:",
-					--     "1. Absolute path: " .. results[1],
-					--     "2. Path relative to CWD: " .. results[2],
-					--     "3. Path relative to HOME: " .. results[3],
-					--     "4. Filename: " .. results[4],
-					--     "5. Filename without extension: " .. results[5],
-					--     "6. Extension of the filename: " .. results[6],
-					--   })
-					--
-					--   if i > 0 then
-					--     local result = results[i]
-					--     if not result then
-					--       return print("Invalid choice: " .. i)
-					--     end
-					--     -- vim.fn.setreg('"', result)
-					--     vim.notify("Copied: " .. result)
-					--   end
-					-- end,
-					["c"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
-					-- ["c"] = {
-					--  "copy",
-					--  config = {
-					--    show_path = "none" -- "none", "relative", "absolute"
-					--  }
-					--}
 					["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
 					["q"] = "close_window",
 					["R"] = "refresh",
