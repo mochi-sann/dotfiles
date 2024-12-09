@@ -69,6 +69,9 @@ bindkey '^k' up-line-or-search
 # zinit snippet OMZP::git
 # zinit cdclear -q # <- forget completions provided by Git plugin
 
+export ENCORE_INSTALL="/home/mochi/.encore"
+export PATH="$ENCORE_INSTALL/bin:$PATH"
+
 
 # eval "$(starship init zsh)"
 export VOLTA_HOME="$HOME/.volta"
