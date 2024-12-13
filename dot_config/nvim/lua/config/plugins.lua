@@ -543,17 +543,17 @@ return require("lazy").setup({ -- Packer can manage itself
 			vim.api.nvim_set_keymap("", "<Leader>sr", "<Cmd>SessionRestore<CR>", { noremap = true, silent = false })
 		end,
 	},
-	-- {
-	-- 	"kyazdani42/nvim-tree.lua",
-	-- 	dependencies = {
-	-- 		{ "kyazdani42/nvim-web-devicons" }, -- optional, for file icons
-	-- 	},
-	-- 	config = function()
-	-- 		require("plugconfig/nvim-tree")
-	-- 	end,
-	--
-	-- 	event = "VeryLazy",
-	-- },
+	{
+		"kyazdani42/nvim-tree.lua",
+		dependencies = {
+			{ "kyazdani42/nvim-web-devicons" }, -- optional, for file icons
+		},
+		config = function()
+			require("plugconfig/nvim-tree")
+		end,
+
+		event = "VeryLazy",
+	},
 	{
 		"stevearc/aerial.nvim",
 		event = "VeryLazy",
