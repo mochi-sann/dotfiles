@@ -1,6 +1,6 @@
 return {
 	"s1n7ax/nvim-window-picker",
-  name = 'window-picker',
+	name = "window-picker",
 	version = "2.*",
 	config = function()
 		require("window-picker").setup({
@@ -10,7 +10,15 @@ return {
 				-- filter using buffer options
 				bo = {
 					-- if the file type is one of following, the window will be ignored
-					filetype = { "neo-tree", "neo-tree-popup", "notify", "nvim-tree", "neo-tree-preview" },
+					filetype = {
+						"neo-tree",
+						"neo-tree-popup",
+						"notify",
+						"nvim-tree",
+						"neo-tree-preview",
+						"NvimTree_1",
+						"NvimTree",
+					},
 					-- if the buffer type is one of following, the window will be ignored
 					buftype = { "terminal", "quickfix", "neo-tree-preview" },
 				},

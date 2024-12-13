@@ -81,7 +81,6 @@ return {
 	},
 	event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
 	config = function()
-		require("plugconfig/nvim_cmp")
 		local lspkind = require("lspkind")
 		local lsp_inlinehint = require("lsp-inlayhints")
 		lsp_inlinehint.setup()
