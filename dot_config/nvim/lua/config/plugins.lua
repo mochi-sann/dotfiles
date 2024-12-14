@@ -26,11 +26,18 @@ return require("lazy").setup({ -- Packer can manage itself
 	{ "nvim-lua/popup.nvim" },
 	{
 		"LintaoAmons/bookmarks.nvim",
-		-- tag = "v0.5.4", -- optional, pin the plugin at specific version for stability
+		-- recommand, pin the plugin at specific version for stability
+		-- backup your db.json file when you want to upgrade the plugin
+		tag = "v2.0.0",
 		dependencies = {
+			{ "kkharji/sqlite.lua" },
 			{ "nvim-telescope/telescope.nvim" },
-			{ "stevearc/dressing.nvim" }, -- optional: to have the same UI shown in the GIF
+			{ "stevearc/dressing.nvim" }, -- optional: better UI
 		},
+		config = function()
+			local opts = {} -- go to the following section to see all the options
+			require("bookmarks").setup(opts) -- you must call setup to init sqlite db
+		end,
 		event = "VeryLazy",
 	},
 
