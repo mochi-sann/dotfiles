@@ -79,7 +79,7 @@ return {
 		},
 		{ "simrat39/rust-tools.nvim" },
 	},
-	event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
+	-- event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
 	config = function()
 		local lspkind = require("lspkind")
 		local lsp_inlinehint = require("lsp-inlayhints")
@@ -354,30 +354,33 @@ return {
 			-- client.resolved_capabilities.document_formatting = false
 
 			local bufopts = { noremap = true, silent = true, buffer = bufnr }
+			local function opts(desc)
+				return { desc = "nvim lsp: " .. desc, noremap = true, silent = true, buffer = bufnr }
+			end
 
-			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts("declaration"))
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts("definition"))
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("hover"))
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
 			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
 			vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
-			vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+			vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts("remove workspace folder"))
 			vim.keymap.set("n", "<space>wl", function()
 				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-			end, bufopts)
-			vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
-			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
-			vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
-			vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-			vim.keymap.set("n", "<space>f", vim.lsp.buf.format, bufopts)
+			end, opts("list workspace folders"))
+			vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts("type_definition"))
+			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts("rename"))
+			vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts("code action"))
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts("references"))
+			vim.keymap.set("n", "<space>f", vim.lsp.buf.format, opts("format"))
 
 			-- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 			-- buf_set_keymap("n", "<space>f", {
-			--   group = augroup,
-			--   buffer = bufnr,
-			--   callback = function()
-			--     lsp_formatting(bufnr)
-			--   end,
+			-- 	group = augroup,
+			-- 	buffer = bufnr,
+			-- 	callback = function()
+			-- 		lsp_formatting(bufnr)
+			-- 	end,
 			-- }, opts)
 		end
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -430,6 +433,8 @@ return {
 			end,
 			["ts_ls"] = function()
 				lspconfig.ts_ls.setup({
+					capabilities = capabilities,
+					on_attach = on_attach,
 					settings = {
 						typescript = {
 							inlayHints = {
