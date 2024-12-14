@@ -101,35 +101,34 @@ local config = {
 	-- open_on_setup = false,
 	hijack_cursor = true,
 	view = {
-		-- width = 35,
+		width = 45,
 		side = "right",
-		float = {
-
-			enable = true,
-			open_win_config = function()
-				local screen_w = vim.opt.columns:get()
-				local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
-				local window_w = screen_w * WIDTH_RATIO
-				local window_h = screen_h * HEIGHT_RATIO
-				local window_w_int = max(math.floor(window_w), 30)
-				local window_h_int = math.floor(window_h)
-				local center_x = (screen_w - window_w)
-				local center_y = (vim.opt.lines:get() - window_h) - vim.opt.cmdheight:get()
-				return {
-					border = "rounded",
-					relative = "editor",
-					row = 0,
-					col = center_x,
-					width = window_w_int,
-					height = window_h_int,
-				}
-			end,
-		},
+		-- float = {
+		--
+		-- 	enable = true,
+		-- 	open_win_config = function()
+		-- 		local screen_w = vim.opt.columns:get()
+		-- 		local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+		-- 		local window_w = screen_w * WIDTH_RATIO
+		-- 		local window_h = screen_h * HEIGHT_RATIO
+		-- 		local window_w_int = max(math.floor(window_w), 30)
+		-- 		local window_h_int = math.floor(window_h)
+		-- 		local center_x = (screen_w - window_w)
+		-- 		local center_y = (vim.opt.lines:get() - window_h) - vim.opt.cmdheight:get()
+		-- 		return {
+		-- 			border = "rounded",
+		-- 			relative = "cursor",
+		-- 			row = 0,
+		-- 			col = center_x,
+		-- 			width = window_w_int,
+		-- 			height = window_h_int,
+		-- 		}
+		-- 	end,
+		-- },
 		-- mappings = {
 		--   custom_only = false,
 		--   list = {
-		--     { key = "l", action = "edit" },
-		--     { key = "L", action = "vsplit_preview" },
+		--     { key = "l", action = "edit" },:		--     { key = "L", action = "vsplit_preview" },
 		--     { key = "h", action = "close_node" },
 		--     { key = "H", action = "collapse_all" },
 		--     { key = "?", action = "toggle_help" },
