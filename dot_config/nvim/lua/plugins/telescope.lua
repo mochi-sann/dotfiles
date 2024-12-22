@@ -57,7 +57,7 @@ return {
 			"n",
 			"<Leader>pp",
 			builtin("find_files")({
-				hidden = true,
+				hidden = false,
 				-- file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
 			})
 		)
