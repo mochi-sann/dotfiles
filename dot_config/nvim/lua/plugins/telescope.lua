@@ -1,19 +1,37 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	module = { "telescope" },
-	event = "VeryLazy",
+	-- event = "VeryLazy",
+  lazy = true , 
+	keys = {
+		{ "n", "<Leader>pp" },
+		{ "n", "<Leader>pgr" },
+		{ "n", "<Leader>pd" },
+		{ "n", "<Leader>ph" },
+		{ "n", "<Leader>pb" },
+		{ "n", "<Leader>pba" },
+		{ "n", "<Leader>po" },
+		{ "n", "<Leader>pk" },
+		{ "n", "<Leader>pc" },
+		{ "n", "<Leader>pi" },
+		{ "n", "<Leader>pg" },
+		{ "n", "<Leader>pz" },
+	},
 	dependencies = {
 		{ "nvim-telescope/telescope-ghq.nvim" },
 		{ "nvim-telescope/telescope-z.nvim" },
 		{
 			"nvim-telescope/telescope-frecency.nvim",
 		},
+		{ "piersolenski/telescope-import.nvim" },
 
 		-- その他の拡張プラグイン……
 	},
 	init = function() end,
 	config = function()
 		local telescope = require("telescope")
+		telescope.load_extension("frecency")
+		telescope.load_extension("import")
 		local actions = require("telescope.actions")
 		local vim = vim
 
@@ -40,10 +58,10 @@ return {
 			"<Leader>pp",
 			builtin("find_files")({
 				hidden = true,
-				file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
+				-- file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
 			})
 		)
-		vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({ file_ignore_patterns = { ".git/" } }))
+		vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({}))
 		vim.keymap.set("n", "<Leader>pd", builtin("diagnostics")({}))
 		vim.keymap.set("n", "<Leader>ph", builtin("help_tags")({}))
 		vim.keymap.set("n", "<Leader>pb", builtin("buffers")({}))
@@ -51,6 +69,7 @@ return {
 		vim.keymap.set("n", "<Leader>po", builtin("command")({}))
 		vim.keymap.set("n", "<Leader>pk", builtin("keymap")({}))
 		vim.keymap.set("n", "<Leader>pc", builtin("command_history")({}))
+		vim.keymap.set("n", "<Leader>pi", extensions("import", "import")({}))
 		vim.keymap.set("n", "<Leader>pg", extensions("ghq", "list")({}))
 		vim.keymap.set("n", "<Leader>pz", extensions("z", "list")({}))
 
