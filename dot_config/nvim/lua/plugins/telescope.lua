@@ -2,7 +2,7 @@ return {
 	"nvim-telescope/telescope.nvim",
 	module = { "telescope" },
 	-- event = "VeryLazy",
-  lazy = true , 
+	lazy = true,
 	keys = {
 		{ "n", "<Leader>pp" },
 		{ "n", "<Leader>pgr" },
@@ -12,6 +12,7 @@ return {
 		{ "n", "<Leader>pba" },
 		{ "n", "<Leader>po" },
 		{ "n", "<Leader>pk" },
+		{ "n", "<Leader>pr" },
 		{ "n", "<Leader>pc" },
 		{ "n", "<Leader>pi" },
 		{ "n", "<Leader>pg" },
@@ -61,17 +62,18 @@ return {
 				-- file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
 			})
 		)
-		vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({}))
-		vim.keymap.set("n", "<Leader>pd", builtin("diagnostics")({}))
-		vim.keymap.set("n", "<Leader>ph", builtin("help_tags")({}))
-		vim.keymap.set("n", "<Leader>pb", builtin("buffers")({}))
-		vim.keymap.set("n", "<Leader>pba", builtin("buffers")({}))
-		vim.keymap.set("n", "<Leader>po", builtin("command")({}))
-		vim.keymap.set("n", "<Leader>pk", builtin("keymap")({}))
-		vim.keymap.set("n", "<Leader>pc", builtin("command_history")({}))
-		vim.keymap.set("n", "<Leader>pi", extensions("import", "import")({}))
-		vim.keymap.set("n", "<Leader>pg", extensions("ghq", "list")({}))
-		vim.keymap.set("n", "<Leader>pz", extensions("z", "list")({}))
+		vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({}), { desc = "telescope libe_grep" })
+		vim.keymap.set("n", "<Leader>pd", builtin("diagnostics")({}), { desc = "telescope diagnostics" })
+		vim.keymap.set("n", "<Leader>ph", builtin("help_tags")({}), { desc = "telescope help tags" })
+		vim.keymap.set("n", "<Leader>pb", builtin("buffers")({}), { desc = "telescope buffers" })
+		vim.keymap.set("n", "<Leader>pba", builtin("buffers")({}), { desc = "telescope buffers" })
+		vim.keymap.set("n", "<Leader>po", builtin("command")({}), { desc = "telescope command" })
+		vim.keymap.set("n", "<Leader>pk", builtin("keymap")({}), { desc = "telescope keymap" })
+		vim.keymap.set("n", "<Leader>pc", builtin("command_history")({}), { desc = "telescope command_history" })
+		vim.keymap.set("n", "<Leader>pr", builtin("resume")({}), { desc = "telescope resume" })
+		vim.keymap.set("n", "<Leader>pi", extensions("import", "import")({}), { desc = "telescope import" })
+		vim.keymap.set("n", "<Leader>pg", extensions("ghq", "list")({}), { desc = "telescope ghq list" })
+		vim.keymap.set("n", "<Leader>pz", extensions("z", "list")({}), { desc = "telescope z list" })
 
 		telescope.setup({
 			defaults = {
