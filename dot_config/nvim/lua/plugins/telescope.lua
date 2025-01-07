@@ -1,23 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	module = { "telescope" },
 	-- event = "VeryLazy",
-	lazy = true,
-	keys = {
-		{ "n", "<Leader>pp" },
-		{ "n", "<Leader>pgr" },
-		{ "n", "<Leader>pd" },
-		{ "n", "<Leader>ph" },
-		{ "n", "<Leader>pb" },
-		{ "n", "<Leader>pba" },
-		{ "n", "<Leader>po" },
-		{ "n", "<Leader>pk" },
-		{ "n", "<Leader>pr" },
-		{ "n", "<Leader>pc" },
-		{ "n", "<Leader>pi" },
-		{ "n", "<Leader>pg" },
-		{ "n", "<Leader>pz" },
-	},
 	dependencies = {
 		{ "nvim-telescope/telescope-ghq.nvim" },
 		{ "nvim-telescope/telescope-z.nvim" },
@@ -25,9 +8,11 @@ return {
 			"nvim-telescope/telescope-frecency.nvim",
 		},
 		{ "piersolenski/telescope-import.nvim" },
+		{ "nvim-lua/plenary.nvim" },
 
 		-- その他の拡張プラグイン……
 	},
+	tag = "0.1.8",
 	init = function() end,
 	config = function()
 		local telescope = require("telescope")
