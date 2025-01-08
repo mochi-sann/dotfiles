@@ -1,6 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	-- event = "VeryLazy",
+	event = "VeryLazy",
 	dependencies = {
 		{ "nvim-telescope/telescope-ghq.nvim" },
 		{ "nvim-telescope/telescope-z.nvim" },
