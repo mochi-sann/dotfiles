@@ -125,7 +125,7 @@ local base_colors = {
 
 return {
 	use_ime = true,
-	font_size = 14,
+	font_size = 11,
 	-- window_background_opacity = 0.90,
 	window_decorations = "RESIZE",
 	-- font_sizeasdf = 14,

@@ -345,8 +345,8 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"uga-rosa/ccc.nvim",
-		-- event = { "VeryLazy" },
-		dependenciek = { "nvim-telescope/telescope.nvim" },
+		event = { "VeryLazy" },
+		-- dependenciek = { "nvim-telescope/telescope.nvim" },
 		config = function()
 			require("plugconfig/ccc-nvim")
 		end,
@@ -540,6 +540,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"rmagatti/auto-session",
+		event = "VeryLazy",
 		config = function()
 			require("auto-session").setup({
 				log_level = "error",
