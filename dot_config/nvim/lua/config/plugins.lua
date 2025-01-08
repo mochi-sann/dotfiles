@@ -345,7 +345,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"uga-rosa/ccc.nvim",
-		-- event = { "VeryLazy" },
+		event = { "VeryLazy" },
 		dependenciek = { "nvim-telescope/telescope.nvim" },
 		config = function()
 			require("plugconfig/ccc-nvim")
