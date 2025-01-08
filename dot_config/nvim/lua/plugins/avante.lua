@@ -1,13 +1,13 @@
 return {
 	"yetone/avante.nvim",
-	-- event = "VeryLazy",
-	-- lazy = true,
-	-- version = false, -- set this if you want to always pull the latest change
+	event = "VeryLazy",
+	lazy = true,
+	version = false, -- set this if you want to always pull the latest change
 
 	opts = {
 		debug = false,
 		---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-		provider = "deepspeek", -- Recommend using Claude
+		provider = "gemini", -- Recommend using Claude
 		system_prompt = [[
 日本語で返答すること
 ソフトウェア開発のエキスパートとして行動する。
@@ -124,7 +124,6 @@ return {
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
-	commit = "f8d80d87c5e2a230ccb29805411bb67aefa1cf96",
 
 	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
 	dependencies = {
