@@ -156,7 +156,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"willothy/flatten.nvim",
-		config = true,
 		-- or pass configuration with
 		-- opts = {  }
 		-- Ensure that it runs first to minimize delay when opening file from terminal
@@ -543,6 +542,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		event = "VeryLazy",
 		config = function()
 			require("auto-session").setup({
+				suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 				log_level = "error",
 				auto_save_enabled = true,
 			})
