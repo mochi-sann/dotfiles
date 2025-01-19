@@ -636,15 +636,16 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("gitlinker").setup()
 		end,
 	},
+	-- {
+	-- 	"nvim-pack/nvim-spectre",
+	-- 	event = "VeryLazy",
+	-- 	dependencies = "nvim-lua/plenary.nvim",
+	-- 	config = function()
+	-- 		require("plugconfig/spectre")
+	-- 	end,
+	-- },
 	{
-		"nvim-pack/nvim-spectre",
-		event = "VeryLazy",
-		dependencies = "nvim-lua/plenary.nvim",
-		config = function()
-			require("plugconfig/spectre")
-		end,
-	},
-	{
+    -- 色々なファイルを見て置換するやつ
 		"MagicDuck/grug-far.nvim",
 		config = function()
 			require("grug-far").setup({

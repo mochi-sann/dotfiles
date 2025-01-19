@@ -1,0 +1,49 @@
+
+#!/bin/bash
+
+{{ if eq .chezmoi.os "linux" }}
+
+{{ if eq .chezmoi.osRelease.id "debian" }}
+
+#############################
+# install cmd
+#############################
+
+apt update
+apt install -y \
+ bat \
+ curl \
+ lsd \
+ fd-find \
+ fzf \
+ git \
+ gh \
+ neofetch \
+ nnn \
+ ripgrep \
+ tldr \
+ tmux \
+ wget 
+
+#############################
+# install sheldon
+#############################
+curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
+   | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+
+
+
+#############################
+# nvim build
+# apt で入る nvim が古すぎるため 自前で build する
+#############################
+
+git clone https://github.com/neovim/neovim --depth=1
+cd neovim
+apt install -y libtool autoconf automake make cmake libncurses5-dev g++ gettext
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+make install
+
+{{ end }}
+
+{{ end }}
