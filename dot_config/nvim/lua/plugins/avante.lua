@@ -5,15 +5,20 @@ return {
 	version = false, -- set this if you want to always pull the latest change
 
 	opts = {
-		debug = false,
+		debug = true,
 		---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
 		provider = "gemini", -- Recommend using Claude
+		auto_suggestions_provider = "copilot",
 		system_prompt = [[
 日本語で返答すること
 ソフトウェア開発のエキスパートとして行動する。
 コーディングの際には常にベストプラクティスを使用すること。
 コードベースにすでに存在する既存の規約やライブラリなどを尊重し、使用すること。
 ]],
+		gemini = {
+			model = "gemini-2.0-flash-exp", --今のところ無料 "models/gemini-exp-1206"
+			max_tokens = 8192,
+		},
 		vendors = {
 			["deepspeek"] = {
 
