@@ -539,7 +539,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"rmagatti/auto-session",
-		event = "VeryLazy",
 		config = function()
 			require("auto-session").setup({
 				suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
@@ -645,7 +644,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	-- 	end,
 	-- },
 	{
-    -- 色々なファイルを見て置換するやつ
+		-- 色々なファイルを見て置換するやつ
 		"MagicDuck/grug-far.nvim",
 		config = function()
 			require("grug-far").setup({
