@@ -2,12 +2,12 @@ return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
 	lazy = true,
-	version = false, -- set this if you want to always pull the latest change
+	version = false, -- 最新の変更を常に取得する場合はこれを設定
 
 	opts = {
 		debug = true,
 		---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-		provider = "gemini", -- Recommend using Claude
+		provider = "gemini", -- Claudeの使用を推奨
 		auto_suggestions_provider = "copilot",
 		system_prompt = [[
 日本語で返答すること
@@ -16,15 +16,14 @@ return {
 コードベースにすでに存在する既存の規約やライブラリなどを尊重し、使用すること。
 ]],
 		gemini = {
-			model = "gemini-2.0-flash-exp", --今のところ無料 "models/gemini-exp-1206"
+			model = "gemini-2.0-flash-exp", -- 今のところ無料 "models/gemini-exp-1206"
 			max_tokens = 8192,
 		},
 		vendors = {
 			["deepspeek"] = {
-
 				endpoint = "http://100.97.82.35:1234/v1",
 				model = "TheBloke/deepseek-coder-6.7B-instruct-GGUF",
-				timeout = 1000 * 30, -- Timeout in milliseconds
+				timeout = 1000 * 30, -- タイムアウト（ミリ秒単位）
 				temperature = 0.7,
 				max_tokens = -1,
 				["local"] = true,
@@ -37,7 +36,7 @@ return {
 						},
 						body = {
 							model = opts.model,
-							messages = require("avante.providers").copilot.parse_message(code_opts), -- you can make your own message, but this is very advanced
+							messages = require("avante.providers").copilot.parse_message(code_opts), -- 独自のメッセージを作成することも可能（高度な設定）
 							temperature = 0.7,
 							max_tokens = -1,
 							stream = true,
@@ -51,7 +50,7 @@ return {
 			["Llama-3-ELYZA-JP"] = {
 				endpoint = "http://100.97.82.35:1234/v1",
 				model = "elyza/Llama-3-ELYZA-JP-8B-GGUF",
-				timeout = 1000 * 30, -- Timeout in milliseconds
+				timeout = 1000 * 30, -- タイムアウト（ミリ秒単位）
 				temperature = 0.7,
 				max_tokens = -1,
 				["local"] = true,
@@ -64,7 +63,7 @@ return {
 						},
 						body = {
 							model = opts.model,
-							messages = require("avante.providers").copilot.parse_message(code_opts), -- you can make your own message, but this is very advanced
+							messages = require("avante.providers").copilot.parse_message(code_opts), -- 独自のメッセージを作成することも可能（高度な設定）
 							temperature = 0.7,
 							max_tokens = -1,
 							stream = true,
@@ -78,7 +77,7 @@ return {
 			["Lalama-3.1"] = {
 				endpoint = "http://100.97.82.35:1234/v1",
 				model = "lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF",
-				timeout = 1000 * 30, -- Timeout in milliseconds
+				timeout = 1000 * 30, -- タイムアウト（ミリ秒単位）
 				temperature = 0.7,
 				max_tokens = -1,
 				["local"] = true,
@@ -91,7 +90,7 @@ return {
 						},
 						body = {
 							model = opts.model,
-							messages = require("avante.providers").copilot.parse_message(code_opts), -- you can make your own message, but this is very advanced
+							messages = require("avante.providers").copilot.parse_message(code_opts), -- 独自のメッセージを作成することも可能（高度な設定）
 							temperature = 0.7,
 							max_tokens = -1,
 							stream = true,
@@ -105,7 +104,7 @@ return {
 		},
 		mappings = {
 			---@class AvanteConflictMappings
-			-- NOTE: The following will be safely set by avante.nvim
+			-- NOTE: 以下はavante.nvimによって安全に設定されます
 			ask = "<leader>aa",
 			edit = "<leader>ae",
 			refresh = "<leader>ar",
@@ -125,36 +124,38 @@ return {
 			},
 		},
 
-		-- add any opts here
+		-- ここにオプションを追加
 	},
-	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+	-- ソースからビルドする場合は `make BUILD_FROM_SOURCE=true` を実行
 	build = "make",
 
-	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- windowsの場合
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"stevearc/dressing.nvim",
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
-		--- The below dependencies are optional,
-		"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-		-- "zbirenbaum/copilot.lua", -- for providers='copilot'
+		--- 以下の依存関係はオプションです
+		"nvim-tree/nvim-web-devicons", -- または echasnovski/mini.icons
+		-- "zbirenbaum/copilot.lua", -- providers='copilot'の場合
 		{
-			-- support for image pasting
+			-- 画像貼り付けのサポート
 			"HakonHarnes/img-clip.nvim",
 			event = "VeryLazy",
 			opts = {
-				-- recommended settings
+				-- 推奨設定
 				default = {
 					embed_image_as_base64 = false,
 					prompt_for_file_name = false,
 					drag_and_drop = {
 						insert_mode = true,
 					},
-					-- required for Windows users
+					-- Windowsユーザーに必須
 					use_absolute_path = true,
 				},
 			},
 		},
 	},
 }
+
+

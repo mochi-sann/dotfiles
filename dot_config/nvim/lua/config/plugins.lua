@@ -186,7 +186,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	{ "alaviss/nim.nvim", event = "VeryLazy" },
 	{
 		"axelvc/template-string.nvim",
-		confg = function()
+		config = function()
 			require("template-string").setup({
 				filetypes = {
 					"html",
@@ -308,7 +308,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			"justinhj/battery.nvim",
 			"nvim-lua/plenary.nvim",
 		},
-		event = "VeryLazy",
+    lazy = false,
 		config = function()
 			require("plugconfig/lualine")
 		end,

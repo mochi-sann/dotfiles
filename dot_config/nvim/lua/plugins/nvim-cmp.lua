@@ -3,7 +3,6 @@ return {
 	event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
 	dependencies = {
 		{ "hrsh7th/cmp-buffer" },
-		{ "hrsh7th/cmp-emoji" },
 		{ "hrsh7th/cmp-nvim-lsp" },
 		{ "hrsh7th/cmp-path" },
 		{ "hrsh7th/cmp-cmdline" },
@@ -56,7 +55,6 @@ return {
 		},
 		{
 			"ray-x/lsp_signature.nvim",
-			event = "VeryLazy",
 			opts = {},
 			config = function(_, opts)
 				require("lsp_signature").setup()
@@ -69,12 +67,6 @@ return {
 				require("copilot_cmp").setup()
 			end,
 		},
-		-- {
-		-- 	"zbirenbaum/copilot.lua",
-		-- 	config = function()
-		-- 		require("copilot").setup({})
-		-- 	end,
-		-- },
 		{
 			"lvimuser/lsp-inlayhints.nvim",
 		},
