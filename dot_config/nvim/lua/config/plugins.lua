@@ -459,45 +459,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		"almo7aya/openingh.nvim",
 	},
 
-	-- {
-	-- 	"nvim-neotest/neotest",
-	-- 	dependencies = {
-	-- 		"nvim-neotest/nvim-nio",
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"antoinemadec/FixCursorHold.nvim",
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 	},
-	-- 	config = function()
-	-- 		require("plugconfig/neotest")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"mrcjkb/rustaceanvim",
-	-- 	version = "^5", -- Recommended
-	-- 	lazy = false, -- This plugin is already lazy
-	-- },
-
-	-- {
-	-- 	"mochi-sann/Select2Browser.nvim",
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("Select2Browser").setup()
-	-- 		vim.api.nvim_set_keymap("", "<Leader>gg", "<Cmd>Select2Browser<CR>", { noremap = true, silent = true })
-	-- 	end,
-	-- },
-	-- {
-	-- 	"jackMort/ChatGPT.nvim",
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("plugconfig/chat-gpt-nvim")
-	-- 	end,
-	-- 	dependencies = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"folke/trouble.nvim",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- },
 	{
 		"folke/zen-mode.nvim",
 		event = "VeryLazy",
