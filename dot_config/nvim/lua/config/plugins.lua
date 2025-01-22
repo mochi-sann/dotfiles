@@ -301,18 +301,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 	{ "MunifTanjim/nui.nvim", event = "VeryLazy" },
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = {
-			"kyazdani42/nvim-web-devicons",
-			"justinhj/battery.nvim",
-			"nvim-lua/plenary.nvim",
-		},
-		lazy = false,
-		config = function()
-			require("plugconfig/lualine")
-		end,
-	},
 
 	-- 	"tversteeg/registers.nvim",
 	-- 	event = "VeryLazy",
