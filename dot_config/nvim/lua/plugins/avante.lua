@@ -29,14 +29,21 @@ return {
 				max_tokens = 8192,
 			},
 			vendors = {
-				["deepseek"] = {
-					endpoint = "http://100.97.82.35:1234/v1",
-					model = "lmstudio-community/DeepSeek-R1-Distill-Llama-8B-GGUF",
-					timeout = 1000 * 30, -- タイムアウト（ミリ秒単位）
-					temperature = 0.7,
-					max_tokens = 8192,
-					["local"] = true,
+				deepseek = {
+					__inherited_from = "openai",
+					api_key_name = "DEEPSEEK_API_KEY",
+					endpoint = "https://api.deepseek.com",
+					model = "deepseek-chat",-- やすい方
+          -- model = "deepseek-reasoner",-- やすい方
 				},
+				-- ["deepseek"] = {
+				-- 	endpoint = "http://100.97.82.35:1234/v1",
+				-- 	model = "lmstudio-community/DeepSeek-R1-Distill-Llama-8B-GGUF",
+				-- 	timeout = 1000 * 30, -- タイムアウト（ミリ秒単位）
+				-- 	temperature = 0.7,
+				-- 	max_tokens = 8192,
+				-- 	["local"] = true,
+				-- },
 				["Llama-3-ELYZA-JP"] = {
 					endpoint = "http://100.97.82.35:1234/v1",
 					model = "elyza/Llama-3-ELYZA-JP-8B-GGUF",
