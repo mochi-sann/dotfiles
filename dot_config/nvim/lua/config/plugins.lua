@@ -308,11 +308,12 @@ return require("lazy").setup({ -- Packer can manage itself
 			"justinhj/battery.nvim",
 			"nvim-lua/plenary.nvim",
 		},
-    lazy = false,
+		lazy = false,
 		config = function()
 			require("plugconfig/lualine")
 		end,
 	},
+
 	-- 	"tversteeg/registers.nvim",
 	-- 	event = "VeryLazy",
 	-- 	config = function()

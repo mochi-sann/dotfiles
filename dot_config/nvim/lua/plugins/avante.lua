@@ -7,7 +7,7 @@ return {
 	opts = {
 		debug = true,
 		---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-		provider = "gemini", -- Claudeの使用を推奨
+		provider = "deepseek", -- Claudeの使用を推奨
 		auto_suggestions_provider = "copilot",
 		system_prompt = [[
 日本語で返答すること
@@ -20,32 +20,13 @@ return {
 			max_tokens = 8192,
 		},
 		vendors = {
-			["deepspeek"] = {
+			["deepseek"] = {
 				endpoint = "http://100.97.82.35:1234/v1",
-				model = "TheBloke/deepseek-coder-6.7B-instruct-GGUF",
+				model = "lmstudio-community/DeepSeek-R1-Distill-Llama-8B-GGUF",
 				timeout = 1000 * 30, -- タイムアウト（ミリ秒単位）
 				temperature = 0.7,
-				max_tokens = -1,
+        max_tokens = 8192,
 				["local"] = true,
-				parse_curl_args = function(opts, code_opts)
-					return {
-						url = opts.endpoint .. "/chat/completions",
-						headers = {
-							["Accept"] = "application/json",
-							["Content-Type"] = "application/json",
-						},
-						body = {
-							model = opts.model,
-							messages = require("avante.providers").copilot.parse_message(code_opts), -- 独自のメッセージを作成することも可能（高度な設定）
-							temperature = 0.7,
-							max_tokens = -1,
-							stream = true,
-						},
-					}
-				end,
-				parse_response_data = function(data_stream, event_state, opts)
-					require("avante.providers").openai.parse_response(data_stream, event_state, opts)
-				end,
 			},
 			["Llama-3-ELYZA-JP"] = {
 				endpoint = "http://100.97.82.35:1234/v1",
@@ -157,5 +138,3 @@ return {
 		},
 	},
 }
-
-
