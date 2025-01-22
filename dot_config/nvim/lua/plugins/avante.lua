@@ -8,7 +8,7 @@ return {
 		return {
 			debug = true,
 			---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-			provider = "gemini", -- Claudeの使用を推奨
+			provider = "deepseek", -- Claudeの使用を推奨
 
 			-- auto_suggestions_provider = require("avante-status").get_suggestions_provider({
 			-- 	"azure",
@@ -33,8 +33,8 @@ return {
 					__inherited_from = "openai",
 					api_key_name = "DEEPSEEK_API_KEY",
 					endpoint = "https://api.deepseek.com",
-					model = "deepseek-chat",-- やすい方
-          -- model = "deepseek-reasoner",-- やすい方
+				--	model = "deepseek-chat",-- やすい方
+          model = "deepseek-reasoner",-- やすい方
 				},
 				-- ["deepseek"] = {
 				-- 	endpoint = "http://100.97.82.35:1234/v1",
