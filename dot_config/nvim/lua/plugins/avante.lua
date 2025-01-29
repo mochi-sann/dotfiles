@@ -33,8 +33,14 @@ return {
 					__inherited_from = "openai",
 					api_key_name = "DEEPSEEK_API_KEY",
 					endpoint = "https://api.deepseek.com",
-				--	model = "deepseek-chat",-- やすい方
-          model = "deepseek-reasoner",-- やすい方
+					--	model = "deepseek-chat",-- やすい方
+					model = "deepseek-reasoner", -- 高い方
+				},
+				deepseek_chat = {
+					__inherited_from = "openai",
+					api_key_name = "DEEPSEEK_API_KEY",
+					endpoint = "https://api.deepseek.com",
+					model = "deepseek-chat", -- やすい方
 				},
 				-- ["deepseek"] = {
 				-- 	endpoint = "http://100.97.82.35:1234/v1",

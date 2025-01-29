@@ -31,7 +31,8 @@ github = 'zsh-users/zsh-autosuggestions'
 github = 'romkatv/powerlevel10k'
 
 [plugins.highlight]
-github = 'zdharma-continuum/fast-syntax-highlighting'
+github = 'zsh-users/zsh-syntax-highlighting'
+# github = 'zdharma-continuum/fast-syntax-highlighting'
 
 [plugins.zsh-complations]
 github = 'zsh-users/zsh-completions'
