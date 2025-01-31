@@ -28,7 +28,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		"LintaoAmons/bookmarks.nvim",
 		-- recommand, pin the plugin at specific version for stability
 		-- backup your db.json file when you want to upgrade the plugin
-		tag = "v2.0.0",
+		-- tag = "v2.0.0",
 		dependencies = {
 			{ "kkharji/sqlite.lua" },
 			{ "nvim-telescope/telescope.nvim" },

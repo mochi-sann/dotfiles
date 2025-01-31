@@ -12,7 +12,7 @@ return {
 
 		-- その他の拡張プラグイン……
 	},
-	tag = "0.1.8",
+	-- tag = "0.1.8",
 	init = function() end,
 	config = function()
 		local telescope = require("telescope")

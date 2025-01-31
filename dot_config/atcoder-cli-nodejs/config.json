@@ -1,5 +1,5 @@
 {
-	"oj-path": "/home/mochi/codespace/github.com/kyuridenamida/atcoder-tools/venv/bin/oj",
+	"oj-path": "/home/mochi/.local/bin/oj",
 	"default-contest-dirname-format": "{ContestID}",
 	"default-task-dirname-format": "{tasklabel}",
 	"default-test-dirname-format": "tests",
