@@ -8,24 +8,24 @@ return {
 	},
 	lazy = false,
 	config = function()
-		local avante_chat_component = {
-			function()
-				local chat = require("avante-status").chat_provider
-				local msg = chat.name
-				return msg
-			end,
-			icon = require("avante-status").chat_provider.icon,
-			color = { fg = require("avante-status").chat_provider.fg },
-		}
-		local avante_suggestions_component = {
-			function()
-				local suggestions = require("avante-status").suggestions_provider
-				local msg = suggestions.name
-				return msg
-			end,
-			icon = require("avante-status").suggestions_provider.icon,
-			color = { fg = require("avante-status").suggestions_provider.fg },
-		}
+		-- local avante_chat_component = {
+		-- 	function()
+		-- 		local chat = require("avante-status").chat_provider
+		-- 		local msg = chat.name
+		-- 		return msg
+		-- 	end,
+		-- 	icon = require("avante-status").chat_provider.icon,
+		-- 	color = { fg = require("avante-status").chat_provider.fg },
+		-- }
+		-- local avante_suggestions_component = {
+		-- 	function()
+		-- 		local suggestions = require("avante-status").suggestions_provider
+		-- 		local msg = suggestions.name
+		-- 		return msg
+		-- 	end,
+		-- 	icon = require("avante-status").suggestions_provider.icon,
+		-- 	color = { fg = require("avante-status").suggestions_provider.fg },
+		-- }
 		require("battery").setup({})
 
     -- Bubbles config for lualine
@@ -78,8 +78,8 @@ return {
 					"encoding",
 					"fileformat",
 					"filetype",
-					avante_chat_component,
-					avante_suggestions_component,
+					-- avante_chat_component,
+					-- avante_suggestions_component,
 				},
 			},
 		})
