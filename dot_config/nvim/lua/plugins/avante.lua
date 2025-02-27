@@ -8,7 +8,7 @@ return {
 		return {
 			debug = true,
 			---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-			provider = "deepseek", -- Claudeの使用を推奨
+			provider = "openai", -- Claudeの使用を推奨
 
 			-- auto_suggestions_provider = require("avante-status").get_suggestions_provider({
 			-- 	"azure",
@@ -27,6 +27,13 @@ return {
 			gemini = {
 				model = "gemini-2.0-flash-exp", -- 今のところ無料 "models/gemini-exp-1206"
 				max_tokens = 8192,
+			},
+			openai = {
+				model = "gpt-4o-mini",
+				api_key_name = "HOGE_OPENAI_API_KEY____NAME",
+				timeout = 30 * 1000, -- timeout in milliseconds
+				temperature = 0, -- adjust if needed
+				max_tokens = 4096,
 			},
 			vendors = {
 				deepseek = {
