@@ -449,7 +449,7 @@ alias accpy='acc s -- main.py --language 5055'
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
 # this is a wsl codes
 
-# PATH=$(echo $PATH | sed s/:/\\n/g | grep -v '/mnt/c' | grep -v 'mnt/d' | sed ':a;N;$!ba;s/\n/:/g')
+export  PATH=$(echo $PATH | sed s/:/\\n/g | grep -v '/mnt/c' | grep -v 'mnt/d' | sed ':a;N;$!ba;s/\n/:/g')
 export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0
 # WSL?
 
