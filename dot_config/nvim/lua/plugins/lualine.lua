@@ -2,9 +2,9 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
 		"kyazdani42/nvim-web-devicons",
-		"takeshid/avante-status.nvim",
-		{ "justinhj/battery.nvim", lazy = false },
-		"nvim-lua/plenary.nvim",
+		-- "takeshid/avante-status.nvim",
+		-- { "justinhj/battery.nvim", lazy = false },
+		-- "nvim-lua/plenary.nvim",
 	},
 	lazy = false,
 	config = function()
@@ -26,7 +26,7 @@ return {
 		-- 	icon = require("avante-status").suggestions_provider.icon,
 		-- 	color = { fg = require("avante-status").suggestions_provider.fg },
 		-- }
-		require("battery").setup({})
+		-- require("battery").setup({})
 
     -- Bubbles config for lualine
     -- Author: lokesh-krishna
@@ -42,12 +42,12 @@ return {
       violet = '#d183e8',
       grey = '#303030'
     }
-		local nvimbattery = {
-			function()
-				return require("battery").get_status_line()
-			end,
-			color = { fg = colors.violet, bg = colors.bg },
-		}
+		-- local nvimbattery = {
+		-- 	function()
+		-- 		return require("battery").get_status_line()
+		-- 	end,
+		-- 	color = { fg = colors.violet, bg = colors.bg },
+		-- }
 
 		local bubbles_theme = {
 			normal = {
@@ -74,7 +74,7 @@ return {
 			},
 			sections = {
 				lualine_x = {
-					nvimbattery,
+					-- nvimbattery,
 					"encoding",
 					"fileformat",
 					"filetype",
