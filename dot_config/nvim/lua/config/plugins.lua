@@ -511,21 +511,6 @@ return require("lazy").setup({ -- Packer can manage itself
 
 		event = "VeryLazy",
 	},
-	-- {
-	-- 	"stevearc/aerial.nvim",
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
-	--
-	-- 		require("aerial").setup({
-	-- 			on_attach = function(bufnr)
-	-- 				-- Jump forwards/backwards with '{' and '}'
-	-- 				vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
-	-- 				vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
-	-- 			end,
-	-- 		})
-	-- 	end,
-	-- },
 
 	{ "tikhomirov/vim-glsl", event = "VeryLazy" },
 	{ "koron/vim-budoux", event = "VeryLazy" },
@@ -585,14 +570,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("gitlinker").setup()
 		end,
 	},
-	-- {
-	-- 	"nvim-pack/nvim-spectre",
-	-- 	event = "VeryLazy",
-	-- 	dependencies = "nvim-lua/plenary.nvim",
-	-- 	config = function()
-	-- 		require("plugconfig/spectre")
-	-- 	end,
-	-- },
 	{
 		-- 色々なファイルを見て置換するやつ
 		"MagicDuck/grug-far.nvim",

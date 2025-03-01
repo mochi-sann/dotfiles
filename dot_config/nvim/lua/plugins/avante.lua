@@ -6,7 +6,7 @@ return {
 
 	opts = function()
 		return {
-			debug = true,
+			debug = false,
 			---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
 			provider = "openai", -- Claudeの使用を推奨
 
@@ -30,7 +30,6 @@ return {
 			},
 			openai = {
 				model = "gpt-4o-mini",
-				api_key_name = "HOGE_OPENAI_API_KEY____NAME",
 				timeout = 30 * 1000, -- timeout in milliseconds
 				temperature = 0, -- adjust if needed
 				max_tokens = 4096,
