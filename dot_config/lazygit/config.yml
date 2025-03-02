@@ -219,6 +219,12 @@ customCommands:
       command: "gh pr create --fill --web"
       context: "global"
       loadingText: "Creating pull request on GitHub"
+    - key: "O"
+      context: "files"
+      command : "oco"
+      description: "commit with AI"
+      loadingText: "opening ai commit tool(oco)"
+      subprocess: true
     - key: "V" # couldn't think of a better keybinding
       prompts:
         - type: "input"
