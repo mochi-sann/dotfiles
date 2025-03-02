@@ -2,6 +2,7 @@ require("config/options")
 require("config/keymaps")
 require("config/plugins")
 require("config/functions")
+require("config/custom_command")
 
 vim.cmd([[
 autocmd BufRead,BufEnter *.astro set filetype=astro
