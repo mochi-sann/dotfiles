@@ -467,7 +467,7 @@ function open() {
 }
 
 #C:\Program Files\PowerShell\7\pwsh.exe
-export BROWSER="pwsh.exe /c start $(wslpath -w $(realpath $1))"
+$ export BROWSER="pwsh.exe /c start $(wslpath -w $(realpath $1))"
 export LD_LIBRARY_PATH="/usr/lib/wsl/lib:/usr/local/cuda/lib64:/usr/lib/wsl/lib:"
 export BROWSER="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"
 alias open="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"
