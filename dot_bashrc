@@ -116,3 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 eval "$(rbenv init -)"
+
+. "$HOME/.atuin/bin/env"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
