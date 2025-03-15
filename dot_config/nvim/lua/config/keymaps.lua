@@ -14,9 +14,9 @@ vim.keymap.set("n", "<leader>cl", function()
 end, { desc = "copy relative file path and line number" })
 
 vim.keymap.set("n", "<leader>cf", function()
-  local path_with_line = vim.fn.expand("%") 
-  vim.fn.setreg("+", path_with_line)
-  print("Copied: " .. path_with_line)
+	local path_with_line = vim.fn.expand("%")
+	vim.fn.setreg("+", path_with_line)
+	print("Copied: " .. path_with_line)
 end, { desc = "copy relative file path" })
 
 vim.cmd([[
