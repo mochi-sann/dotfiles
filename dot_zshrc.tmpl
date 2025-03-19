@@ -439,7 +439,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 export WASMER_DIR="/home/mochi/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 # asdf
-. /opt/asdf-vm/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export PATH=$GEM_HOME/bin:$PATH
@@ -467,7 +467,7 @@ function open() {
 }
 
 #C:\Program Files\PowerShell\7\pwsh.exe
-$ export BROWSER="pwsh.exe /c start $(wslpath -w $(realpath $1))"
+$ # export BROWSER="pwsh.exe /c start $(wslpath -w $(realpath $1))"
 export LD_LIBRARY_PATH="/usr/lib/wsl/lib:/usr/local/cuda/lib64:/usr/lib/wsl/lib:"
 export BROWSER="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"
 alias open="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"

@@ -87,4 +87,4 @@ ccc.setup({
 	},
 })
 
-vim.keymap.set("n", "<Space>c", ":CccPick<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "<Space>cc", ":CccPick<cr>", { silent = true, noremap = true, desc = "Pick color" })

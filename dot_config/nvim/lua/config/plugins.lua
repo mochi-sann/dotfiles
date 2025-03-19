@@ -372,6 +372,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			"gbprod/none-ls-php.nvim",
 			"gbprod/none-ls-shellcheck.nvim",
 			"saecki/crates.nvim",
+			"jay-babu/mason-null-ls.nvim",
 		},
 		config = function()
 			require("plugconfig/null_ls")
