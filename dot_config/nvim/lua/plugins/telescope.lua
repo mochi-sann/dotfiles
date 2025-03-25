@@ -47,15 +47,22 @@ return {
 				-- file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
 			})
 		)
-		vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({}), { desc = "telescope libe_grep" })
+		vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({}), { desc = "telescope live_grep" })
 		vim.keymap.set("n", "<Leader>pd", builtin("diagnostics")({}), { desc = "telescope diagnostics" })
 		vim.keymap.set("n", "<Leader>ph", builtin("help_tags")({}), { desc = "telescope help tags" })
 		vim.keymap.set("n", "<Leader>pb", builtin("buffers")({}), { desc = "telescope buffers" })
 		vim.keymap.set("n", "<Leader>pba", builtin("buffers")({}), { desc = "telescope buffers" })
 		vim.keymap.set("n", "<Leader>po", builtin("command")({}), { desc = "telescope command" })
 		vim.keymap.set("n", "<Leader>pk", builtin("keymap")({}), { desc = "telescope keymap" })
-		vim.keymap.set("n", "<Leader>pc", builtin("command_history")({}), { desc = "telescope command_history" })
+		vim.keymap.set("n", "<Leader>pch", builtin("command_history")({}), { desc = "telescope command_history" })
 		vim.keymap.set("n", "<Leader>pr", builtin("resume")({}), { desc = "telescope resume" })
+		vim.keymap.set("n", "<Leader>pl", builtin("lsp_definitions")({}), { desc = "telescope lsp_definitions" })
+		vim.keymap.set(
+			"n",
+			"<Leader>pcf",
+			builtin("current_buffer_fuzzy_find")({}),
+			{ desc = "telescope current_buffer_fuzzy_find" }
+		)
 		vim.keymap.set("n", "<Leader>pi", extensions("import", "import")({}), { desc = "telescope import" })
 		vim.keymap.set("n", "<Leader>pg", extensions("ghq", "list")({}), { desc = "telescope ghq list" })
 		vim.keymap.set("n", "<Leader>pz", extensions("z", "list")({}), { desc = "telescope z list" })
