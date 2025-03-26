@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 return require("lazy").setup({ -- Packer can manage itself
 
 	{ import = "plugins" },
+	{ "lambdalisue/vim-suda" },
 	{
 		"petertriho/nvim-scrollbar",
 		config = function()

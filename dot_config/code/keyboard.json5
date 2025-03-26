@@ -1,0 +1,11 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[{
+  "key": "ctrl+oem_minus",
+  "command": "workbench.action.togglePanel",
+},
+ {
+   "key": "shift+enter",
+   "command": "extension.jumpy-word",
+   "when": "editorTextFocus"
+ }
+]
