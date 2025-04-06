@@ -21,3 +21,13 @@ vim.api.nvim_create_user_command("CloseBuffers", function()
 
 	vim.notify(closed_count .. " buffers closed", vim.log.levels.INFO)
 end, {})
+
+-- bufを離れたときに保存する
+vim.api.nvim_create_autocmd("BufLeavehogehoge", {
+	pattern = "*",
+	callback = function()
+		if vim.bo.modified and vim.bo.buftype == "" then
+			vim.cmd("write")
+		end
+	end,
+})
