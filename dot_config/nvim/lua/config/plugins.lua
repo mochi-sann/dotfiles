@@ -587,6 +587,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		"MagicDuck/grug-far.nvim",
 		cmd = {
 			"GrugFar",
+			"GrugFarWithin",
 			"GrugFarReplace",
 			"GrugFarReplaceAll",
 			"GrugFarReplaceAllInFile",
