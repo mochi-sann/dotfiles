@@ -23,7 +23,7 @@ vim.api.nvim_create_user_command("CloseBuffers", function()
 end, {})
 
 -- bufを離れたときに保存する
-vim.api.nvim_create_autocmd("BufLeavehogehoge", {
+vim.api.nvim_create_autocmd("BufLeave", {
 	pattern = "*",
 	callback = function()
 		if vim.bo.modified and vim.bo.buftype == "" then

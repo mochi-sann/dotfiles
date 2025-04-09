@@ -615,4 +615,11 @@ return require("lazy").setup({ -- Packer can manage itself
 			{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
 		},
 	},
+	{
+		"barrett-ruth/import-cost.nvim",
+		build = "sh install.sh npm",
+		-- if on windows
+		-- build = 'pwsh install.ps1 yarn',
+		config = true,
+	},
 })
