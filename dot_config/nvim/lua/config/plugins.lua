@@ -338,7 +338,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/whichi_key")
 		end,
 	},
-	{ "ryanoasis/vim-devicons" }, -- {
+	{ "ryanoasis/vim-devicons", lazy = true }, -- {
 	-- 	"relastle/vim-colorrange",
 	-- 	event = "VeryLazy",
 	-- },
