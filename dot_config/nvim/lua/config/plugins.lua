@@ -261,10 +261,15 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		opts = {},
+		---@module "ibl"
+		---@type ibl.config
+		opts = {
+			-- char
+		},
 		config = function()
 			require("plugconfig/indent_blankline")
 		end,
+		event = "VeryLazy",
 	},
 	--  treesitter settins
 	{
