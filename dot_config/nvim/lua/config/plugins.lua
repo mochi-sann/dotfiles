@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 return require("lazy").setup({ -- Packer can manage itself
 
 	{ import = "plugins" },
+	{ "nvim-lua/plenary.nvim", lazy = true },
 	{ "lambdalisue/vim-suda" },
 	{
 		"petertriho/nvim-scrollbar",
@@ -24,7 +25,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 
 	-- { "junegunn/fzf", build = ":call fzf#install()", event = "VeryLazy" },
-	{ "nvim-lua/popup.nvim" },
+	{ "nvim-lua/popup.nvim", lazy = true },
 	{
 		"LintaoAmons/bookmarks.nvim",
 		-- recommand, pin the plugin at specific version for stability
@@ -43,12 +44,15 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 
 	{
-		"phaazon/hop.nvim",
-		branch = "v2", -- optional but strongly recommended
-		event = "VeryLazy",
+		"smoka7/hop.nvim",
+		-- version = "*",
+		-- event = "VeryLazy",
 		config = function()
 			require("plugconfig/hop")
 		end,
+		-- opts = {
+		-- 	keys = "etovxqpdygfblzhckisuran",
+		-- },
 	},
 	--{
 	--	"folke/flash.nvim",
@@ -341,7 +345,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 		-- keys = { ":CccPick<cr>" },
 	},
-	{ "nvim-lua/plenary.nvim" },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
@@ -598,6 +601,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		"nabekou29/open-by-http.nvim",
 		cmd = { "OpenByHttpServerStart", "OpenByHttpServerStop" },
 		event = { "FocusLost" },
+		lazy = true,
 		opts = {
 			auto_start = true,
 			port = 24917,
@@ -614,12 +618,5 @@ return require("lazy").setup({ -- Packer can manage itself
 			-- suggested keymap
 			{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
 		},
-	},
-	{
-		"barrett-ruth/import-cost.nvim",
-		build = "sh install.sh npm",
-		-- if on windows
-		-- build = 'pwsh install.ps1 yarn',
-		config = true,
 	},
 })
