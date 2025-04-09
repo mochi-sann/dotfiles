@@ -15,7 +15,15 @@ vim.opt.rtp:prepend(lazypath)
 return require("lazy").setup({ -- Packer can manage itself
 
 	{ import = "plugins" },
-	{ "lambdalisue/vim-suda" },
+	{ "nvim-lua/plenary.nvim", lazy = true },
+	{
+		"lambdalisue/vim-suda",
+		lazy = true,
+		cmd = {
+			"SudaWrite",
+			"SudaRead",
+		},
+	},
 	{
 		"petertriho/nvim-scrollbar",
 		config = function()
@@ -24,7 +32,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 
 	-- { "junegunn/fzf", build = ":call fzf#install()", event = "VeryLazy" },
-	{ "nvim-lua/popup.nvim" },
+	{ "nvim-lua/popup.nvim", lazy = true },
 	{
 		"LintaoAmons/bookmarks.nvim",
 		-- recommand, pin the plugin at specific version for stability
@@ -43,8 +51,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 
 	{
-		"phaazon/hop.nvim",
-		branch = "v2", -- optional but strongly recommended
+		"smoka7/hop.nvim",
 		event = "VeryLazy",
 		config = function()
 			require("plugconfig/hop")
@@ -111,11 +118,10 @@ return require("lazy").setup({ -- Packer can manage itself
 	--	},
 
 	-- "rebelot/kanagawa.nvim")
-	{ "kyazdani42/nvim-web-devicons" },
+	{ "kyazdani42/nvim-web-devicons", lazy = true },
 
 	{
 		"alvarosevilla95/luatab.nvim",
-		dependencies = "kyazdani42/nvim-web-devicons",
 		event = "VeryLazy",
 		config = function()
 			require("luatab").setup({})
@@ -263,10 +269,15 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		opts = {},
+		---@module "ibl"
+		---@type ibl.config
+		opts = {
+			-- char
+		},
 		config = function()
 			require("plugconfig/indent_blankline")
 		end,
+		event = "VeryLazy",
 	},
 	--  treesitter settins
 	{
@@ -327,7 +338,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/whichi_key")
 		end,
 	},
-	{ "ryanoasis/vim-devicons" }, -- {
+	{ "ryanoasis/vim-devicons", lazy = true }, -- {
 	-- 	"relastle/vim-colorrange",
 	-- 	event = "VeryLazy",
 	-- },
@@ -341,7 +352,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 		-- keys = { ":CccPick<cr>" },
 	},
-	{ "nvim-lua/plenary.nvim" },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
@@ -452,7 +462,11 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"folke/zen-mode.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
+		lazy = true,
+		keys = {
+			{ "<leader>z", "<cmd>ZenMode<CR>", desc = "Zen Mode" },
+		},
 		config = function()
 			require("zen-mode").setup({
 				window = {
@@ -496,6 +510,10 @@ return require("lazy").setup({ -- Packer can manage itself
 				suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 				log_level = "error",
 				auto_save_enabled = true,
+				session_lens = {
+					load_on_setup = false, -- Initialize on startup (requires Telescope)
+					previewer = false, -- File preview for session picker
+				},
 			})
 			vim.api.nvim_set_keymap("", "<Leader>ss", "<Cmd>SessionSave<CR>", { noremap = true, silent = false })
 			vim.api.nvim_set_keymap("", "<Leader>sd", "<Cmd>SessionDelete<CR>", { noremap = true, silent = false })
@@ -504,9 +522,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"kyazdani42/nvim-tree.lua",
-		dependencies = {
-			{ "kyazdani42/nvim-web-devicons" }, -- optional, for file icons
-		},
 		config = function()
 			require("plugconfig/nvim-tree")
 		end,
@@ -554,6 +569,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"zbirenbaum/copilot.lua",
+		lazy = true,
 		cmd = "Copilot",
 		event = {
 			"InsertEnter",
@@ -561,7 +577,9 @@ return require("lazy").setup({ -- Packer can manage itself
 			"CmdlineEnter",
 		},
 		config = function()
-			require("copilot").setup({})
+			require("copilot").setup({
+				copilot_model = "gpt-4o-copilot",
+			})
 		end,
 	}, -- or github/copilot.vim
 	{
@@ -575,6 +593,15 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		-- 色々なファイルを見て置換するやつ
 		"MagicDuck/grug-far.nvim",
+		cmd = {
+			"GrugFar",
+			"GrugFarWithin",
+			"GrugFarReplace",
+			"GrugFarReplaceAll",
+			"GrugFarReplaceAllInFile",
+			"GrugFarReplaceInFile",
+		},
+		lazy = true,
 		config = function()
 			require("grug-far").setup({
 
@@ -598,6 +625,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		"nabekou29/open-by-http.nvim",
 		cmd = { "OpenByHttpServerStart", "OpenByHttpServerStop" },
 		event = { "FocusLost" },
+		lazy = true,
 		opts = {
 			auto_start = true,
 			port = 24917,

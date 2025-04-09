@@ -1,8 +1,8 @@
 return {
-    "FabijanZulj/blame.nvim",
-    lazy = false,
-    config = function()
-      require('blame').setup {}
-    end,
+	"FabijanZulj/blame.nvim",
+	cmd = { "BlameToggle", "BlameOpen" },
+	lazy = true,
+	config = function()
+		require("blame").setup({})
+	end,
 }
-
