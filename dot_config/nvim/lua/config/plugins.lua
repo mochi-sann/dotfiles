@@ -16,7 +16,14 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{ import = "plugins" },
 	{ "nvim-lua/plenary.nvim", lazy = true },
-	{ "lambdalisue/vim-suda" },
+	{
+		"lambdalisue/vim-suda",
+		lazy = true,
+		cmd = {
+			"SudaWrite",
+			"SudaRead",
+		},
+	},
 	{
 		"petertriho/nvim-scrollbar",
 		config = function()
@@ -45,6 +52,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"smoka7/hop.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/hop")
 		end,
