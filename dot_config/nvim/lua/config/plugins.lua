@@ -556,6 +556,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"zbirenbaum/copilot.lua",
+		lazy = true,
 		cmd = "Copilot",
 		event = {
 			"InsertEnter",
@@ -563,7 +564,9 @@ return require("lazy").setup({ -- Packer can manage itself
 			"CmdlineEnter",
 		},
 		config = function()
-			require("copilot").setup({})
+			require("copilot").setup({
+				copilot_model = "gpt-4o-copilot",
+			})
 		end,
 	}, -- or github/copilot.vim
 	{
@@ -577,6 +580,14 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		-- 色々なファイルを見て置換するやつ
 		"MagicDuck/grug-far.nvim",
+		cmd = {
+			"GrugFar",
+			"GrugFarReplace",
+			"GrugFarReplaceAll",
+			"GrugFarReplaceAllInFile",
+			"GrugFarReplaceInFile",
+		},
+    lazy=true,
 		config = function()
 			require("grug-far").setup({
 
