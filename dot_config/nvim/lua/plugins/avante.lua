@@ -4,6 +4,7 @@ return {
 	lazy = true,
 	version = false, -- 最新の変更を常に取得する場合はこれを設定
 	cmd = {
+		"Avante",
 		"AvanteDebug",
 		"AvanteToggle",
 		"AvanteFocus",

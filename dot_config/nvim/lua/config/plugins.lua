@@ -449,7 +449,11 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"folke/zen-mode.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
+		lazy = true,
+		keys = {
+			{ "<leader>z", "<cmd>ZenMode<CR>", desc = "Zen Mode" },
+		},
 		config = function()
 			require("zen-mode").setup({
 				window = {
@@ -493,6 +497,10 @@ return require("lazy").setup({ -- Packer can manage itself
 				suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 				log_level = "error",
 				auto_save_enabled = true,
+				session_lens = {
+					load_on_setup = false, -- Initialize on startup (requires Telescope)
+					previewer = false, -- File preview for session picker
+				},
 			})
 			vim.api.nvim_set_keymap("", "<Leader>ss", "<Cmd>SessionSave<CR>", { noremap = true, silent = false })
 			vim.api.nvim_set_keymap("", "<Leader>sd", "<Cmd>SessionDelete<CR>", { noremap = true, silent = false })
