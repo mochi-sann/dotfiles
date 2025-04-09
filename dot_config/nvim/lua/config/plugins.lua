@@ -587,7 +587,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			"GrugFarReplaceAllInFile",
 			"GrugFarReplaceInFile",
 		},
-    lazy=true,
+		lazy = true,
 		config = function()
 			require("grug-far").setup({
 
