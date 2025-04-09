@@ -1,8 +1,23 @@
 return {
 	"yetone/avante.nvim",
-	event = "VeryLazy",
+	-- event = "VeryLazy",
 	lazy = true,
 	version = false, -- 最新の変更を常に取得する場合はこれを設定
+	cmd = {
+		"AvanteDebug",
+		"AvanteToggle",
+		"AvanteFocus",
+		"AvanteRefresh",
+		"AvanteAsk",
+		"AvanteEdit",
+	},
+	keys = {
+		{ "<leader>aa", "<cmd>AvanteAsk<cr>", desc = "Ask" },
+		{ "<leader>ae", "<cmd>AvanteEdit<cr>", desc = "Edit" },
+		{ "<leader>ar", "<cmd>AvanteRefresh<cr>", desc = "Refresh" },
+		{ "<leader>af", "<cmd>AvanteFocus<cr>", desc = "Focus" },
+		{ "<leader>at", "<cmd>AvanteToggle<cr>", desc = "Toggle" },
+	},
 
 	opts = function()
 		return {
@@ -143,7 +158,7 @@ return {
 		"stevearc/dressing.nvim",
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
-		--- 以下の依存関係はオプションです
+		-- 以下の依存関係はオプションです
 		"nvim-tree/nvim-web-devicons", -- または echasnovski/mini.icons
 		"takeshid/avante-status.nvim",
 		"zbirenbaum/copilot.lua", -- providers='copilot'の場合

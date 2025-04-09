@@ -45,14 +45,9 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"smoka7/hop.nvim",
-		-- version = "*",
-		-- event = "VeryLazy",
 		config = function()
 			require("plugconfig/hop")
 		end,
-		-- opts = {
-		-- 	keys = "etovxqpdygfblzhckisuran",
-		-- },
 	},
 	--{
 	--	"folke/flash.nvim",
@@ -115,11 +110,10 @@ return require("lazy").setup({ -- Packer can manage itself
 	--	},
 
 	-- "rebelot/kanagawa.nvim")
-	{ "kyazdani42/nvim-web-devicons" },
+	{ "kyazdani42/nvim-web-devicons", lazy = true },
 
 	{
 		"alvarosevilla95/luatab.nvim",
-		dependencies = "kyazdani42/nvim-web-devicons",
 		event = "VeryLazy",
 		config = function()
 			require("luatab").setup({})
@@ -507,9 +501,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"kyazdani42/nvim-tree.lua",
-		dependencies = {
-			{ "kyazdani42/nvim-web-devicons" }, -- optional, for file icons
-		},
 		config = function()
 			require("plugconfig/nvim-tree")
 		end,

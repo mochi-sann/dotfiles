@@ -1,7 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
-		"kyazdani42/nvim-web-devicons",
+		-- "kyazdani42/nvim-web-devicons",
 		-- "takeshid/avante-status.nvim",
 		-- { "justinhj/battery.nvim", lazy = false },
 		-- "nvim-lua/plenary.nvim",
