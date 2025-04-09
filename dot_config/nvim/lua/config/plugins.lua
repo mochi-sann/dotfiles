@@ -612,7 +612,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 	{ "sindrets/diffview.nvim", event = "VeryLazy" },
-	{ "jay-babu/mason-nvim-dap.nvim", dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" } },
+	{ "jay-babu/mason-nvim-dap.nvim", dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" }, lazy=true  },
 	{
 		"rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
