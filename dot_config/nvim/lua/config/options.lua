@@ -56,8 +56,8 @@ vim.o.smartcase = true -- 大文字を含んでいる時は完全一致で検索
 vim.o.backup = false -- バックアップを作らない
 vim.o.cmdheight = 0 -- コマンドラインの高さを0にする
 vim.o.guifont = "JetBrainsMono Nerd Font:h14"
-vim.o.pumblend = 7 -- ポップアップメニューをはん透明にする
-vim.o.winblend = 7 -- windowメニューをはん透明にする
+vim.o.pumblend = 0 -- ポップアップメニューをはん透明にする
+vim.o.winblend = 0 -- windowメニューをはん透明にする
 vim.g.mapleader = " " -- リーダーキーをスペースにする
 vim.g.maplocalleader = "," -- localleader を','にする
 
