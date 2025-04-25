@@ -433,7 +433,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	},
 	{ "slim-template/vim-slim", ft = { "slim" } },
-	{ "wakatime/vim-wakatime", event = "VeryLazy" },
 	{
 		"andweeb/presence.nvim",
 		event = "InsertEnter",
