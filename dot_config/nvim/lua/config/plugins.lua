@@ -354,7 +354,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"folke/todo-comments.nvim",
-		dependencies = "nvim-lua/plenary.nvim",
 		event = "VeryLazy",
 		config = function()
 			require("plugconfig/todo-comments")
@@ -425,8 +424,6 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{
 		"saecki/crates.nvim",
-		tag = "stable",
-		dependencies = { "nvim-lua/plenary.nvim" },
 		ft = { "rust", "toml" },
 		config = function()
 			require("crates").setup()
