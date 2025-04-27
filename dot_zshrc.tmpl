@@ -444,6 +444,7 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export PATH=$GEM_HOME/bin:$PATH
 alias accpy='acc s -- main.py --language 5055'
+eval "$(direnv hook zsh)"
 
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
@@ -469,7 +470,8 @@ function open() {
 #C:\Program Files\PowerShell\7\pwsh.exe
 # export BROWSER="pwsh.exe /c start $(wslpath -w $(realpath $1))"
 export LD_LIBRARY_PATH="/usr/lib/wsl/lib:/usr/local/cuda/lib64:/usr/lib/wsl/lib:"
-export BROWSER="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"
+# export BROWSER="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"
+export BROWSER='/mnt/c/Windows/explorer.exe'
 alias open="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"
 export PATH="$PATH:/mnt/c/Users/mochi/AppData/Local/Microsoft/WindowsApps"
 export PATH="$PATH:/mnt/c/Users/mochi/AppData/Local/Programs/Microsoft VS Code/bin"
@@ -483,4 +485,3 @@ export PATH="$PATH:/mnt/c/Windows/System32/WindowsPowerShell/v1.0"
 
 {{   end }}
 {{ end }}
-eval "$(direnv hook zsh)"
