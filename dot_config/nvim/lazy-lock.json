@@ -1,5 +1,6 @@
 {
-  "CopilotChat.nvim": { "branch": "canary", "commit": "451d365928a994cda3505a84905303f790e28df8" },
+  "CopilotChat.nvim": { "branch": "main", "commit": "75653259442a8eb895abfc70d7064e07aeb7134c" },
+  "arrow.nvim": { "branch": "master", "commit": "6e0f726f55f99332dd726a53effd6813786b6d49" },
   "auto-session": { "branch": "main", "commit": "00334ee24b9a05001ad50221c8daffbeedaa0842" },
   "avante-status.nvim": { "branch": "main", "commit": "35b4cebedae0b1de6a33e9562af20bb0150f2230" },
   "avante.nvim": { "branch": "main", "commit": "113913355a6b9c0fbd62cf52d0cf3e5671d0e34a" },
@@ -95,6 +96,7 @@
   "tokyonight.nvim": { "branch": "main", "commit": "057ef5d260c1931f1dffd0f052c685dcd14100a3" },
   "vim-budoux": { "branch": "main", "commit": "e038d54398a7e620392c0719feba863f8f5afae6" },
   "vim-choosewin": { "branch": "master", "commit": "839da609d9b811370216bdd9d4512ec2d0ac8644" },
+  "vim-coffee-script": { "branch": "master", "commit": "28421258a8dde5a50deafbfc19cd9873cacfaa79" },
   "vim-dadbod": { "branch": "master", "commit": "fa31d0ffeebaa59cf97a81e7f92194cced54a13f" },
   "vim-dadbod-ui": { "branch": "master", "commit": "460432301a5cb280ea265ddfa15c9f3dcd1d26b7" },
   "vim-devicons": { "branch": "master", "commit": "71f239af28b7214eebb60d4ea5bd040291fb7e33" },
