@@ -5,7 +5,7 @@ require("toggleterm").setup({
 	size = 100,
 	direction = "float",
 	hide_numbers = false,
-	float_opts = { winblend = 8, border = "curved" },
+	float_opts = { winblend = 0, border = "curved" },
 })
 -- vim.api.nvim_set_keymap("n", "<A-t>", "ToggleTerm size=40 direction=horizontal", { noremap = true, silent = true })
 -- vim.cmd([[

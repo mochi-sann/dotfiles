@@ -1,31 +1,7 @@
-source ~/.profile
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/bash_profile.pre.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.pre.bash"
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/mochi/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/mochi/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/mochi/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/mochi/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+
+. /home/mochi/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
 
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.post.bash"
-. "$HOME/.cargo/env"
-
-# >>> JVM installed by coursier >>>
-export JAVA_HOME="/home/mochi/.cache/coursier/arc/https/github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.23%252B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.23_9.tar.gz/jdk-11.0.23+9"
-export PATH="$PATH:/home/mochi/.cache/coursier/arc/https/github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.23%252B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.23_9.tar.gz/jdk-11.0.23+9/bin"
-# <<< JVM installed by coursier <<<
-
-# >>> coursier install directory >>>
-export PATH="$PATH:/home/mochi/.local/share/coursier/bin"
-# <<< coursier install directory <<<
+. "$HOME/.atuin/bin/env"

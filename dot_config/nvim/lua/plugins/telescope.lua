@@ -78,7 +78,7 @@ return {
 					preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 				},
 
-				winblend = 8,
+				winblend = 0,
 				prompt_title = "",
 				results_title = "",
 				preview_title = "",
