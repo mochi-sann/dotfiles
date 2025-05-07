@@ -3,5 +3,3 @@
 
 . $HOME/.asdf/completions/asdf.bash
 
-
-. "$HOME/.atuin/bin/env"
