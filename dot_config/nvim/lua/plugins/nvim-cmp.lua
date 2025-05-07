@@ -41,11 +41,12 @@ return {
 		{ "neovim/nvim-lspconfig" },
 		{
 			"williamboman/mason-lspconfig.nvim",
+			version = "v1.*",
 			config = function()
 				require("plugconfig/mason-lsp")
 			end,
 		},
-		{ "williamboman/mason.nvim" },
+		{ "williamboman/mason.nvim", version = "v1.*" },
 		{
 			"hrsh7th/vim-vsnip",
 			config = function()
