@@ -632,7 +632,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		},
 	},
 	{
-		"kchmck/vim-coffee-script"
+		"kchmck/vim-coffee-script",
 	},
 	{
 		-- Make sure to set this up properly if you have lazy=true
