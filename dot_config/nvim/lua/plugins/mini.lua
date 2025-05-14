@@ -29,6 +29,7 @@ return {
 				["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\].", register = { cr = false } },
 			},
 		})
+		require("mini.move").setup()
 		-- require('mini.sessions').setup({
 		--
 		-- })
