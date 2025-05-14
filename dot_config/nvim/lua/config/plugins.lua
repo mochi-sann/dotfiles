@@ -579,12 +579,13 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	}, -- or github/copilot.vim
 	{
-		"ruifm/gitlinker.nvim",
-		event = "VeryLazy",
-		dependencies = "nvim-lua/plenary.nvim",
-		config = function()
-			require("gitlinker").setup()
-		end,
+		"linrongbin16/gitlinker.nvim",
+		cmd = "GitLink",
+		opts = {},
+		keys = {
+			{ "<leader>gy", "<cmd>GitLink<cr>", mode = { "n", "v" }, desc = "Yank git link" },
+			{ "<leader>gY", "<cmd>GitLink!<cr>", mode = { "n", "v" }, desc = "Open git link" },
+		},
 	},
 	{
 		-- 色々なファイルを見て置換するやつ
