@@ -2,6 +2,7 @@ return {
 	"echasnovski/mini.nvim",
 	branch = "stable",
 	event = "VeryLazy",
+	lazy = true,
 	config = function()
 		require("mini.pairs").setup({
 			-- In which modes mappings from this `config` should be created
@@ -55,10 +56,9 @@ return {
 			},
 		})
 		require("mini.comment").setup({
-			-- Module mappings. Use `''` (empty string) to disable one.
-			hooks = {
-				pre = function()
-					require("ts_context_commentstring.internal").update_commentstring()
+			options = {
+				custom_commentstring = function()
+					return require("ts_context_commentstring").calculate_commentstring() or vim.bo.commentstring
 				end,
 			},
 
