@@ -20,7 +20,14 @@ return {
 		telescope.load_extension("import")
 		local actions = require("telescope.actions")
 		local vim = vim
-
+		local function filename_sorter()
+			local sorter = require("telescope.config").values.generic_sorter()
+			local score = sorter.scoring_function
+			sorter.scoring_function = function(self, prompt, _, entry)
+				return score(self, prompt, entry.filename, entry)
+			end
+			return sorter
+		end
 		local function builtin(name)
 			return function(opt)
 				return function()
@@ -47,7 +54,22 @@ return {
 				-- file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
 			})
 		)
-		vim.keymap.set("n", "<Leader>pgr", builtin("live_grep")({}), { desc = "telescope live_grep" })
+		vim.keymap.set(
+			"n",
+			"<Leader>pgr",
+			builtin("live_grep")({
+				attach_mappings = function(prompt_bufnr, map)
+					map("i", "<C-G><C-G>", function()
+						require("telescope.actions").send_to_qflist(prompt_bufnr)
+						require("telescope.builtin").quickfix({
+							sorter = filename_sorter(),
+						})
+					end)
+					return true
+				end,
+			}),
+			{ desc = "telescope live_grep" }
+		)
 		vim.keymap.set("n", "<Leader>pd", builtin("diagnostics")({}), { desc = "telescope diagnostics" })
 		vim.keymap.set("n", "<Leader>ph", builtin("help_tags")({}), { desc = "telescope help tags" })
 		vim.keymap.set("n", "<Leader>pb", builtin("buffers")({}), { desc = "telescope buffers" })
