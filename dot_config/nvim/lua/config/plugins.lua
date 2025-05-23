@@ -579,7 +579,8 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 	}, -- or github/copilot.vim
 	{
-		"linrongbin16/gitlinker.nvim",
+		"mochi-sann/gitlinker.nvim",
+    branch="switch-to-vim-clipboard"
 		cmd = "GitLink",
 		opts = {},
 		keys = {
