@@ -142,10 +142,21 @@ return require("lazy").setup({ -- Packer can manage itself
 		config = function()
 			require("plugconfig/toggleterm")
 		end,
+		lazy = true,
+	},
+	{
+		"ryanmsnyder/toggleterm-manager.nvim",
+		dependencies = {
+			-- "akinsho/nvim-toggleterm.lua",
+			-- "nvim-telescope/telescope.nvim",
+			-- "nvim-lua/plenary.nvim", -- only needed because it's a dependency of telescope
+		},
+		config = true,
 	},
 	{
 		"chomosuke/term-edit.nvim",
 		ft = "toggleterm",
+		event = "TermOpen",
 		version = "1.*",
 		config = function()
 			require("term-edit").setup({
