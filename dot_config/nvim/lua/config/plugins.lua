@@ -164,13 +164,15 @@ return require("lazy").setup({ -- Packer can manage itself
 	{
 		"willothy/flatten.nvim",
 		-- or pass configuration with
-		-- opts = {  }
+		opts = {
+			window = {
+				open = "tab",
+			},
+		},
 		-- Ensure that it runs first to minimize delay when opening file from terminal
 		lazy = false,
 		priority = 1001,
-		config = function()
-			require("flatten").setup({})
-		end,
+		config = true,
 	},
 
 	{
