@@ -668,4 +668,14 @@ return require("lazy").setup({ -- Packer can manage itself
 			{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
 		},
 	},
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+
+			-- Only one of these is needed.
+			"ibhagwan/fzf-lua", -- optional
+			-- "echasnovski/mini.pick",      -- optional
+			"folke/snacks.nvim", -- optional
+		},
+	},
 })
