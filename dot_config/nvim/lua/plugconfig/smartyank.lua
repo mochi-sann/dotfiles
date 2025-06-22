@@ -4,7 +4,7 @@ require("smartyank").setup({
 		higroup = "IncSearch", -- highlight group of yanked text
 		timeout = 500, -- timeout for clearing the highlight
 	},
-	-- clipboard = { enabled = true },
+	clipboard = { enabled = true },
 	tmux = {
 		enabled = true,
 		-- remove `-w` to disable copy to host client's clipboard
@@ -14,7 +14,7 @@ require("smartyank").setup({
 		enabled = true,
 		-- escseq = 'tmux',     -- use tmux escape sequence, only enable if
 		-- you're using tmux and have issues (see #4)
-		ssh_only = true, -- false to OSC52 yank also in local sessions
+		ssh_only = false, -- false to OSC52 yank also in local sessions
 		silent = false, -- true to disable the "n chars copied" echo
 		echo_hl = "Directory", -- highlight group of the OSC52 echo message
 	},

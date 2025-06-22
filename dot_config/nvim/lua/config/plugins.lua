@@ -368,12 +368,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/smartyank")
 		end,
 	},
-	{ "t9md/vim-choosewin", event = "VeryLazy" }, -- {
-	-- 	"jose-elias-alvarez/null-ls.nvim",
-	-- 	onfig = function()
-	-- 		require("plugconfig/null_ls")
-	-- 	end,
-	-- },
 	{
 		"nvimtools/none-ls.nvim",
 		event = "VeryLazy",
