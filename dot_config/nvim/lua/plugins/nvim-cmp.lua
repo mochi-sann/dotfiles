@@ -1,6 +1,6 @@
 return {
 	"hrsh7th/nvim-cmp",
-	event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
+	event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter", "BufReadPre" },
 	dependencies = {
 		{ "hrsh7th/cmp-buffer" },
 		{ "hrsh7th/cmp-nvim-lsp" },
@@ -330,9 +330,9 @@ return {
 		local mason_lspconfig = require("mason-lspconfig")
 
 		local opts = { noremap = true, silent = true }
-		vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
-		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-		vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+		-- vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
+		-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+		-- vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 		vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 
 		local on_attach = function(client, bufnr)
