@@ -734,6 +734,13 @@ return require("lazy").setup({ -- Packer can manage itself
 		},
 	},
 	{
+		"nvimdev/lspsaga.nvim",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+	},
+
+	{
 		"NeogitOrg/neogit",
 		dependencies = {
 
