@@ -733,12 +733,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
 		},
 	},
-	{
-		"nvimdev/lspsaga.nvim",
-		config = function()
-			require("lspsaga").setup({})
-		end,
-	},
 
 	{
 		"NeogitOrg/neogit",
