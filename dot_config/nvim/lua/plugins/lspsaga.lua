@@ -15,6 +15,10 @@ return {
 					exec = "<CR>",
 				},
 			},
+
+			lightbulb = {
+				enable = false,
+			},
 		})
 		vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 		vim.keymap.set("n", "<space>gf", "<cmd>Lspsaga lsp_finder<CR>")
