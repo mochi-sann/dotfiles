@@ -16,6 +16,7 @@ return require("lazy").setup({ -- Packer can manage itself
 
 	{ import = "plugins" },
 	{ "nvim-lua/plenary.nvim", lazy = true },
+	-- {			"antoinemadec/FixCursorHold.nvim"},
 	{
 		"lambdalisue/vim-suda",
 		lazy = true,

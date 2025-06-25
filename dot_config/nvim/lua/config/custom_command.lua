@@ -31,3 +31,15 @@ vim.api.nvim_create_autocmd("BufLeave", {
 		end
 	end,
 })
+vim.api.nvim_create_user_command("ProfileStart", function()
+	vim.cmd("profile start profile.log")
+	vim.cmd("profile func *")
+	vim.cmd("profile file *")
+	print("Profiling started")
+end, {})
+
+vim.api.nvim_create_user_command("ProfileStop", function()
+	vim.cmd("profile pause")
+	vim.cmd("profile dump")
+	print("Profiling stopped, check profile.log")
+end, {})

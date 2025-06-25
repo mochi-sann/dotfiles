@@ -4,7 +4,6 @@ return {
 		event = "VeryLazy",
 		dependencies = {
 			"nvim-neotest/nvim-nio",
-			"antoinemadec/FixCursorHold.nvim",
 			"nvim-neotest/neotest-python",
 			"marilari88/neotest-vitest",
 			"nvim-neotest/neotest-vim-test",

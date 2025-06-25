@@ -17,7 +17,27 @@ return {
 			},
 
 			lightbulb = {
-				enable = false,
+				enable = true,
+				sign = true,
+				debounce = 500,
+				sign_priority = 400,
+				virtual_text = true,
+				enable_in_insert = true,
+				ignore = {
+					clients = {},
+					ft = {},
+				},
+			},
+
+			symbol_in_winbar = {
+				enable = true,
+				separator = " › ",
+				hide_keyword = false,
+				ignore_patterns = nil,
+				show_file = true,
+				folder_level = 1,
+				color_mode = true,
+				delay = 1000,
 			},
 		})
 		vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
