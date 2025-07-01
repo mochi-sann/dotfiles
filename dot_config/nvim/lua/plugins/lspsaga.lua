@@ -41,7 +41,7 @@ return {
 			},
 		})
 		vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
-		vim.keymap.set("n", "<space>gf", "<cmd>Lspsaga lsp_finder<CR>")
+		vim.keymap.set("n", "<space>gf", "<cmd>Lspsaga finder<CR>")
 		vim.keymap.set("n", "<space>gd", "<cmd>Lspsaga peek_definition<CR>")
 		vim.keymap.set("n", "<space>gca", "<cmd>Lspsaga code_action<CR>")
 		vim.keymap.set("n", "<space>grn", "<cmd>Lspsaga rename<CR>")
