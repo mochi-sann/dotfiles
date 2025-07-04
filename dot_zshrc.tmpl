@@ -342,85 +342,6 @@ alias gg="git log --graph --color=always --pretty=format:\" %C(dim white)%ad │
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-
-
-
-# #-------------------------------------------------------------------------------
-# #           Automatic activate/deactivate python virtual environment
-# #-------------------------------------------------------------------------------
-# function cd() {
-#     # Call the built-in cd command
-#     builtin cd "$@" || return
-#
-#     # Deactivate virtual environment
-#     if [[ -n "$VIRTUAL_ENV" && $PWD != ${VIRTUAL_ENV%/*} && $PWD != ${VIRTUAL_ENV%/*}/* ]]
-#     then
-#         deactivate
-#     fi
-#
-#     # Recursively find virtual env in parent directories
-#     find_venv_in_parents $PWD
-# }
-# #-------------------------------------------------------------------------------
-# function find_venv_in_parents() {
-#     local dir=$1
-#     local venv_path="$dir/.venv"
-#     local pyvenv_cfg="$venv_path/pyvenv.cfg"
-#
-#     # Check for pyvenv.cfg in the .venv directory
-#     if [[ -f $pyvenv_cfg ]]; then
-#         source "$venv_path/bin/activate"
-#
-#     elif [[ -d $venv_path ]]; then
-#         # Enumerate directories, including dotfiles
-#         setopt LOCAL_OPTIONS NULL_GLOB
-#         local dirs=($(ls -d "$venv_path/"*))
-#         local num_dirs=${#dirs[@]}
-#
-#         # If there's no directory, ignore it and recursively check the parent
-#         if (( num_dirs == 0 )); then
-#             if [[ $dir != '/' ]]; then
-#                 find_venv_in_parents "$(dirname "$dir")"
-#             fi
-#
-#         # If there's only one directory, activate it
-#         elif (( num_dirs == 1 )); then
-#             source "${dirs[1]}/bin/activate"
-#
-#         # If there are multiple directories, use peco to select one and activate it
-#         elif (( num_dirs > 1 )); then
-#             local selected_dir=$(printf '%s\n' "${dirs[@]}" | peco)
-#             if [[ $selected_dir == $venv_path/* ]]; then
-#                 source "$selected_dir/bin/activate"
-#             fi
-#         fi
-#     else
-#         # If we are not in the root directory, recursively check the parent
-#         if [[ $dir != '/' ]]; then
-#             find_venv_in_parents "$(dirname "$dir")"
-#         fi
-#     fi
-# }
-#-------------------------------------------------------------------------------
-
-
-
-# export PYENV_ROOT="$HOME/.pyenv"
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-#
-# # Restart your shell for the changes to take effect.
-#
-# # Load pyenv-virtualenv automatically by adding
-# # the following to ~/.bashrc:
-#
-# eval "$(pyenv virtualenv-init -)"
-# export PATH="$PYENV_ROOT/versions/anaconda3-2023.03/bin/:$PATH
-
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# export PATH="$(rbenv root)/shims:$PATH"
-# eval "$(rbenv init - zsh)"
 # rust
 . "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdksh
 
@@ -487,3 +408,4 @@ alias cursor="/mnt/c/Users/mochi/AppData/Local/Programs/cursor/resources/app/bin
 
 {{   end }}
 {{ end }}
+eval "$(~/.local/bin/mise activate zsh)"
