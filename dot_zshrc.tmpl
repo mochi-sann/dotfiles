@@ -439,8 +439,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Wasmer
 export WASMER_DIR="/home/mochi/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
-# asdf
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export PATH=$GEM_HOME/bin:$PATH

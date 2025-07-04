@@ -18,3 +18,4 @@ export PATH="/usr/local/cuda/bin:$PATH"
 
 export LD_LIBRARY_PATH="/usr/lib/wsl/lib:/usr/local/cuda/lib64:/usr/lib/wsl/lib:"
 
+eval "$(mise activate bash)"
