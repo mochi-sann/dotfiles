@@ -2,7 +2,7 @@ local Terminal = require("toggleterm.terminal").Terminal
 require("toggleterm").setup({
 	open_mapping = [[<c-t>]],
 
-	size = 100,
+	-- size = 100,
 	direction = "float",
 	hide_numbers = false,
 	float_opts = { winblend = 0, border = "curved" },
