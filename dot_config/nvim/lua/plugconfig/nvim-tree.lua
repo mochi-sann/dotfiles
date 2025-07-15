@@ -101,7 +101,7 @@ local config = {
 	-- open_on_setup = false,
 	hijack_cursor = true,
 	view = {
-		width = 45,
+		width = 35,
 		side = "right",
 		-- float = {
 		--
