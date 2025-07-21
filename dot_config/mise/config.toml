@@ -1,0 +1,15 @@
+[tools]
+chezmoi = "latest"
+delta = "latest"
+deno = "latest"
+fzf = "latest"
+ghq = "latest"
+lazygit = "latest"
+neovim = "latest"
+node = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
+ruby = "latest"
+rust = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
