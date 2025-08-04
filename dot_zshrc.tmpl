@@ -1,6 +1,7 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+eval "$(~/.local/bin/mise activate zsh)"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -408,4 +409,3 @@ alias cursor="/mnt/c/Users/mochi/AppData/Local/Programs/cursor/resources/app/bin
 
 {{   end }}
 {{ end }}
-eval "$(~/.local/bin/mise activate zsh)"
