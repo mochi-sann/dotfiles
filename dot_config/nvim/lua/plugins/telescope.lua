@@ -9,6 +9,12 @@ return {
 		},
 		{ "piersolenski/telescope-import.nvim" },
 		{ "nvim-lua/plenary.nvim" },
+		{
+			"nvim-telescope/telescope-live-grep-args.nvim",
+			-- This will not install any breaking changes.
+			-- For major updates, this must be adjusted manually.
+			version = "^1.0.0",
+		},
 
 		-- その他の拡張プラグイン……
 	},
@@ -18,6 +24,7 @@ return {
 		local telescope = require("telescope")
 		telescope.load_extension("frecency")
 		telescope.load_extension("import")
+		telescope.load_extension("live_grep_args")
 		local actions = require("telescope.actions")
 		local vim = vim
 		local function filename_sorter()
