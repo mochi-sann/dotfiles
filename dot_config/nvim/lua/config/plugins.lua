@@ -25,12 +25,12 @@ return require("lazy").setup({ -- Packer can manage itself
 			"SudaRead",
 		},
 	},
-	{
-		"petertriho/nvim-scrollbar",
-		config = function()
-			require("plugconfig/nvim-scrollbar")
-		end,
-	},
+	-- {
+	-- 	"petertriho/nvim-scrollbar",
+	-- 	config = function()
+	-- 		require("plugconfig/nvim-scrollbar")
+	-- 	end,
+	-- },
 
 	-- { "junegunn/fzf", build = ":call fzf#install()", event = "VeryLazy" },
 	{ "nvim-lua/popup.nvim", lazy = true },
@@ -86,7 +86,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/vim_expand_region")
 		end,
 	},
-	{ "segeljakt/vim-silicon", event = "VeryLazy" }, -- colorschem
+	-- { "segeljakt/vim-silicon", event = "VeryLazy" }, -- colorschem
 
 	{
 		"folke/tokyonight.nvim",
@@ -195,7 +195,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("plugconfig/lazygit")
 		end,
 	},
-	{ "rhysd/git-messenger.vim" },
+	-- { "rhysd/git-messenger.vim" },
 	{
 		"akinsho/git-conflict.nvim",
 		event = "VeryLazy",
@@ -252,32 +252,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			"vue",
 			"svelte",
 		},
-	}, -- {
-	--   "steelsojka/pears.nvim",
-	--   event = "VeryLazy",
-	--   config = function()
-	--     require("plugconfig/pears")
-	--   end,
-	-- },
-	{
-		"https://codeberg.org/esensar/nvim-dev-container",
-		lazy = true,
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		cmd = {
-			-- NOTE: The Subs command name can be customized via the option "substitude_command_name"
-			"DevcontainerStart",
-			"DevcontainerAttach",
-			"DevcontainerExec",
-			"DevcontainerStop",
-			"DevcontainerStopAll",
-			"DevcontainerRemoveAll",
-			"DevcontainerLogs",
-			"DevcontainerEditNearestConfig",
-		},
-
-		config = function()
-			require("devcontainer").setup({})
-		end,
 	},
 
 	{
@@ -495,7 +469,7 @@ return require("lazy").setup({ -- Packer can manage itself
 			require("crates").setup()
 		end,
 	},
-	{ "slim-template/vim-slim", ft = { "slim" } },
+	-- { "slim-template/vim-slim", ft = { "slim" } },
 	{
 		"andweeb/presence.nvim",
 		event = "InsertEnter",
@@ -518,10 +492,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			},
 		},
 	},
-	{
-		"almo7aya/openingh.nvim",
-	},
-
 	{
 		"folke/zen-mode.nvim",
 		-- event = "VeryLazy",
@@ -556,14 +526,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			})
 			vim.api.nvim_set_keymap("", "<Leader>z", "<Cmd>ZenMode<CR>", { noremap = true, silent = true })
 		end,
-	},
-	{
-		"tpope/vim-dadbod",
-		event = "UIEnter",
-		config = function()
-			require("plugconfig/vim-dadbod")
-		end,
-		dependencies = { "kristijanhusak/vim-dadbod-ui" },
 	},
 	{
 		"rmagatti/auto-session",
