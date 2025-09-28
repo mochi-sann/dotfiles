@@ -375,7 +375,7 @@ export  PATH=$(echo $PATH | sed s/:/\\n/g | grep -v '/mnt/c' | grep -v 'mnt/d' |
 export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0
 # WSL?
 
-
+alias codex='unset OPENAI_BASE_URL OPENAI_API_KEY && codex' 
 function open() {
     if [ $# != 1 ]; then
         explorer.exe .
