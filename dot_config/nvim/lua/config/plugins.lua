@@ -187,14 +187,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		config = true,
 	},
 
-	{
-		"kdheepak/lazygit.nvim",
-		cmd = "LazyGit",
-		keys = { "<Space>lg" },
-		config = function()
-			require("plugconfig/lazygit")
-		end,
-	},
 	-- { "rhysd/git-messenger.vim" },
 	{
 		"akinsho/git-conflict.nvim",
