@@ -409,3 +409,16 @@ alias cursor="/mnt/c/Users/mochi/AppData/Local/Programs/cursor/resources/app/bin
 
 {{   end }}
 {{ end }}
+# ポート番号を指定してインタラクティブにkillする関数
+killf() {
+  # $1（1番目の引数）が空かどうかをチェック
+  if [ -z "$1" ]; then
+    echo "エラー: ポート番号を指定してください。"
+    echo "使い方: killf <ポート番号>"
+    return 1
+  fi
+
+  # lsofでポートを検索し、fzfで選択、xargsでkillする
+  # (tail/awk/sortでPIDとCOMMANDを整形)
+  lsof -i:$1 | tail -n +2 | awk '{print $2, $1}' | sort -u | fzf --multi | awk '{print $1}' | xargs kill -9
+}
