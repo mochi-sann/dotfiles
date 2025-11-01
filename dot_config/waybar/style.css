@@ -1,0 +1,35 @@
+/*
+https://docs.gtk.org/gtk3/css-properties.html
+*/
+@define-color k0 #222; /*背景*/
+@define-color k2 alpha(@k0,.5);
+@define-color k3 alpha(@k0,.2);
+
+@define-color w0 #fff; /*文字色*/
+@define-color w3 alpha(@w0,.2);
+@define-color a alpha(#6ca,.5); /*アクセント*/
+@define-color u alpha(#f44,.5); /*警告*/
+
+*{
+	font-family:monospace,sans-serif;font-size:16px;color:@w0;transition:.2s;
+	margin:0;outline:none;border:none;padding:0;background:none;
+	box-shadow:none;text-shadow:none;-gtk-icon-shadow:none;
+}
+
+#waybar>box,tooltip,menu{margin:{{.gap}}px;margin-bottom:0;border:{{.border_width}}px solid;border-radius:{{add .border_radius .border_width}}px;background-color:@k2;border-color:@k3;}
+tooltip>*{margin:{{mul .border_width 2}}px;}menu{padding:{{.border_width}}px;}
+#waybar.battery-low>box{background-color:@u;}
+
+.module,button,menuitem,separator,#tray>*{border-radius:{{sub .border_radius 2}}px;}
+.module,menuitem{margin:2px;}radio{margin:8px;}
+menuitem{padding:2px;}separator{padding:1px;}
+button,#tray image{padding:0 8px;}.module>label,label.module{padding:0 4px;}
+:hover,separator,radio{background-color:@w3;}
+button.active,button.focused,radio:checked{background-color:@a;}
+#tray>.needs-attention{background-color:@u;}
+
+#battery.high.charging,#battery.high.full{background-color:@a;}
+.muted,.paused,.stopped{opacity:.5;}
+#taskbar,#tray{background-color:@w3;}
+#workspaces{background-color:@k3;}
+
