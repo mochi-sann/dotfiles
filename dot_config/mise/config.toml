@@ -1,4 +1,5 @@
 [tools]
+"cargo:bat" = "latest"
 chezmoi = "latest"
 delta = "latest"
 deno = "latest"

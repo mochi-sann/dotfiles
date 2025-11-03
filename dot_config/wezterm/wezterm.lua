@@ -129,7 +129,7 @@ return {
 	-- window_background_opacity = 0.90,
 	window_decorations = "RESIZE",
 	-- font_sizeasdf = 14,
-	-- font = wezterm.font("UDEV Gothic 35NFLG"),
+	font = wezterm.font("UDEV Gothic 35NFLG"),
 	-- font = wezterm.font("Monocraft"),
 	-- font  = wezterm.font("PlemolJP35 Console"),
 
