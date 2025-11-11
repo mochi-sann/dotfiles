@@ -25,6 +25,7 @@ return {
 		telescope.load_extension("frecency")
 		telescope.load_extension("import")
 		telescope.load_extension("live_grep_args")
+		telescope.load_extension("nested_keys")
 		local actions = require("telescope.actions")
 		local vim = vim
 		local function filename_sorter()
@@ -95,6 +96,12 @@ return {
 		vim.keymap.set("n", "<Leader>pi", extensions("import", "import")({}), { desc = "telescope import" })
 		vim.keymap.set("n", "<Leader>pg", extensions("ghq", "list")({}), { desc = "telescope ghq list" })
 		vim.keymap.set("n", "<Leader>pz", extensions("z", "list")({}), { desc = "telescope z list" })
+		vim.keymap.set(
+			"n",
+			"<Leader>pK",
+			extensions("nested_keys", "nested_keys")({}),
+			{ desc = "telescope JSON/YAML keys" }
+		)
 
 		telescope.setup({
 			defaults = {
