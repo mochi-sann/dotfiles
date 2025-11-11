@@ -287,6 +287,7 @@ return {
 
 				{ name = "copilot", group_index = 2 },
 				{ name = "crates" },
+				{ name = "i18n" },
 
 				-- { name = 'luasnip' }, -- For luasnip users.
 				-- { name = 'ultisnips' }, -- For ultisnips users.
