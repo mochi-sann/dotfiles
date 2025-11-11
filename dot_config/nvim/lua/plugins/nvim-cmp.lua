@@ -10,7 +10,7 @@ return {
 		{ "hrsh7th/cmp-nvim-lua" },
 		{ "hrsh7th/cmp-emoji" },
 		{ "hrsh7th/cmp-nvim-lsp-document-symbol" },
-    {"yelog/i18n.nvim"},
+		{ "yelog/i18n.nvim" },
 		{
 			"hrsh7th/cmp-vsnip",
 			dependencies = { "vim-vsnip", "cmp-nvim-lsp-document-symbol" },
@@ -167,7 +167,7 @@ return {
 			}
 		end
 
-cmp.register_source("i18n", require("i18n.integration.cmp_source").new())
+		cmp.register_source("i18n", require("i18n.integration.cmp_source").new())
 		cmp.setup({
 			snippet = {
 
