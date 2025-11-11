@@ -12,7 +12,7 @@ return {
 			-- sources can be string or table { pattern = "...", prefix = "..." }
 			sources = {
 				"src/locales/{locales}.json",
-				-- { pattern = "src/locales/lang/{locales}/{module}.ts",            prefix = "{module}." },
+				{ pattern = "apps/front/src/locales/{locales}/{module}.ts", prefix = "{module}." },
 				-- { pattern = "src/views/{bu}/locales/lang/{locales}/{module}.ts", prefix = "{bu}.{module}." },
 			},
 		})
