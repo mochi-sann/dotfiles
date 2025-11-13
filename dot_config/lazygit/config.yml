@@ -15,6 +15,11 @@ update:
 reporting: "undetermined" # one of: 'on' | 'off' | 'undetermined'
 # determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
 promptToReturnFromSubprocess: true # display confirmation when subprocess terminates
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --true-color=auto --dark  --line-numbers --syntax-theme=Dracula --width=variable --navigate
+      #useConfig: true
 keybinding:
   universal:
     quit: "q"
