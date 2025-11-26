@@ -1,21 +1,21 @@
-return {
-	"yelog/i18n.nvim",
-	dependencies = {
-		"ibhagwan/fzf-lua",
-		"nvim-treesitter/nvim-treesitter",
-	},
-	config = function()
-		require("i18n").setup({
-			-- Locales to parse; first is the default locale
-			-- Use I18nNextLocale command to switch the default locale in real time
-			locales = { "ja", "en" },
-			-- sources can be string or table { pattern = "...", prefix = "..." }
-			sources = {
-				"src/locales/{locales}.json",
-				{ pattern = "src/locales/{locales}/{module}.json", prefix = "{module}." },
-				{ pattern = "apps/front/src/locales/{locales}/{module}.json", prefix = "{module}." },
-				{ pattern = "src/views/{bu}/locales/lang/{locales}/{module}.ts", prefix = "{bu}.{module}." },
-			},
-		})
-	end,
-}
+-- return {
+-- 	"yelog/i18n.nvim",
+-- 	dependencies = {
+-- 		"ibhagwan/fzf-lua",
+-- 		"nvim-treesitter/nvim-treesitter",
+-- 	},
+-- 	config = function()
+-- 		require("i18n").setup({
+-- 			-- Locales to parse; first is the default locale
+-- 			-- Use I18nNextLocale command to switch the default locale in real time
+-- 			locales = { "ja", "en" },
+-- 			-- sources can be string or table { pattern = "...", prefix = "..." }
+-- 			sources = {
+-- 				"src/locales/{locales}.json",
+-- 				{ pattern = "src/locales/{locales}/{module}.json", prefix = "{module}." },
+-- 				{ pattern = "apps/front/src/locales/{locales}/{module}.json", prefix = "{module}." },
+-- 				{ pattern = "src/views/{bu}/locales/lang/{locales}/{module}.ts", prefix = "{bu}.{module}." },
+-- 			},
+-- 		})
+-- 	end,
+-- }

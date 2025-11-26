@@ -25,7 +25,7 @@ return {
 		telescope.load_extension("frecency")
 		telescope.load_extension("import")
 		telescope.load_extension("live_grep_args")
-		telescope.load_extension("nested_keys")
+		-- telescope.load_extension("nested_keys")
 		local actions = require("telescope.actions")
 		local vim = vim
 		local function filename_sorter()
