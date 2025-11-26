@@ -366,6 +366,7 @@ export WASMER_DIR="/home/mochi/.wasmer"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export PATH=$GEM_HOME/bin:$PATH
 alias accpy='acc s -- main.py --language 5055'
+alias be='bundle exec'
 eval "$(direnv hook zsh)"
 
 {{ if eq .chezmoi.os "linux" }}
