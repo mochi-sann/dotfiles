@@ -39,15 +39,11 @@ return {
 				require("fidget").setup({})
 			end,
 		},
-		{ "neovim/nvim-lspconfig" },
+		{ "williamboman/mason.nvim" },
 		{
 			"williamboman/mason-lspconfig.nvim",
-			version = "v1.*",
-			config = function()
-				require("plugconfig/mason-lsp")
-			end,
 		},
-		{ "williamboman/mason.nvim", version = "v1.*" },
+		{ "neovim/nvim-lspconfig" },
 		{
 			"hrsh7th/vim-vsnip",
 			config = function()
@@ -81,9 +77,9 @@ return {
 		lsp_inlinehint.setup()
 		local navic = require("nvim-navic")
 
-		require("lspconfig").clangd.setup({
-			on_attach = function(client, bufnr) end,
-		})
+		-- vim.lsp.clangd.setup({
+		-- 	on_attach = function(client, bufnr) end,
+		-- })
 
 		vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -329,9 +325,6 @@ return {
 		-- 	},
 		-- })
 
-		local lspconfig = require("lspconfig")
-		local mason_lspconfig = require("mason-lspconfig")
-
 		local opts = { noremap = true, silent = true }
 		-- vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
 		-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
@@ -380,9 +373,6 @@ return {
 			-- 	end,
 			-- }, opts)
 		end
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		-- capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 		require("mason").setup({
 			ui = {
@@ -394,40 +384,16 @@ return {
 			},
 		})
 
-		require("mason-nvim-dap").setup()
-		mason_lspconfig.setup()
-		-- for _, server in ipairs(lsp_installer.get_installed_servers()) do
-
-		mason_lspconfig.setup_handlers({
-			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-					on_attach = on_attach,
-				})
-			end,
-
-			["denols"] = function()
-				lspconfig["denols"].setup({
-					capabilities = capabilities,
-					on_attach = on_attach,
-					-- single_file_support = false,
-					root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc", "deps.ts", "import_map.json"),
-					init_options = {
-						lint = true,
-						unstable = true,
-						suggest = {
-							imports = {
-								hosts = {
-									["https://deno.land"] = true,
-									["https://cdn.nest.land"] = true,
-									["https://crux.land"] = true,
-								},
-							},
-						},
-					},
-					-- autostart = false
-				})
-			end,
+		local ensure_installed = { "ts_ls", "lua_ls", "clangd" }
+		require("mason-lspconfig").setup({
+			automatic_installation = true,
+			ensure_installed = ensure_installed, -- 自動でインストールしたいlanguage server
 		})
+
+		vim.lsp.config("*", {
+			capabilities = require("cmp_nvim_lsp").default_capabilities(),
+			on_attach = on_attach,
+		})
+		vim.lsp.enable(ensure_installed)
 	end,
 }
