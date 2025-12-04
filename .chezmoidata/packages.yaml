@@ -1,0 +1,9 @@
+packages:
+  darwin:
+    brews:
+    - 'git'
+    - 'atuin'
+    - 'sheldon'
+    casks:
+    - 'google-chrome'
+    - 'firefox'
