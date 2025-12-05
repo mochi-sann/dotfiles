@@ -7,7 +7,7 @@ return {
 		{
 			"nvim-telescope/telescope-frecency.nvim",
 		},
-		{ "piersolenski/telescope-import.nvim" },
+		{ "piersolenski/import.nvim" },
 		{ "nvim-lua/plenary.nvim" },
 		{
 			"nvim-telescope/telescope-live-grep-args.nvim",
