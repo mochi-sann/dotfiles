@@ -13,7 +13,7 @@ return {
 		-- { "yelog/i18n.nvim" },
 		{
 			"hrsh7th/cmp-vsnip",
-			dependencies = { "vim-vsnip", "cmp-nvim-lsp-document-symbol" },
+			-- dependencies = { "vim-vsnip", "cmp-nvim-lsp-document-symbol" },
 		},
 		{
 			"SmiteshP/nvim-navic",

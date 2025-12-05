@@ -39,10 +39,7 @@ return {
 		local function builtin(name)
 			return function(opt)
 				return function()
-					return require("telescope.builtin")[name](opt or {
-						hidden = true,
-						file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
-					})
+					return require("telescope.builtin")[name](opt or {})
 				end
 			end
 		end
@@ -69,6 +66,8 @@ return {
 			"n",
 			"<Leader>pgr",
 			builtin("live_grep")({
+				hidden = true,
+				file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
 				attach_mappings = function(prompt_bufnr, map)
 					map("i", "<C-G><C-G>", function()
 						require("telescope.actions").send_to_qflist(prompt_bufnr)
