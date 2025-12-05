@@ -265,7 +265,7 @@ return require("lazy").setup({ -- Packer can manage itself
 		config = function()
 			require("plugconfig/autotag")
 		end,
-		event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
+		-- event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
