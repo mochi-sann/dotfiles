@@ -39,7 +39,10 @@ return {
 		local function builtin(name)
 			return function(opt)
 				return function()
-					return require("telescope.builtin")[name](opt or {})
+					return require("telescope.builtin")[name](opt or {
+						hidden = true,
+						file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
+					})
 				end
 			end
 		end
@@ -58,8 +61,8 @@ return {
 			"n",
 			"<Leader>pp",
 			builtin("find_files")({
-				hidden = false,
-				-- file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
+				hidden = true,
+				file_ignore_patterns = { ".git/", "node_modules", ".next", "dist", "out" },
 			})
 		)
 		vim.keymap.set(
