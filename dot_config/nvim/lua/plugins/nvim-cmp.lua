@@ -1,4 +1,11 @@
 return {
+	{
+		"MysticalDevil/inlay-hints.nvim",
+		event = "LspAttach",
+		config = function()
+			require("inlay-hints").setup()
+		end,
+	},
 	"hrsh7th/nvim-cmp",
 	event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter", "BufReadPre" },
 	dependencies = {
@@ -314,6 +321,7 @@ return {
 
 		local on_attach = function(client, bufnr)
 			navic.attach(client, bufnr)
+			require("inlay-hints").on_attach(client, bufnr)
 			local function buf_set_keymap(...)
 				vim.api.nvim_buf_set_keymap(bufnr, ...)
 			end
