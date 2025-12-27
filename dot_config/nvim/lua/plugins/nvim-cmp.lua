@@ -76,7 +76,6 @@ return {
 		-- 	on_attach = function(client, bufnr) end,
 		-- })
 
-
 		local rt = require("rust-tools")
 
 		rt.setup({
