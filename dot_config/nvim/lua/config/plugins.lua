@@ -259,32 +259,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		end,
 		event = "VeryLazy",
 	},
-	--  treesitter settins
-	{
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("plugconfig/autotag")
-		end,
-		-- event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		dependencies = {
-			-- { "mrjones2014/nvim-ts-rainbow" },
-			{
-				"nvim-treesitter/nvim-treesitter-context",
-				config = function()
-					require("plugconfig/treesitter-context")
-				end,
-			},
-			{ "JoosepAlviste/nvim-ts-context-commentstring" },
-			{ "RRethy/nvim-treesitter-textsubjects" },
-		},
-		config = function()
-			require("plugconfig/treesitter")
-		end,
-	},
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "VeryLazy",
