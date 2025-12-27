@@ -406,6 +406,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"nvimtools/none-ls.nvim",
+		lazy = true,
 		event = "VeryLazy",
 		dependencies = {
 			"jayp0521/mason-null-ls.nvim",
@@ -646,14 +647,6 @@ return require("lazy").setup({ -- Packer can manage itself
 		lazy = true,
 	},
 	{
-		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
-		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-		config = function()
-			require("plugconfig/nvim-dap")
-		end,
-	},
-	{
 		"nabekou29/open-by-http.nvim",
 		cmd = { "OpenByHttpServerStart", "OpenByHttpServerStop" },
 		event = { "FocusLost" },
@@ -665,6 +658,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"kchmck/vim-coffee-script",
+		file_types = { "coffee" },
 	},
 	{
 		-- Make sure to set this up properly if you have lazy=true
