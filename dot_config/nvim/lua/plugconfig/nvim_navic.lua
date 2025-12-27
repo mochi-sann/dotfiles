@@ -1,10 +1,5 @@
 local navic = require("nvim-navic")
 
-vim.lsp.config().clangd.setup({
-	on_attach = function(client, bufnr)
-		navic.attach(client, bufnr)
-	end,
-})
 navic.setup({
 	icons = {
 		File = " ",
