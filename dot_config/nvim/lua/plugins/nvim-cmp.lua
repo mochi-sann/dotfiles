@@ -65,35 +65,17 @@ return {
 				require("copilot_cmp").setup()
 			end,
 		},
-		{
-			"lvimuser/lsp-inlayhints.nvim",
-		},
 		{ "simrat39/rust-tools.nvim" },
 	},
 	-- event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
 	config = function()
 		local lspkind = require("lspkind")
-		local lsp_inlinehint = require("lsp-inlayhints")
-		lsp_inlinehint.setup()
 		local navic = require("nvim-navic")
 
 		-- vim.lsp.clangd.setup({
 		-- 	on_attach = function(client, bufnr) end,
 		-- })
 
-		vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
-		vim.api.nvim_create_autocmd("LspAttach", {
-			group = "LspAttach_inlayhints",
-			callback = function(args)
-				if not (args.data and args.data.client_id) then
-					return
-				end
-
-				local bufnr = args.buf
-				local client = vim.lsp.get_client_by_id(args.data.client_id)
-				lsp_inlinehint.on_attach(client, bufnr)
-			end,
-		})
 
 		local rt = require("rust-tools")
 
