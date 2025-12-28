@@ -1,14 +1,14 @@
 return {
-	{
-		"MysticalDevil/inlay-hints.nvim",
-		event = "LspAttach",
-		config = function()
-			require("inlay-hints").setup()
-		end,
-	},
 	"hrsh7th/nvim-cmp",
 	event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter", "BufReadPre" },
 	dependencies = {
+		{
+			"MysticalDevil/inlay-hints.nvim",
+			event = "LspAttach",
+			config = function()
+				require("inlay-hints").setup()
+			end,
+		},
 		{ "hrsh7th/cmp-buffer" },
 		{ "hrsh7th/cmp-nvim-lsp" },
 		{ "hrsh7th/cmp-path" },
