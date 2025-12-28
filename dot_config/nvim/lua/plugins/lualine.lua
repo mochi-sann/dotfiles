@@ -6,7 +6,7 @@ return {
 		-- { "justinhj/battery.nvim", lazy = false },
 		-- "nvim-lua/plenary.nvim",
 	},
-	lazy = false,
+	event = "VeryLazy",
 	config = function()
 		-- local avante_chat_component = {
 		-- 	function()

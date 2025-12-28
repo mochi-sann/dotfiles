@@ -147,6 +147,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"ryanmsnyder/toggleterm-manager.nvim",
+		event = "VeryLazy",
 		dependencies = {
 			-- "akinsho/nvim-toggleterm.lua",
 			-- "nvim-telescope/telescope.nvim",
@@ -445,6 +446,7 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"folke/noice.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("plugconfig/noice")
 		end,
