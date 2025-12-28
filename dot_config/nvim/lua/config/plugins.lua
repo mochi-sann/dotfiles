@@ -373,7 +373,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 	{
 		"ibhagwan/smartyank.nvim",
-		event = "VeryLazy",
 		config = function()
 			require("plugconfig/smartyank")
 		end,
