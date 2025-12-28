@@ -40,6 +40,20 @@ vim.o.cursorline = true -- カーソルラインを表示
 vim.o.showtabline = 2 -- タブバーを常時表示
 vim.o.autoindent = true -- "改行時に自動でインデントする
 -- vim.o.clipboard = "unnamed" -- ヤンクしたときにクリップボードに自動コピー
+if vim.fn.has("wsl") == 1 then
+	vim.g.clipboard = {
+		name = "win32yank-wsl",
+		copy = {
+			["+"] = "win32yank.exe -i --crlf",
+			["*"] = "win32yank.exe -i --crlf",
+		},
+		paste = {
+			["+"] = "win32yank.exe -o --lf",
+			["*"] = "win32yank.exe -o --lf",
+		},
+		cache_enabled = 0,
+	}
+end
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 vim.o.swapfile = false -- swapfileをなくす
 vim.o.termguicolors = true -- ターミナルの色を設定
