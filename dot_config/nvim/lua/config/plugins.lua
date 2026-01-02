@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 return require("lazy").setup({ -- Packer can manage itself
 
-	{ import = "plugins" },
 	{ "nvim-lua/plenary.nvim", lazy = true },
 	-- {			"antoinemadec/FixCursorHold.nvim"},
 	{
@@ -649,6 +648,12 @@ return require("lazy").setup({ -- Packer can manage itself
 			{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
 		},
 	},
+	{
+		"Juksuu/worktrees.nvim",
+		config = function()
+			require("worktrees").setup()
+		end,
+	},
 
 	{
 		"rainbowhxch/accelerated-jk.nvim",
@@ -666,5 +671,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			vim.api.nvim_set_keymap("n", "k", "<Plug>(accelerated_jk_gk)", {})
 		end,
 	},
+	{ import = "plugins" },
 	-- { "/home/mochi/codespace/github.com/mochi-sann/mochi-term" },
 })
