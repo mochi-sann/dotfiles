@@ -11,6 +11,8 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+
+		event = "VeryLazy",
 		dependencies = {
 			-- { "mrjones2014/nvim-ts-rainbow" },
 			{
@@ -18,7 +20,7 @@ return {
 				config = function()
 					require("treesitter-context").setup({
 						enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-						multiwindow = false, -- Enable multiwindow support.
+						multiwindow = true, -- Enable multiwindow support.
 						max_lines = 5000, -- How many lines the window should span. Values <= 0 mean no limit.
 						min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
 						line_numbers = true,
@@ -56,36 +58,36 @@ return {
 				-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
 				auto_install = true,
 
-				-- highlight = {
-				-- 	enable = true,
-				-- 	-- disable = function(lang, buf)
-				-- 	-- 	local max_filesize = 100 * 1024 -- 100 KB
-				-- 	-- 	local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-				-- 	-- 	if ok and stats and stats.size > max_filesize then
-				-- 	-- 		return true
-				-- 	-- 	end
-				-- 	-- end,
-				-- },
+				highlight = {
+					enable = true,
+					disable = function(lang, buf)
+						local max_filesize = 100 * 1024 -- 100 KB
+						local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+						if ok and stats and stats.size > max_filesize then
+							return true
+						end
+					end,
+				},
 				--
-				-- rainbow = {
-				-- 	enable = true,
-				-- 	-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-				-- 	extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-				-- 	max_file_lines = 300, -- Do not enable for files with more than n lines, int
-				-- 	-- colors = {}, -- table of hex strings
-				-- 	-- termcolors = {} -- table of colour name strings
-				-- },
-				-- autotag = { enable = true },
-				-- textsubjects = {
-				-- 	enable = true,
-				-- 	prev_selection = ",", -- (Optional) keymap to select the previous selection
-				-- 	keymaps = {
-				-- 		["."] = "textsubjects-smart",
-				-- 		[";"] = "textsubjects-container-outer",
-				-- 		["i;"] = "textsubjects-container-inner",
-				-- 		["i;"] = { "textsubjects-container-inner", desc = "Select inside containers (classes, functions, etc.)" },
-				-- 	},
-				-- },
+				rainbow = {
+					enable = true,
+					-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+					extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+					max_file_lines = 300, -- Do not enable for files with more than n lines, int
+					-- colors = {}, -- table of hex strings
+					-- termcolors = {} -- table of colour name strings
+				},
+				autotag = { enable = true },
+				textsubjects = {
+					enable = true,
+					prev_selection = ",", -- (Optional) keymap to select the previous selection
+					keymaps = {
+						["."] = "textsubjects-smart",
+						[";"] = "textsubjects-container-outer",
+						["i;"] = "textsubjects-container-inner",
+						["i;"] = { "textsubjects-container-inner", desc = "Select inside containers (classes, functions, etc.)" },
+					},
+				},
 			})
 			-- require("ts_context_commentstring").setup({
 			-- 	enable_autocmd = false,
