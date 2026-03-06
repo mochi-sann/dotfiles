@@ -40,13 +40,13 @@ return {
 
 			-- Module mappings. Use `''` (empty string) to disable one.
 			mappings = {
-				add = "sa", -- Add surrounding
-				delete = "sd", -- Delete surrounding
-				find = "sf", -- Find surrounding (to the right)
-				find_left = "sF", -- Find surrounding (to the left)
-				highlight = "sh", -- Highlight surrounding
-				replace = "sr", -- Replace surrounding
-				update_n_lines = "sn", -- Update `n_lines`
+				add = "ya", -- Add yurrounding
+				delete = "yd", -- Delete yurrounding
+				find = "yf", -- Find yurrounding (to the right)
+				find_left = "yF", -- Find yurrounding (to the left)
+				highlight = "yh", -- Highlight yurrounding
+				replace = "yr", -- Replace yurrounding
+				update_n_lines = "yn", -- Update `n_liney`
 			},
 		})
 		-- require('mini.sessions').setup({
