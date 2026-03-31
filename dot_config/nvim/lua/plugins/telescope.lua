@@ -53,6 +53,9 @@ return {
 				end
 			end
 		end
+		local function trim_leading_whitespace(prompt)
+			return { prompt = prompt:gsub("^%s+", "") }
+		end
 
 		vim.keymap.set(
 			"n",
@@ -152,6 +155,9 @@ return {
 				-- Now the picker_config_key will be applied every time you call this
 				-- builtin picker
 				layout_config = { prompt_position = "top" },
+				find_files = {
+					on_input_filter_cb = trim_leading_whitespace,
+				},
 			},
 			extensions = {
 				-- Your extension configuration goes here:
