@@ -52,7 +52,7 @@ return {
 					"yaml",
 				},
 				install_dir = vim.fn.stdpath("data") .. "/site",
-				sync_install = true,
+				sync_install = false,
 
 				-- Automatically install missing parsers when entering buffer
 				-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally

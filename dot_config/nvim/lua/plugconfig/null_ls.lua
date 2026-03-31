@@ -5,7 +5,7 @@ null_ls.register(require("none-ls-shellcheck.code_actions"))
 
 require("mason-null-ls").setup({
 	ensure_installed = { "stylua", "jq", "prettier", "rustfmt" },
-	automatic_installation = true,
+	automatic_installation = false,
 	handlers = {},
 })
 -- require("mason-null-ls").setup({

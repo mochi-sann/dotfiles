@@ -375,7 +375,7 @@ return {
 
 		local ensure_installed = { "ts_ls", "lua_ls", "clangd" }
 		require("mason-lspconfig").setup({
-			automatic_installation = true,
+			automatic_installation = false,
 			ensure_installed = ensure_installed, -- 自動でインストールしたいlanguage server
 		})
 
