@@ -11,7 +11,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-
+    branch="main",
 		event = "VeryLazy",
 		dependencies = {
 			-- { "mrjones2014/nvim-ts-rainbow" },
@@ -84,7 +84,6 @@ return {
 					keymaps = {
 						["."] = "textsubjects-smart",
 						[";"] = "textsubjects-container-outer",
-						["i;"] = "textsubjects-container-inner",
 						["i;"] = {
 							"textsubjects-container-inner",
 							desc = "Select inside containers (classes, functions, etc.)",
