@@ -2,13 +2,6 @@ return {
 	"hrsh7th/nvim-cmp",
 	event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter", "BufReadPre" },
 	dependencies = {
-		{
-			"MysticalDevil/inlay-hints.nvim",
-			event = "LspAttach",
-			config = function()
-				require("inlay-hints").setup()
-			end,
-		},
 		{ "hrsh7th/cmp-buffer" },
 		{ "hrsh7th/cmp-nvim-lsp" },
 		{ "hrsh7th/cmp-path" },
@@ -72,34 +65,11 @@ return {
 				require("copilot_cmp").setup()
 			end,
 		},
-		{ "simrat39/rust-tools.nvim" },
 	},
 	-- event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
 	config = function()
 		local lspkind = require("lspkind")
 		local navic = require("nvim-navic")
-
-		-- vim.lsp.clangd.setup({
-		-- 	on_attach = function(client, bufnr) end,
-		-- })
-
-		local rt = require("rust-tools")
-
-		rt.setup({
-			server = {
-				on_attach = function(_, bufnr)
-					-- Hover actions
-					vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-					-- Code action groups
-					vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-				end,
-			},
-			tools = {
-				inlay_hints = {
-					auto = true,
-				},
-			},
-		})
 
 		local has_words_before = function()
 			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -132,7 +102,7 @@ return {
 		local cmp = require("cmp")
 
 		local has_words_before = function()
-			if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
+			if vim.bo.buftype == "prompt" then
 				return false
 			end
 			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -321,12 +291,14 @@ return {
 
 		local on_attach = function(client, bufnr)
 			navic.attach(client, bufnr)
-			require("inlay-hints").on_attach(client, bufnr)
+			if client.server_capabilities.inlayHintProvider then
+				vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+			end
 			local function buf_set_keymap(...)
 				vim.api.nvim_buf_set_keymap(bufnr, ...)
 			end
 
-			vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+			vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
 
 			-- LSPサーバーのフォーマット機能を無効にする
 			--
@@ -352,6 +324,11 @@ return {
 			-- vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts("code action"))
 			-- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts("references"))
 			vim.keymap.set("n", "<space>f", vim.lsp.buf.format, opts("format"))
+
+			if vim.bo[bufnr].filetype == "rust" then
+				vim.keymap.set("n", "<C-space>", function() vim.cmd.RustLsp("hover_actions") end, { buffer = bufnr })
+				vim.keymap.set("n", "<Leader>a", function() vim.cmd.RustLsp("codeAction") end, { buffer = bufnr })
+			end
 
 			-- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 			-- buf_set_keymap("n", "<space>f", {

@@ -1,6 +1,6 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local vim = vim
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
@@ -670,6 +670,11 @@ return require("lazy").setup({ -- Packer can manage itself
 			vim.api.nvim_set_keymap("n", "j", "<Plug>(accelerated_jk_gj)", {})
 			vim.api.nvim_set_keymap("n", "k", "<Plug>(accelerated_jk_gk)", {})
 		end,
+	},
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^5",
+		lazy = false,
 	},
 	{ import = "plugins" },
 	-- { "/home/mochi/codespace/github.com/mochi-sann/mochi-term" },
