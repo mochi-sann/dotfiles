@@ -1,4 +1,5 @@
-vim.opt.clipboard = "unnamed,unnamedplus"
+-- WSL では clipboard=unnamedplus にすると全ヤンクが win32yank.exe を経由して遅くなるため設定しない。
+-- システムクリップボードへは明示的に "+y / "+p を使う（プロバイダは options.lua の vim.g.clipboard）。
 
 vim.cmd([[
 augroup vimrc-checktime
