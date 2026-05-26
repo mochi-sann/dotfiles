@@ -7,6 +7,14 @@ return {
 		-- JS/TS 用アダプタ（vitest / jest）
 		"marilari88/neotest-vitest",
 		"nvim-neotest/neotest-jest",
+		-- Ruby 用アダプタ（rspec / minitest、ファイル名で自動振り分け）
+		"olimorris/neotest-rspec",
+		"zidhuss/neotest-minitest",
+		-- Go 用アダプタ
+		"fredrikaverpil/neotest-golang",
+		-- その他言語の汎用フォールバック（vim-test 経由で多数のランナーに対応）
+		"nvim-neotest/neotest-vim-test",
+		"vim-test/vim-test",
 	},
 	-- 最初にテスト系キーを押したときにロードする
 	keys = {
@@ -126,8 +134,32 @@ return {
 			return jest_is_test(file) and uses_jest(file)
 		end
 
+		-- Ruby: rspec は *_spec.rb、minitest は *_test.rb をそれぞれ担当するため
+		-- ファイル名で自然に振り分かれる（取り合いは起きない）
+		local rspec = require("neotest-rspec")
+		local minitest = require("neotest-minitest")
+
+		-- Go
+		local golang = require("neotest-golang")
+
+		-- その他言語の汎用フォールバック。専用アダプタがある型は除外する
+		local vim_test = require("neotest-vim-test")({
+			ignore_file_types = {
+				"javascript",
+				"typescript",
+				"javascriptreact",
+				"typescriptreact",
+				"ruby",
+				"go",
+				"python",
+				"lua",
+				"vim",
+				"rust",
+			},
+		})
+
 		require("neotest").setup({
-			adapters = { vitest, jest },
+			adapters = { vitest, jest, rspec, minitest, golang, vim_test },
 			-- 行内に成否を仮想テキストで表示
 			status = { virtual_text = true },
 			output = { open_on_run = true },
