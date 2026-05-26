@@ -394,7 +394,13 @@ function open() {
 $ # export BROWSER="pwsh.exe /c start $(wslpath -w $(realpath $1))"
 export LD_LIBRARY_PATH="/usr/lib/wsl/lib:/usr/local/cuda/lib64:/usr/lib/wsl/lib:"
 # export BROWSER="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"
-export BROWSER='/mnt/c/Windows/explorer.exe'
+# WSL: Linux から URL/ファイルを開くと Windows 側の既定アプリ(ブラウザ)で開く。
+# wslu(wslview) があればそれを使い、無ければ explorer.exe にフォールバック。
+if command -v wslview >/dev/null 2>&1; then
+  export BROWSER=wslview
+else
+  export BROWSER='/mnt/c/Windows/explorer.exe'
+fi
 alias open="'/mnt/c/Program Files/PowerShell/7/pwsh.exe' /c start"
 export PATH="$PATH:/mnt/c/Users/mochi/AppData/Local/Microsoft/WindowsApps"
 export PATH="$PATH:/mnt/c/Users/mochi/AppData/Local/Programs/Microsoft VS Code/bin"
@@ -424,3 +430,9 @@ killf() {
   # (tail/awk/sortでPIDとCOMMANDを整形)
   lsof -i:$1 | tail -n +2 | awk '{print $2, $1}' | sort -u | fzf --multi | awk '{print $1}' | xargs kill -9
 }
+
+# moonbit
+export PATH="$HOME/.moon/bin:$PATH"
+
+# opencode
+export PATH=/home/mochi/.opencode/bin:$PATH
