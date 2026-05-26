@@ -5,7 +5,7 @@ vim.api.nvim_create_user_command("CloseBuffers", function()
 
 	-- 現在のバッファと変更のあるバッファをリストに追加
 	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-		if vim.api.nvim_buf_get_option(buf, "modified") or buf == current_buf then
+		if vim.bo[buf].modified or buf == current_buf then
 			table.insert(buffers_to_keep, buf)
 		end
 	end
