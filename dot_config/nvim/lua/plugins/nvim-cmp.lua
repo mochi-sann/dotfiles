@@ -1,6 +1,6 @@
 return {
 	"hrsh7th/nvim-cmp",
-	event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter", "BufReadPre" },
+	event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
 	dependencies = {
 		{ "hrsh7th/cmp-buffer" },
 		{ "hrsh7th/cmp-nvim-lsp" },
@@ -70,11 +70,6 @@ return {
 	config = function()
 		local lspkind = require("lspkind")
 		local navic = require("nvim-navic")
-
-		local has_words_before = function()
-			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-		end
 
 		local feedkey = function(key, mode)
 			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
@@ -201,37 +196,6 @@ return {
 				end, { "i", "s" }),
 			}),
 			sources = cmp.config.sources({
-				-- {
-				-- 	name = "copilot",
-				-- 	group_index = 2,
-				-- 	max_item_count = 3,
-				-- 	trigger_characters = {
-				-- 		{
-				-- 			".",
-				-- 			":",
-				-- 			"(",
-				-- 			"'",
-				-- 			'"',
-				-- 			"[",
-				-- 			",",
-				-- 			"#",
-				-- 			"*",
-				-- 			"@",
-				-- 			"|",
-				-- 			"=",
-				-- 			"-",
-				-- 			"{",
-				-- 			"/",
-				-- 			"\\",
-				-- 			"+",
-				-- 			"?",
-				-- 			" ",
-				-- 			"\t",
-				-- 			"\n",
-				-- 		},
-				-- 	},
-				-- },
-
 				{ name = "nvim_lsp", group_index = 2 },
 				{ name = "vsnip", group_index = 3 }, -- For vsnip users.
 				{ name = "nvim_lsp_signature_help" },
@@ -271,18 +235,6 @@ return {
 			sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
 		})
 
-		-- Setup lspconfig.
-		-- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-		--
-		-- -- if you want to set up formatting on save, you can use this as a callback
-		-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-		-- require("copilot").setup({
-		-- 	panel = {
-		-- 		enabled = false,
-		-- 	},
-		-- })
-
 		local opts = { noremap = true, silent = true }
 		-- vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
 		-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
@@ -294,10 +246,6 @@ return {
 			if client.server_capabilities.inlayHintProvider then
 				vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 			end
-			local function buf_set_keymap(...)
-				vim.api.nvim_buf_set_keymap(bufnr, ...)
-			end
-
 			vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
 
 			-- LSPサーバーのフォーマット機能を無効にする
@@ -316,9 +264,8 @@ return {
 			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
 			-- vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
 			-- vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts("remove workspace folder"))
-			vim.keymap.set("n", "<space>wl", function()
-				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-			end, opts("list workspace folders"))
+			-- <space>wl は hop.lua の HopLine と競合するため LSP 側では割り当てない
+			-- （workspace folders を見たい場合は :lua=vim.lsp.buf.list_workspace_folders() で代替）
 			vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts("type_definition"))
 			-- vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts("rename"))
 			-- vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts("code action"))
@@ -326,18 +273,13 @@ return {
 			vim.keymap.set("n", "<space>f", vim.lsp.buf.format, opts("format"))
 
 			if vim.bo[bufnr].filetype == "rust" then
-				vim.keymap.set("n", "<C-space>", function() vim.cmd.RustLsp("hover_actions") end, { buffer = bufnr })
-				vim.keymap.set("n", "<Leader>a", function() vim.cmd.RustLsp("codeAction") end, { buffer = bufnr })
+				vim.keymap.set("n", "<C-space>", function()
+					vim.cmd.RustLsp("hover_actions")
+				end, { buffer = bufnr })
+				vim.keymap.set("n", "<Leader>a", function()
+					vim.cmd.RustLsp("codeAction")
+				end, { buffer = bufnr })
 			end
-
-			-- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-			-- buf_set_keymap("n", "<space>f", {
-			-- 	group = augroup,
-			-- 	buffer = bufnr,
-			-- 	callback = function()
-			-- 		lsp_formatting(bufnr)
-			-- 	end,
-			-- }, opts)
 		end
 
 		require("mason").setup({
@@ -353,6 +295,7 @@ return {
 		local ensure_installed = { "ts_ls", "lua_ls", "clangd" }
 		require("mason-lspconfig").setup({
 			automatic_installation = false,
+			automatic_enable = false, -- 有効化は下の vim.lsp.enable に一本化する（二重 enable を防ぐ）
 			ensure_installed = ensure_installed, -- 自動でインストールしたいlanguage server
 		})
 
@@ -361,5 +304,7 @@ return {
 			on_attach = on_attach,
 		})
 		vim.lsp.enable(ensure_installed)
+		-- deno（denols）は deno.json があるプロジェクトでのみ起動。after/lsp/denols.lua 参照
+		vim.lsp.enable("denols")
 	end,
 }
