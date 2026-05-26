@@ -559,21 +559,6 @@ return require("lazy").setup({ -- Packer can manage itself
 	},
 
 	{
-		"zbirenbaum/copilot.lua",
-		lazy = true,
-		cmd = "Copilot",
-		event = {
-			"InsertEnter",
-			"CmdwinEnter",
-			"CmdlineEnter",
-		},
-		config = function()
-			require("copilot").setup({
-				copilot_model = "gpt-4o-copilot",
-			})
-		end,
-	}, -- or github/copilot.vim
-	{
 		"hedyhli/outline.nvim",
 		lazy = true,
 		cmd = { "Outline", "OutlineOpen" },
@@ -647,12 +632,6 @@ return require("lazy").setup({ -- Packer can manage itself
 			-- suggested keymap
 			{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
 		},
-	},
-	{
-		"Juksuu/worktrees.nvim",
-		config = function()
-			require("worktrees").setup()
-		end,
 	},
 
 	{
