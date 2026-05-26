@@ -15,9 +15,7 @@ vim.g.loaded_remote_plugins = 1
 vim.g.loaded_rplugin = 1
 vim.g.loaded_rrhelper = 1
 vim.g.loaded_shada_plugin = 1
-vim.g.loaded_shada_plugin = 1
 vim.g.loaded_spec = 1
-vim.g.loaded_spellfile_plugin = 1
 vim.g.loaded_spellfile_plugin = 1
 vim.g.loaded_tar = 1
 vim.g.loaded_tarPlugin = 1
@@ -33,7 +31,7 @@ vim.g.loaded_gtags = 1
 vim.g.loaded_gtags_cscope = 1
 
 --
-vim.g.editorconfig = true -- edMisskekitorconfigを有効にする
+vim.g.editorconfig = true -- editorconfigを有効にする
 vim.opt.number = true -- 行番号を表示
 vim.opt.laststatus = 3 -- ステータスラインを画面いっぱいにする
 vim.o.cursorline = true -- カーソルラインを表示
