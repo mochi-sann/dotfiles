@@ -4,9 +4,7 @@ local vim = vim
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 vim.keymap.set({ "n" }, "U", "<C-r>", { desc = "redo command" })
 vim.keymap.set({ "n" }, "p", "]p`]", { desc = "paste and auto indent" })
-
 vim.keymap.set({ "n" }, "P", "]P`]", { desc = "paste before cursor and auto indent" })
-vim.keymap.set({ "n" }, "p", "]p`]", { desc = "paste and auto indent" })
 vim.keymap.set("n", "<leader>cl", function()
 	local path_with_line = vim.fn.expand("%") .. ":" .. vim.fn.line(".")
 	vim.fn.setreg("+", path_with_line)
@@ -18,11 +16,3 @@ vim.keymap.set("n", "<leader>cf", function()
 	vim.fn.setreg("+", path_with_line)
 	print("Copied: " .. path_with_line)
 end, { desc = "copy relative file path" })
-
-vim.cmd([[
-" nnoremap U <c-r>  # U でredoになるように
-
-" nnoremap p ]p`]
-" nnoremap P ]P`]
-
-]])
