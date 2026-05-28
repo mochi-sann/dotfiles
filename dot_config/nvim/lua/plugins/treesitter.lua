@@ -11,7 +11,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-    branch="main",
+		branch = "main",
 		event = "VeryLazy",
 		dependencies = {
 			-- { "mrjones2014/nvim-ts-rainbow" },

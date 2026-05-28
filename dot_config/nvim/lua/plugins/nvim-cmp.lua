@@ -58,7 +58,6 @@ return {
 				require("lsp_signature").setup()
 			end,
 		},
-
 	},
 	-- event = { "InsertEnter", "CmdwinEnter", "CmdlineEnter" },
 	config = function()
