@@ -72,6 +72,15 @@
       "skillFolderHash": "7d4f92fc6933d3aad52ef1872e9ed3c8813f5217",
       "installedAt": "2026-05-08T15:28:19.408Z",
       "updatedAt": "2026-05-08T15:28:19.408Z"
+    },
+    "review-and-refactor": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/github/awesome-copilot.git",
+      "skillPath": "skills/review-and-refactor/SKILL.md",
+      "skillFolderHash": "1c31b702214c02180ffaaa67ce54f51c9e10fac7",
+      "installedAt": "2026-05-30T00:03:54.401Z",
+      "updatedAt": "2026-05-30T00:04:35.715Z"
     }
   },
   "dismissed": {
@@ -91,8 +100,10 @@
     "kimi-cli",
     "opencode",
     "warp",
+    "zed",
     "crush",
     "roo",
-    "qwen-code"
+    "qwen-code",
+    "claude-code"
   ]
 }
