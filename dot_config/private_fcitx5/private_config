@@ -16,9 +16,11 @@ ModifierOnlyKeyTimeout=250
 
 [Hotkey/ActivateKeys]
 0=Hangul
+1=Alt+Alt_R
 
 [Hotkey/DeactivateKeys]
 0=Hangul_Hanja
+1=Alt+Alt_L
 
 [Hotkey/AltTriggerKeys]
 0=Shift_L

@@ -37,7 +37,7 @@
 
 
 [commit]
-	gpgsign = true
+	gpgsign = false
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
@@ -47,7 +47,7 @@
 [gpg]
 	program = gpg
 [tag]
-	gpgsign = true
+	gpgsign = false
 [interactive]
     diffFilter = delta --color-only
 [delta]

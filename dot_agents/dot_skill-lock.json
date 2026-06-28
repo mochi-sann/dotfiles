@@ -1,86 +1,32 @@
 {
   "version": 3,
   "skills": {
-    "hikkaku": {
-      "source": "pnsk-lab/hikkaku",
+    "security-review": {
+      "source": "getsentry/skills",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/pnsk-lab/hikkaku.git",
-      "skillPath": ".agents/skills/hikkaku/SKILL.md",
-      "skillFolderHash": "8807dcd63e105d816a93a68be7460809887695ad",
-      "installedAt": "2026-02-11T00:05:19.919Z",
-      "updatedAt": "2026-02-11T00:05:19.919Z"
+      "sourceUrl": "https://github.com/getsentry/skills.git",
+      "skillPath": "skills/security-review/SKILL.md",
+      "skillFolderHash": "598da260ce536813c8bce1607b3c447bdc2f54f7",
+      "installedAt": "2026-05-05T22:39:46.813Z",
+      "updatedAt": "2026-05-05T22:39:46.813Z"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/skills.git",
       "skillPath": "skills/find-skills/SKILL.md",
-      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
-      "installedAt": "2026-02-11T00:05:22.305Z",
-      "updatedAt": "2026-02-11T00:05:22.305Z"
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
+      "installedAt": "2026-05-05T22:40:13.445Z",
+      "updatedAt": "2026-05-05T22:40:13.445Z"
     },
-    "executing-plans": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/obra/superpowers.git",
-      "skillPath": "skills/executing-plans/SKILL.md",
-      "skillFolderHash": "75248b138170840e3e82680cfde7ca615414a548",
-      "installedAt": "2026-02-11T03:04:49.480Z",
-      "updatedAt": "2026-02-11T03:04:49.480Z"
-    },
-    "vercel-react-best-practices": {
-      "source": "vercel-labs/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
-      "skillPath": "skills/react-best-practices/SKILL.md",
-      "skillFolderHash": "fce8b5a24ff4ff2fc5db6aa1051e03b53c6b5bf1",
-      "installedAt": "2026-02-20T09:31:33.192Z",
-      "updatedAt": "2026-03-07T05:24:36.754Z"
-    },
-    "migrate-to-vinext": {
-      "source": "cloudflare/vinext",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/cloudflare/vinext.git",
-      "skillPath": ".agents/skills/migrate-to-vinext/SKILL.md",
-      "skillFolderHash": "9284c140c8dbc60f1c39a3f5849bb33b6331f7d3",
-      "installedAt": "2026-02-25T03:42:45.958Z",
-      "updatedAt": "2026-03-07T05:24:40.618Z"
-    },
-    "react:components": {
-      "source": "google-labs-code/stitch-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/google-labs-code/stitch-skills.git",
-      "skillPath": "skills/react-components/SKILL.md",
-      "skillFolderHash": "c201fcfad2b656a7e4276bd2a4d10611a79321f8",
-      "installedAt": "2026-02-25T10:05:54.190Z",
-      "updatedAt": "2026-03-07T05:24:43.125Z"
-    },
-    "playwright-interactive": {
-      "source": "openai/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/openai/skills.git",
-      "skillPath": "skills/.curated/playwright-interactive/SKILL.md",
-      "skillFolderHash": "6d18386434d5cc0235d62e32ca4f7db8fc9813f6",
-      "installedAt": "2026-03-07T02:48:49.061Z",
-      "updatedAt": "2026-03-07T02:48:49.061Z"
-    },
-    "code-review": {
-      "source": "helderberto/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/helderberto/skills.git",
-      "skillPath": "code-review/SKILL.md",
-      "skillFolderHash": "7d4f92fc6933d3aad52ef1872e9ed3c8813f5217",
-      "installedAt": "2026-05-08T15:28:19.408Z",
-      "updatedAt": "2026-05-08T15:28:19.408Z"
-    },
-    "review-and-refactor": {
+    "git-commit": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
       "sourceUrl": "https://github.com/github/awesome-copilot.git",
-      "skillPath": "skills/review-and-refactor/SKILL.md",
-      "skillFolderHash": "1c31b702214c02180ffaaa67ce54f51c9e10fac7",
-      "installedAt": "2026-05-30T00:03:54.401Z",
-      "updatedAt": "2026-05-30T00:04:35.715Z"
+      "skillPath": "skills/git-commit/SKILL.md",
+      "skillFolderHash": "883a6a7466f55a9cd9f22cf1cce2d9333fc9b998",
+      "installedAt": "2026-05-09T23:52:29.158Z",
+      "updatedAt": "2026-05-09T23:52:29.158Z"
     }
   },
   "dismissed": {
@@ -99,11 +45,6 @@
     "github-copilot",
     "kimi-cli",
     "opencode",
-    "warp",
-    "zed",
-    "crush",
-    "roo",
-    "qwen-code",
-    "claude-code"
+    "warp"
   ]
 }
